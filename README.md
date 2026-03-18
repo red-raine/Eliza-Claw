@@ -10,11 +10,11 @@ The Challenge: Create an agentic framework inspired by Eliza's pattern-matching 
 
 # Rules
 
-  1.The best agent is the agent that isn't an agent at all
-  2. Zero tokens
-  3. BERT, classifiers, NLP, rewriters are fair game
-  4. Smaller memory footprint = more points
-  5. Master the context, kill the agent, own the code
+  1.The best agent is the agent that isn't an agent at all<br>
+  2. Zero tokens<br>
+  3. BERT, classifiers, NLP, rewriters are fair game<br>
+  4. Smaller memory footprint = more points<br>
+  5. Master the context, kill the agent, own the code<br>
   
 # Questions
 
@@ -29,3 +29,13 @@ I'll publish my failures and successes in roughly historical order — building 
 Phase 1: Rewrite Eliza as a friendly task-manager agentic framework. Add a plugin structure. See what tasks ElizaClaw can do reliably.
 
 Let's find out.
+
+# Suggested Start
+
+Mad Libs + Eliza + Menu list
+
+https://github.com/wadetb/eliza/tree/master
+
+https://github.com/rupertl/eliza-ctss
+
+https://github.com/jezhiggins/eliza.py/blob/main/eliza.py
