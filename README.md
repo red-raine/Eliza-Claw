@@ -1,12 +1,21 @@
-# Eliza-Claw
+# Eliza-Claw :  A Micro AI OS  
 
 Context engineering challenge - Kill the Lobster, Save the World
 
 Can you build an agent without an LLM?
 
-The goal: Learn context engineering and AI history by attempting to reverse engineer something like OpenClaw — but without any language models. Instead, use the logic of the original Eliza chatbot, classical NLP, and whatever else you can think of.
+A minimal agentic operating system. One loop. A heartbeat. Plugins that wake up, check their context, and act.
+Build it small enough that the whole thing fits in your head.  Mostly just Python, TOML and JSON.
 
-The Challenge: Create an agentic framework inspired by Eliza's pattern-matching logic, using modern NLP tools — but zero tokens. No LLMs.
+# The Goal: 
+
+  Learn context engineering and AI history though a return to first principles and attempting to reverse engineer something like OpenClaw — but without any language models. 
+  Instead, use the logic of the original Eliza chatbot, classical NLP, and whatever else you can think of.
+
+# The Challenge: 
+Create an agentic framework inspired by Eliza's pattern-matching logic, using modern NLP tools — but zero tokens. No LLMs.
+
+Build it small enough that the whole thing fits in your head. No framework dependencies. Just Python and JSON.
 
 # Rules
 
@@ -35,8 +44,8 @@ Let's find out.
 
 # Suggested Start
 
-Mad Libs + Eliza + Menu list
-
+Mad Libs + Eliza + Menu list<br>
+load → parse → route → execute → template → respond<br>
 
   [CLI / Input]<br>
 [Parser / Router ← Eliza-style pattern matching]<br>
