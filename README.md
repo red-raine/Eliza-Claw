@@ -20,7 +20,7 @@ The Challenge: Create an agentic framework inspired by Eliza's pattern-matching 
 
   1. Eliza fooled humans. Could we fool ChatGPT?
   2. Is Eliza's approach good enough for most tasks?
-  3. Can recursive logic make Eliza beat an LLM on a specific task?
+  3. Can recursive logic + Eliza beat an LLM on a specific task?
 
 # Plan
 
