@@ -1,0 +1,51 @@
+{
+  "users": {
+    "known": [
+      {
+        "id": "user_001",
+        "name": "Alice",
+        "aliases": ["alice", "al", "ally"],
+        "location": "Seattle",
+        "timezone": "PST",
+        "interests": ["python", "hiking", "coffee"],
+        "relationships": {
+          "Bob": "colleague",
+          "Carol": "friend"
+        },
+        "history": {
+          "first_met": "2024-01-15T10:30:00Z",
+          "conversations": 12,
+          "last_seen": "2024-01-20T14:22:00Z",
+          "topics_discussed": ["work", "python", "weather"],
+          "emotions_expressed": ["frustrated", "happy", "curious"]
+        },
+        "facts_known": [
+          "works at tech company",
+          "has a dog named Max",
+          "learning python"
+        ]
+      },
+      {
+        "id": "user_002",
+        "name": "Bob",
+        "aliases": ["bob", "robert", "bobby"],
+        "location": "Portland",
+        "interests": ["music", "coffee"],
+        "relationships": {
+          "Alice": "colleague"
+        },
+        "history": {
+          "first_met": "2024-01-16T09:00:00Z",
+          "conversations": 3,
+          "last_seen": "2024-01-18T16:45:00Z"
+        },
+        "facts_known": [
+          "plays guitar",
+          "friends with Alice"
+        ]
+      }
+    ],
+    "current": "user_001",
+    "last_active": "2024-01-20T14:22:00Z"
+  }
+}
