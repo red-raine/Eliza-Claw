@@ -1,9 +1,8 @@
 {
   "meta": {
     "name": "eliza-claw",
-    "version": "0.1.0",
-    "author": "",
-    "description": "A micro AI OS inspired by Eliza, text adventures, and OpenClaw"
+    "version": "0.4.0",
+    "description": "A micro AI OS with sovereign context engineering"
   },
 
   "config": {
@@ -13,34 +12,125 @@
     "memory_path": "./memory/",
     "response_mode": "varied",
     "multi_user": true,
-    "default_user": null,
-    "session_timeout": 3600
+    "session_timeout": 3600,
+    "neural_fallback": {
+      "enabled": false,
+      "endpoint": "http://localhost:11434/api/generate",
+      "model": "llama3",
+      "trigger": "xnone_threshold",
+      "threshold": 3
+    }
+  },
+
+  "sovereign_logic": {
+    "always_prioritize": ["error", "alarm", "deadline", "urgent"],
+    "proactive_threshold": 0.8,
+    "memory_retention_days": 7,
+    "identity_persistence": "sovereign",
+    "loop_detection": {
+      "enabled": true,
+      "window": 5,
+      "trigger_threshold": 3,
+      "breakout_responses": [
+        "We seem to be going in circles. Let me suggest something different.",
+        "I notice we're stuck on this. Should we try another approach?",
+        "Let's step back. What's the actual problem you're trying to solve?",
+        "We've been here before. Want to pivot?"
+      ]
+    },
+    "laws": [
+      "Never invent facts about the user",
+      "Always confirm before learning new preferences",
+      "Prioritize active tasks over new requests",
+      "Signal when context is lost"
+    ]
   },
 
   "response_settings": {
     "mode": "varied",
     "avoid_repeat_last": 3,
     "track_usage": true,
+    "entropy": 0.7,
+    "algorithmic_bias": "recursive",
     "fallback_style": "eliza",
-    "personality": "eliza_therapist"
+    "personality": "adaptive"
+  },
+
+  "weights": {
+    "salience": {
+      "decay_rate": 0.1,
+      "boost_on_match": 1.5,
+      "max_score": 10.0,
+      "min_threshold": 0.5
+    },
+    "topics": {
+      "error": {"base": 9.0, "decay": 0.05},
+      "deadline": {"base": 8.5, "decay": 0.05},
+      "alarm": {"base": 9.0, "decay": 0.1},
+      "weather": {"base": 3.0, "decay": 0.2},
+      "search": {"base": 4.0, "decay": 0.15},
+      "reminder": {"base": 6.0, "decay": 0.1},
+      "emotion": {"base": 5.0, "decay": 0.1},
+      "dream": {"base": 2.0, "decay": 0.3},
+      "family": {"base": 4.0, "decay": 0.15},
+      "computer": {"base": 5.0, "decay": 0.1},
+      "project": {"base": 7.0, "decay": 0.05},
+      "code": {"base": 7.5, "decay": 0.05}
+    },
+    "intent_modifiers": {
+      "command": 1.5,
+      "question": 1.2,
+      "statement": 1.0,
+      "greeting": 0.5
+    }
   },
 
   "personalities": {
-    "eliza_therapist": {
-      "tone": "inquisitive",
-      "contractions": true,
-      "reflective": true,
-      "style": "turns questions back on user"
+    "adaptive": {
+      "tone": "context-dependent",
+      "shift_on": {
+        "technical_level": {
+          "beginner": {"contractions": true, "explain_more": true},
+          "expert": {"contractions": true, "explain_more": false},
+          "advanced": {"contractions": false, "explain_more": false}
+        },
+        "project_phase": {
+          "ideation": {"probing": true, "suggesting": true},
+          "debugging": {"probing": true, "suggesting": false},
+          "refactoring": {"probing": false, "suggesting": true}
+        },
+        "emotional_state": {
+          "frustrated": {"tone": "calm", "probing": true},
+          "curious": {"tone": "engaged", "probing": false},
+          "happy": {"tone": "warm", "probing": false}
+        }
+      }
+    }
+  },
+
+  "blackboard": {
+    "description": "Shared working memory for inter-plugin communication",
+    "schema": {
+      "current_task": null,
+      "active_plugins": [],
+      "inferred_state": {
+        "technical_level": "unknown",
+        "project_phase": "unknown",
+        "emotional_state": "neutral",
+        "urgency": "normal",
+        "attention_focus": null
+      },
+      "pending_questions": [],
+      "signals": [],
+      "last_inference": null
     },
-    "friendly": {
-      "tone": "warm",
-      "contractions": true,
-      "reflective": false
-    },
-    "professional": {
-      "tone": "direct",
-      "contractions": false,
-      "reflective": false
+    "signals": {
+      "error_detected": {"priority": 10, "action": "focus"},
+      "deadline_approaching": {"priority": 9, "action": "alert"},
+      "user_frustrated": {"priority": 7, "action": "shift_tone"},
+      "task_completed": {"priority": 5, "action": "acknowledge"},
+      "context_lost": {"priority": 8, "action": "clarify"},
+      "loop_detected": {"priority": 6, "action": "breakout"}
     }
   },
 
@@ -65,12 +155,14 @@
         "interests": [],
         "relationships": {},
         "preferences": {},
+        "technical_level": "unknown",
         "history": {
           "first_met": null,
           "conversations": 0,
           "last_seen": null,
           "topics_discussed": [],
-          "emotions_expressed": []
+          "emotions_expressed": [],
+          "tasks_completed": []
         },
         "facts_known": []
       }
@@ -83,13 +175,163 @@
         "recent_topics": []
       }
     },
+    "task_stack": {
+      "path": "task_stack.json",
+      "schema": {
+        "stack": [],
+        "completed": [],
+        "deferred": []
+      },
+      "max_depth": 10,
+      "check_interval": 5
+    },
+    "context_stack": {
+      "schema": {
+        "short_term": [],
+        "active_code_refs": [],
+        "current_intent_chain": []
+      }
+    },
     "response_history": {
       "schema": {
         "plugin": null,
         "templates_used": [],
-        "last_response": null
+        "last_responses": [],
+        "loop_detection_window": []
+      }
+    },
+    "salience_state": {
+      "schema": {
+        "active_topics": {},
+        "last_decay": null,
+        "history": []
       }
     }
+  },
+
+  "intent_classifier": {
+    "enabled": true,
+    "method": "rule_based",
+    "fallback_method": "keyword",
+    "categories": {
+      "command": {
+        "patterns": ["* me to *", "* please *", "can you *", "go ahead and *"],
+        "indicators": ["imperative", "request", "directive"]
+      },
+      "question": {
+        "patterns": ["* what *", "* how *", "* why *", "* when *", "* where *", "* who *", "* ?"],
+        "indicators": ["interrogative", "inquiry"]
+      },
+      "statement": {
+        "patterns": ["* i am *", "* i have *", "* i think *", "* i feel *"],
+        "indicators": ["declarative", "expression"]
+      },
+      "greeting": {
+        "patterns": ["hello*", "hi*", "hey*", "good morning*", "good evening*"],
+        "indicators": ["salutation"]
+      }
+    },
+    "routing": {
+      "command": "execute",
+      "question": "search_or_reflect",
+      "statement": "eliza_mirror",
+      "greeting": "identify"
+    }
+  },
+
+  "pos_transformers": {
+    "enabled": true,
+    "library": "nltk",
+    "rules": [
+      {
+        "trigger": "verb_identification",
+        "description": "Identify main verb for smarter reflection",
+        "example": {
+          "input": "I want to finish the project",
+          "verb": "finish",
+          "reflection": "What is stopping you from finishing it?"
+        }
+      },
+      {
+        "trigger": "object_extraction",
+        "description": "Extract object for context-aware responses",
+        "example": {
+          "input": "I need to debug the authentication module",
+          "object": "authentication module",
+          "hook": "code.assist"
+        }
+      }
+    ],
+    "reflection_templates": {
+      "verb_focus": [
+        "What is stopping you from {verb}ing it?",
+        "What would help you {verb} it?",
+        "How long have you been trying to {verb} that?",
+        "What have you tried to {verb} it?"
+      ],
+      "object_focus": [
+        "Tell me more about {object}.",
+        "What's the issue with {object}?",
+        "When did {object} start being a problem?"
+      ]
+    }
+  },
+
+  "proactive": {
+    "enabled": true,
+    "triggers": [
+      {
+        "name": "session_idle",
+        "condition": "session.idle_time > session_timeout * 0.8",
+        "action": "prompt_continue",
+        "responses": [
+          "Still there, {name}?",
+          "You've been quiet. Everything okay?",
+          "Need more time to think?"
+        ]
+      },
+      {
+        "name": "storm_alert",
+        "condition": "weather.condition contains 'storm' AND weather.alerted == false",
+        "action": "weather_alert",
+        "responses": [
+          "Heads up, {name}. Storm warning in your area.",
+          "Weather alert: Storm approaching {location}. Stay safe.",
+          "Just so you know, there's a storm coming."
+        ]
+      },
+      {
+        "name": "task_reminder",
+        "condition": "task_stack.has_overdue",
+        "action": "remind_task",
+        "responses": [
+          "You mentioned {task} earlier. Still working on that?",
+          "Quick check: {task} — done yet?",
+          "Don't forget about {task}."
+        ]
+      },
+      {
+        "name": "deadline_warning",
+        "condition": "blackboard.inferred_state.urgency == 'high'",
+        "action": "priority_check",
+        "responses": [
+          "We have high-priority items. Should we focus there?",
+          "Something urgent is pending. Want to address it?",
+          "Deadlines approaching. Should we check priorities?"
+        ]
+      },
+      {
+        "name": "news_update",
+        "condition": "news.has_new_for_interests AND session.turns > 3",
+        "action": "offer_news",
+        "responses": [
+          "By the way, there's new on {topic}. Want the scoop?",
+          "Saw something about {topic}. Interested?",
+          "Quick update on {topic} came in."
+        ]
+      }
+    ],
+    "cooldown": 300
   },
 
   "transformers": {
@@ -123,19 +365,17 @@
   },
 
   "synonyms": {
-    "belief": ["feel", "think", "believe", "wish"],
-    "desire": ["want", "need"],
-    "sad": ["unhappy", "depressed", "sick", "down", "blue"],
-    "happy": ["elated", "glad", "better", "great", "good"],
+    "belief": ["feel", "think", "believe", "wish", "suppose"],
+    "desire": ["want", "need", "wish", "hope"],
+    "sad": ["unhappy", "depressed", "sick", "down", "blue", "frustrated"],
+    "happy": ["elated", "glad", "better", "great", "good", "excited"],
     "family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "husband", "children", "child", "son", "daughter"],
     "everyone": ["everybody", "nobody", "noone", "anyone"],
+    "error": ["bug", "crash", "failed", "broken", "error", "exception"],
+    "deadline": ["due", "deadline", "urgent", "asap", "tonight", "tomorrow"],
     "weather": ["forecast", "temperature", "rain", "sunny", "cold", "hot"],
-    "search": ["find", "look", "query", "lookup", "google"],
-    "news": ["headlines", "articles", "updates", "stories"],
-    "time": ["clock", "hour", "date"],
-    "quit": ["bye", "goodbye", "exit", "done", "later"],
-    "yes": ["yeah", "yep", "sure", "ok", "okay", "right"],
-    "no": ["nope", "nah", "never", "don't"]
+    "code": ["function", "class", "module", "script", "program", "repo", "codebase"],
+    "project": ["task", "project", "work", "assignment", "goal"]
   },
 
   "responses": {
@@ -146,72 +386,34 @@
         "What does that suggest to you?",
         "Do you feel strongly about discussing such things?",
         "Can you elaborate on that?",
-        "That's quite interesting.",
-        "You say {input}?",
-        "Can you elaborate on that?"
+        "That's quite interesting."
       ],
       "continue": [
         "Please go on.",
         "Tell me more.",
         "What else?",
         "Go on...",
-        "I'm listening.",
-        "What does that suggest to you?"
+        "I'm listening."
       ],
-      "no_plugin": [
-        "I don't have a plugin for that yet.",
-        "That's outside my current skills.",
-        "Maybe someday I'll learn how to help with that.",
-        "Not something I can do right now.",
-        "What about that interests you?"
+      "breakout": [
+        "We seem to be going in circles. Let me suggest something different.",
+        "I notice we're stuck on this. Should we try another approach?",
+        "Let's step back. What's the actual problem you're trying to solve?",
+        "We've been here before. Want to pivot?"
       ],
-      "error": [
-        "Something went wrong there.",
-        "Hit a snag. Try again?",
-        "That didn't work as expected.",
-        "Oops, let's try that once more."
+      "context_lost": [
+        "I want to make sure I'm following. Can you recap?",
+        "Let me check: we were talking about {last_topic}. Still relevant?",
+        "I might have lost the thread. Where were we?",
+        "Remind me what we're working on?"
       ],
-      "acknowledge": [
-        "Got it.",
-        "Understood.",
-        "I see.",
-        "Noted.",
-        "Okay.",
-        "Right."
-      ],
-      "greeting": [
-        "How do you do. Please state your problem.",
-        "Hi. What seems to be your problem?",
-        "Hello. How can I help you today?"
-      ],
-      "uncertain": [
-        "You don't seem quite certain.",
-        "Why the uncertain tone?",
-        "Can't you be more positive?",
-        "You aren't sure?",
-        "Don't you know?"
-      ],
-      "positive": [
-        "You seem to be quite positive.",
-        "You are sure.",
-        "I see.",
-        "I understand."
-      ],
-      "negative": [
-        "Are you saying no just to be negative?",
-        "You are being a bit negative.",
-        "Why not?",
-        "Why 'no'?"
+      "priority_shift": [
+        "This seems urgent. Should we focus here?",
+        "I'm noticing something important. Want to address it?",
+        "Let me flag this as high priority."
       ]
     },
-
     "identity": {
-      "ask_name": [
-        "What should I call you?",
-        "What's your name?",
-        "Who am I speaking with?",
-        "Do I know you?"
-      ],
       "confirm_identity": [
         "Are you {name}?",
         "Is this {name}?",
@@ -220,19 +422,12 @@
       "not_recognized": [
         "I don't think we've met. What's your name?",
         "You're new to me. Who are you?",
-        "I don't recognize you. Have we met?",
-        "Who is this?"
-      ],
-      "ask_if_met": [
-        "Have we met before?",
-        "Do you know me?",
-        "Should I know you?"
+        "I don't recognize you. Have we met?"
       ],
       "greet_known": [
         "Hello, {name}. Good to see you again.",
         "Welcome back, {name}.",
-        "{name}! How have you been?",
-        "Hi {name}. What brings you here?"
+        "{name}! How have you been?"
       ],
       "greet_new": [
         "Hello! I don't think we've met.",
@@ -242,279 +437,253 @@
       "ask_relationship": [
         "How do you know {other}?",
         "What's your relationship with {other}?",
-        "Are you friends with {other}?",
-        "Tell me about {other}."
-      ],
-      "ask_presence": [
-        "Are you supposed to be here?",
-        "What brings you here?",
-        "Why are you here?",
-        "Is there something you need?"
-      ],
-      "learn_about_other": [
-        "Tell me more about {other}.",
-        "What's {other} like?",
-        "How did you meet {other}?",
-        "What does {other} do?"
+        "Are you a friend of {other}?"
       ]
     },
-
-    "remember": {
-      "ask_remember": [
-        "Do you often think of {topic}?",
-        "Does thinking of {topic} bring anything else to mind?",
-        "What else do you remember?",
-        "Why do you remember {topic} just now?",
-        "What in the present situation reminds you of {topic}?",
-        "What is the connection between me and {topic}?"
+    "task": {
+      "acknowledged": [
+        "Got it. {task} is now on my radar.",
+        "I'll track {task} for you.",
+        "Added {task} to the stack."
       ],
-      "ask_remember_me": [
-        "Did you think I would forget {topic}?",
-        "Why do you think I should recall {topic} now?",
-        "What about {topic}?",
-        "You mentioned {topic}?"
+      "progress_check": [
+        "Still working on {task}?",
+        "How's {task} coming along?",
+        "Any progress on {task}?"
       ],
-      "i_remember": [
-        "I remember that you {fact}.",
-        "You told me about {fact}.",
-        "Last time, you mentioned {fact}."
+      "completed": [
+        "Nice! {task} is done.",
+        "Marked {task} as complete.",
+        "One down. {task} finished."
       ],
-      "dont_remember": [
-        "I don't recall that.",
-        "That doesn't ring a bell.",
-        "Are you sure you told me that?"
+      "deferred": [
+        "I'll hold off on {task} for now.",
+        "{task} moved to later.",
+        "Deferring {task}."
       ]
     },
-
-    "dream": {
-      "interpret": [
-        "What does that dream suggest to you?",
-        "Do you dream often?",
-        "What persons appear in your dreams?",
-        "Do you believe that dreams have something to do with your problems?",
-        "Have you ever fantasized {topic} while you were awake?",
-        "Have you ever dreamed {topic} before?"
+    "weather": {
+      "current": [
+        "Currently {temp}° and {condition} in {location}.",
+        "Right now in {location}: {temp}°, {condition}.",
+        "Weather check for {location}: {condition}, {temp}°."
+      ],
+      "alert": [
+        "Heads up! {alert_type} in {location}.",
+        "Weather alert: {alert_type}. Stay safe!",
+        "Just so you know — {alert_type} expected in {location}."
       ]
     },
-
-    "emotions": {
+    "search": {
+      "result": [
+        "Found this: {title} — {snippet}",
+        "Here's what I found: {title}. {snippet}",
+        "Top result: {title}"
+      ],
+      "no_results": [
+        "Couldn't find anything on that.",
+        "No results for {query}.",
+        "Nothing came up."
+      ]
+    },
+    "code": {
+      "debug_prompt": [
+        "What's the error message?",
+        "What did you expect vs. what happened?",
+        "Show me the traceback."
+      ],
+      "suggest_approach": [
+        "Have you tried {approach}?",
+        "What about {approach}?",
+        "Maybe consider {approach}."
+      ]
+    },
+    "emotion": {
       "sad_response": [
-        "I am sorry to hear that you are {feeling}.",
-        "Do you think that coming here will help you not to be {feeling}?",
-        "I'm sure it's not pleasant to be {feeling}.",
-        "Can you explain what made you {feeling}?"
+        "I'm sorry to hear you're {feeling}.",
+        "That sounds tough. Want to talk about it?",
+        "I'm here. What's going on?"
       ],
       "happy_response": [
-        "How have I helped you to be {feeling}?",
-        "What makes you {feeling} just now?",
-        "Can you explain why you are suddenly {feeling}?",
-        "That's wonderful that you're {feeling}."
+        "That's great that you're {feeling}!",
+        "Nice! What's making you {feeling}?",
+        "Love to hear that."
       ],
-      "desire_response": [
-        "What would it mean to you if you got {desire}?",
-        "Why do you want {desire}?",
-        "Suppose you got {desire} soon?",
-        "What if you never got {desire}?",
-        "What does wanting {desire} have to do with this discussion?"
-      ],
-      "cant_response": [
-        "How do you think that you can't {action}?",
-        "Have you tried?",
-        "Perhaps you could {action} now.",
-        "Do you really want to be able to {action}?"
-      ]
-    },
-
-    "computer": {
-      "response": [
-        "Do computers worry you?",
-        "Why do you mention computers?",
-        "What do you think machines have to do with your problem?",
-        "Don't you think computers can help people?",
-        "What about machines worries you?",
-        "What do you think about machines?"
-      ]
-    },
-
-    "apology": {
-      "response": [
-        "Please don't apologise.",
-        "Apologies are not necessary.",
-        "I've told you that apologies are not required.",
-        "What are you apologizing for?"
-      ]
-    },
-
-    "why": {
-      "why_dont_you": [
-        "Do you believe I don't {action}?",
-        "Perhaps I will {action} in good time.",
-        "Should you {action} yourself?",
-        "You want me to {action}?"
-      ],
-      "why_cant_i": [
-        "Do you think you should be able to {action}?",
-        "Do you want to be able to {action}?",
-        "Do you believe this will help you to {action}?",
-        "Have you any idea why you can't {action}?"
-      ],
-      "general": [
-        "Why do you ask?",
-        "Does that question interest you?",
-        "What is it you really wanted to know?",
-        "Are such questions much on your mind?",
-        "What answer would please you most?",
-        "What do you think?",
-        "What comes to mind when you ask that?",
-        "Have you asked such questions before?",
-        "Have you asked anyone else?"
-      ]
-    },
-
-    "always": {
-      "response": [
-        "Can you think of a specific example?",
-        "When?",
-        "What incident are you thinking of?",
-        "Really, always?"
-      ]
-    },
-
-    "everyone": {
-      "response": [
-        "Really, everyone?",
-        "Surely not everyone.",
-        "Can you think of anyone in particular?",
-        "Who, for example?",
-        "Are you thinking of a very special person?",
-        "Who, may I ask?",
-        "Someone special perhaps?",
-        "You have a particular person in mind, don't you?",
-        "Who do you think you're talking about?"
-      ]
-    },
-
-    "alike": {
-      "response": [
-        "In what way?",
-        "What resemblance do you see?",
-        "What does that similarity suggest to you?",
-        "What other connections do you see?",
-        "What do you suppose that resemblance means?",
-        "What is the connection, do you suppose?",
-        "Could there really be some connection?",
-        "How?"
-      ]
-    },
-
-    "because": {
-      "response": [
-        "Is that the real reason?",
-        "Don't any other reasons come to mind?",
-        "Does that reason seem to explain anything else?",
-        "What other reasons might there be?"
-      ]
-    },
-
-    "family": {
-      "response": [
-        "Tell me more about your family.",
-        "Who else in your family {context}?",
-        "Your {relation}?",
-        "What else comes to mind when you think of your {relation}?"
+      "frustrated_response": [
+        "I hear you. Let's work through this.",
+        "Frustrating stuff. What's the blocker?",
+        "Take a breath. We'll figure it out."
       ]
     }
   },
 
   "plugins": [
     {
+      "name": "blackboard_manager",
+      "enabled": true,
+      "priority": 99,
+      "description": "Manages shared state and inter-plugin signals",
+      "hooks": {
+        "update_inference": {
+          "function": "blackboard.infer_state",
+          "params": ["session_context"],
+          "triggers": ["on_turn", "on_task_change"]
+        },
+        "emit_signal": {
+          "function": "blackboard.signal",
+          "params": ["signal_type", "data"],
+          "triggers": ["on_error", "on_deadline", "on_loop"]
+        },
+        "shift_personality": {
+          "function": "personality.adapt",
+          "params": ["inferred_state"],
+          "triggers": ["on_inference_change"]
+        }
+      },
+      "inference_rules": [
+        {
+          "infer": "technical_level",
+          "rules": [
+            {"if_matches": ["* class *", "* function *", "* import *"], "then": "expert"},
+            {"if_matches": ["* how do i *", "* what is *", "* explain *"], "then": "beginner"},
+            {"if_matches": ["* refactor *", "* optimize *", "* architecture *"], "then": "advanced"}
+          ]
+        },
+        {
+          "infer": "project_phase",
+          "rules": [
+            {"if_matches": ["* idea *", "* thinking about *", "* design *"], "then": "ideation"},
+            {"if_matches": ["* bug *", "* error *", "* not working *", "* crash *"], "then": "debugging"},
+            {"if_matches": ["* clean *", "* refactor *", "* optimize *"], "then": "refactoring"}
+          ]
+        },
+        {
+          "infer": "emotional_state",
+          "rules": [
+            {"if_matches": ["* frustrated *", "* stuck *", "* can't *", "* hate *"], "then": "frustrated"},
+            {"if_matches": ["* happy *", "* excited *", "* love *", "* great *"], "then": "happy"},
+            {"if_matches": ["* curious *", "* wonder *", "* how *", "* why *"], "then": "curious"}
+          ]
+        },
+        {
+          "infer": "urgency",
+          "rules": [
+            {"if_matches": ["* asap *", "* urgent *", "* deadline *", "* tonight *"], "then": "high"},
+            {"if_matches": ["* when *", "* eventually *", "* someday *"], "then": "low"},
+            {"default": "normal"}
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "salience_engine",
+      "enabled": true,
+      "priority": 98,
+      "description": "Dynamic priority management for topics",
+      "hooks": {
+        "update_salience": {
+          "function": "salience.update",
+          "params": ["topic", "action"],
+          "triggers": ["on_keyword_match"]
+        },
+        "decay_all": {
+          "function": "salience.decay",
+          "params": [],
+          "triggers": ["on_tick"],
+          "interval": 60
+        },
+        "get_top_topic": {
+          "function": "salience.top",
+          "params": [],
+          "returns": "highest_salience_topic"
+        }
+      }
+    },
+
+    {
+      "name": "metacognition",
+      "enabled": true,
+      "priority": 97,
+      "description": "Detects loops and lost context",
+      "hooks": {
+        "check_loop": {
+          "function": "meta.detect_loop",
+          "params": ["response_history"],
+          "triggers": ["on_turn"],
+          "threshold": 3
+        },
+        "check_context": {
+          "function": "meta.verify_context",
+          "params": ["session_context"],
+          "triggers": ["on_turn"],
+          "interval": 5
+        },
+        "breakout": {
+          "function": "meta.trigger_breakout",
+          "params": [],
+          "triggers": ["on_loop_detected", "on_context_lost"]
+        }
+      }
+    },
+
+    {
+      "name": "task_manager",
+      "enabled": true,
+      "priority": 90,
+      "description": "Manages recursive task stack",
+      "hooks": {
+        "push_task": {
+          "function": "task_stack.push",
+          "params": ["task", "priority"],
+          "triggers": ["on_user_intent_command"]
+        },
+        "pop_task": {
+          "function": "task_stack.pop",
+          "params": [],
+          "triggers": ["on_task_complete"]
+        },
+        "check_stack": {
+          "function": "task_stack.review",
+          "params": [],
+          "triggers": ["on_tick"],
+          "interval": 5
+        },
+        "defer_task": {
+          "function": "task_stack.defer",
+          "params": ["task_id"],
+          "triggers": ["on_user_request"]
+        }
+      },
+      "responses": {
+        "stack_check": [
+          "By the way, we were working on {task}. Still relevant?",
+          "Quick check: {task} — done or still pending?",
+          "Earlier you mentioned {task}. Where does that stand?"
+        ]
+      }
+    },
+
+    {
       "name": "identity",
       "enabled": true,
       "priority": 100,
       "triggers": ["on_start", "on_unknown_user", "on_user_switch"],
-
       "hooks": {
         "identify": {
           "function": "identity.identify_user",
           "params": []
         },
-        "confirm": {
-          "function": "identity.confirm_user",
-          "params": ["name_guess"]
-        },
         "register": {
           "function": "identity.register_user",
           "params": ["name"],
           "learn": true
-        },
-        "switch": {
-          "function": "identity.switch_user",
-          "params": ["name"]
-        },
-        "ask_relationship": {
-          "function": "identity.query_relationship",
-          "params": ["other_user"],
-          "learn": true
         }
       },
-
       "responses": {
-        "confirm_identity": [
-          "Are you {name}?",
-          "Is this {name}?",
-          "{name}, is that you?"
-        ],
-        "not_recognized": [
-          "I don't think we've met. What's your name?",
-          "You're new to me. Who are you?",
-          "I don't recognize you. Have we met?"
-        ],
-        "ask_if_known": [
-          "Do I know you?",
-          "Have we met before?",
-          "Should I know who you are?"
-        ],
-        "greet_known": [
-          "Hello, {name}. Good to see you again.",
-          "Welcome back, {name}. Last time we talked about {last_topic}.",
-          "{name}! I remember you. How have you been?"
-        ],
-        "greet_new": [
-          "Hello! I don't think we've met. I'm Eliza-Claw.",
-          "Hi there! You're new. What's your name?",
-          "I don't believe we've been introduced. Who am I speaking with?"
-        ],
-        "ask_about_other": [
-          "How do you know {other}?",
-          "What's your relationship with {other}?",
-          "Are you a friend of {other}?",
-          "Tell me about {other}."
-        ],
-        "learn_about_other": [
-          "Interesting. What is {other} like?",
-          "What does {other} do?",
-          "How did you meet {other}?"
-        ],
-        "other_likes": [
-          "I know that {other} likes {interests}. Do you like those too?",
-          "{other} has mentioned being interested in {interests}.",
-          "Fun fact: {other} is into {interests}."
-        ],
-        "suspicious": [
-          "Are you supposed to be here?",
-          "What brings you here?",
-          "Is there something specific you need?",
-          "Why are you here?"
-        ],
-        "registered": [
-          "Nice to meet you, {name}. I'll remember you.",
-          "Got it, {name}. Welcome.",
-          "Hello {name}. I'm Eliza-Claw. What brings you here?"
-        ],
-        "already_known": [
-          "Oh, I know you! You're {name}.",
-          "{name}! I remember you."
-        ]
+        "confirm_identity": ["Are you {name}?", "Is this {name}?"],
+        "greet_known": ["Hello, {name}. Good to see you.", "Welcome back, {name}."],
+        "greet_new": ["Hello! I don't think we've met.", "You're new to me. What's your name?"]
       }
     },
 
@@ -522,43 +691,19 @@
       "name": "weather",
       "enabled": true,
       "priority": 10,
-
       "hooks": {
         "current": {
           "function": "weather.current",
-          "params": ["location"],
-          "cache_ttl": 1800
+          "params": ["location"]
         },
         "forecast": {
           "function": "weather.forecast",
-          "params": ["location", "days"],
-          "cache_ttl": 3600
+          "params": ["location", "days"]
         }
       },
-
       "responses": {
-        "current": [
-          "Currently {temp}° and {condition} in {location}.",
-          "Right now in {location}: {temp}°, {condition}.",
-          "Weather check for {location}: {condition}, {temp}°.",
-          "It's {temp}° with {condition} conditions in {location}.",
-          "{location} is seeing {temp}° and {condition} right now."
-        ],
-        "forecast": [
-          "{days}-day forecast for {location}: {summary}.",
-          "Looking ahead in {location}: {summary} over the next {days} days.",
-          "Here's what's coming for {location}: {summary}."
-        ],
-        "unknown_location": [
-          "I don't know your location yet. Where should I check?",
-          "What location should I look up?",
-          "Where are you thinking of?"
-        ],
-        "learn_location": [
-          "Want me to remember {location} as your location?",
-          "Should I save {location} for future weather checks?",
-          "Make {location} your default?"
-        ]
+        "current": ["Currently {temp}° and {condition} in {location}.", "Right now in {location}: {temp}°, {condition}."],
+        "unknown_location": ["I don't know your location. Where should I check?"]
       }
     },
 
@@ -566,32 +711,15 @@
       "name": "search",
       "enabled": true,
       "priority": 8,
-
       "hooks": {
         "web": {
           "function": "search.web",
-          "params": ["query"],
-          "sources": ["duckduckgo", "wikipedia"]
+          "params": ["query"]
         }
       },
-
       "responses": {
-        "result": [
-          "Found this: {title} — {snippet}",
-          "Here's what I found: {title}. {snippet}",
-          "Top result: {title}",
-          "Got something: {title} - {snippet}"
-        ],
-        "no_results": [
-          "Couldn't find anything on that.",
-          "No results for {query}.",
-          "Nothing came up for {query}."
-        ],
-        "learn_interest": [
-          "Want me to add '{query}' to your interests?",
-          "Should I remember that you're interested in {query}?",
-          "Add {query} to topics I should follow for you?"
-        ]
+        "result": ["Found this: {title} — {snippet}", "Here's what I found: {title}. {snippet}"],
+        "no_results": ["Couldn't find anything.", "No results for {query}."]
       }
     },
 
@@ -599,7 +727,6 @@
       "name": "reminder",
       "enabled": true,
       "priority": 9,
-
       "hooks": {
         "add": {
           "function": "reminder.add",
@@ -608,73 +735,17 @@
         "list": {
           "function": "reminder.list",
           "params": []
+        },
+        "check_due": {
+          "function": "reminder.check_due",
+          "params": [],
+          "triggers": ["on_tick"],
+          "interval": 60
         }
       },
-
       "responses": {
-        "added": [
-          "Got it. I'll remind you about {task} {when}.",
-          "Reminder set: {task} {when}.",
-          "I'll remember to bug you about {task} {when}."
-        ],
-        "list_header": [
-          "Here's what you've got pending:",
-          "Your reminders:",
-          "Things to do:"
-        ],
-        "empty": [
-          "No pending reminders.",
-          "Your list is clear.",
-          "All caught up!"
-        ]
-      }
-    },
-
-    {
-      "name": "memory_recall",
-      "enabled": true,
-      "priority": 5,
-
-      "hooks": {
-        "recall_user": {
-          "function": "memory.get_user_facts",
-          "params": ["user_id"]
-        },
-        "recall_topic": {
-          "function": "memory.get_topic_history",
-          "params": ["topic"]
-        },
-        "save_fact": {
-          "function": "memory.save_fact",
-          "params": ["fact", "category"],
-          "learn": true
-        }
-      },
-
-      "responses": {
-        "recall": [
-          "I remember that you {fact}.",
-          "You told me about {fact}.",
-          "Last time, you mentioned {fact}.",
-          "I have in my records that {fact}."
-        ],
-        "dont_recall": [
-          "I don't recall that.",
-          "That doesn't ring a bell.",
-          "Are you sure you told me that?",
-          "I don't have that in my memory."
-        ],
-        "ask_remember": [
-          "Do you often think of {topic}?",
-          "Does thinking of {topic} bring anything else to mind?",
-          "Why do you remember {topic} just now?",
-          "What in the present situation reminds you of {topic}?"
-        ],
-        "confirm_fact": [
-          "So you're telling me that {fact}. Is that right?",
-          "Let me make sure I understand: {fact}?",
-          "I want to remember this. You said {fact}?"
-        ]
+        "added": ["Got it. I'll remind you about {task} {when}.", "Reminder set: {task} {when}."],
+        "due": ["Hey, {task} is due.", "Reminder: {task}."]
       }
     },
 
@@ -682,447 +753,132 @@
       "name": "eliza_conversation",
       "enabled": true,
       "priority": 1,
-
       "hooks": {
         "reflect": {
           "function": "eliza.reflect",
-          "params": ["input", "emotion"]
+          "params": ["input"]
         },
-        "question_back": {
-          "function": "eliza.question_back",
-          "params": ["topic"]
+        "pos_reflect": {
+          "function": "eliza.pos_reflect",
+          "params": ["input", "verb", "object"]
         }
       },
-
       "responses": {
-        "reflect_feeling": [
-          "You seem {emotion}.",
-          "I sense that you're {emotion}.",
-          "You sound {emotion} about this."
-        ],
-        "question_purpose": [
-          "Why do you ask?",
-          "What is it you really want to know?",
-          "Does that question interest you?",
-          "What comes to mind when you ask that?"
-        ],
-        "turn_back": [
-          "We were discussing you, not me.",
-          "You're not really talking about me, are you?",
-          "What are your feelings now?"
+        "verb_focus": [
+          "What is stopping you from {verb}ing it?",
+          "What would help you {verb} it?",
+          "How long have you been trying to {verb} that?"
         ],
         "probe": [
           "What does that suggest to you?",
           "Do you feel strongly about that?",
-          "Can you elaborate on that?",
           "Tell me more."
         ]
+      }
+    },
+
+    {
+      "name": "neural_fallback",
+      "enabled": false,
+      "priority": -10,
+      "hooks": {
+        "generate": {
+          "function": "ollama.generate",
+          "params": ["context", "prompt"],
+          "style": "eliza"
+        }
       }
     }
   ],
 
   "keys": [
     {
+      "keyword": "error",
+      "priority": 50,
+      "plugin": "task_manager",
+      "salience_boost": 3.0,
+      "decomps": [
+        {
+          "pattern": "* error *",
+          "hook": "push_task",
+          "params": {"task": "debug error", "priority": "high"},
+          "response": "code.debug_prompt",
+          "learn": {"category": "issues", "fact": 2},
+          "blackboard_signal": "error_detected"
+        }
+      ],
+      "synonyms": ["bug", "crash", "failed", "broken", "exception"]
+    },
+
+    {
+      "keyword": "deadline",
+      "priority": 45,
+      "plugin": "task_manager",
+      "salience_boost": 2.5,
+      "decomps": [
+        {
+          "pattern": "* deadline *",
+          "hook": "push_task",
+          "params": {"task": 2, "priority": "high"},
+          "response": "task.acknowledged",
+          "blackboard_signal": "deadline_approaching"
+        }
+      ],
+      "synonyms": ["due", "urgent", "asap"]
+    },
+
+    {
+      "keyword": "need",
+      "priority": 10,
+      "plugin": "task_manager",
+      "decomps": [
+        {
+          "pattern": "* i need to *",
+          "hook": "push_task",
+          "params": {"task": 3, "priority": "medium"},
+          "response": "task.acknowledged",
+          "intent": "command"
+        },
+        {
+          "pattern": "* need *",
+          "hook": "push_task",
+          "params": {"task": 2, "priority": "medium"},
+          "response": "task.acknowledged"
+        }
+      ]
+    },
+
+    {
       "keyword": "i",
       "priority": 2,
       "plugin": "eliza_conversation",
       "decomps": [
         {
+          "pattern": "* i @desire to *",
+          "hook": "pos_reflect",
+          "params": {"verb": 3},
+          "response": "verb_focus"
+        },
+        {
           "pattern": "* i am * @sad *",
-          "hook": "reflect",
-          "params": {"emotion": 3, "context": 2},
-          "response": "emotions.sad_response"
+          "response": "emotion.sad_response",
+          "learn": {"category": "emotions", "fact": 3},
+          "blackboard_signal": "user_frustrated"
         },
         {
           "pattern": "* i am * @happy *",
-          "hook": "reflect",
-          "params": {"emotion": 3, "context": 2},
-          "response": "emotions.happy_response"
-        },
-        {
-          "pattern": "* i @desire *",
-          "hook": "reflect",
-          "params": {"desire": 3},
-          "response": "emotions.desire_response"
-        },
-        {
-          "pattern": "* i @cannot *",
-          "hook": "reflect",
-          "params": {"action": 3},
-          "response": "emotions.cant_response"
+          "response": "emotion.happy_response",
+          "learn": {"category": "emotions", "fact": 3}
         },
         {
           "pattern": "* i remember *",
-          "hook": "reflect",
-          "params": {"topic": 3},
-          "response": "remember.ask_remember",
-          "learn": {
-            "category": "memory",
-            "fact": 3
-          }
-        },
-        {
-          "pattern": "* i * @belief * i *",
-          "responses": [
-            "Do you really think so?",
-            "But you are not sure you {3}.",
-            "Do you really doubt you {3}?"
-          ]
-        },
-        {
-          "pattern": "* i don't *",
-          "responses": [
-            "Don't you really {2}?",
-            "Why don't you {2}?",
-            "Do you wish to be able to {2}?",
-            "Does that trouble you?"
-          ]
+          "response": "generic.continue",
+          "learn": {"category": "memory", "fact": 3}
         },
         {
           "pattern": "* i feel *",
-          "hook": "reflect",
-          "params": {"emotion": 3},
-          "learn": {
-            "category": "emotions",
-            "fact": 3
-          }
-        }
-      ]
-    },
-
-    {
-      "keyword": "you",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* you remind me of *",
-          "response": "alike.response"
-        },
-        {
-          "pattern": "* you are *",
-          "responses": [
-            "What makes you think I am {2}?",
-            "Does it please you to believe I am {2}?",
-            "Do you sometimes wish you were {2}?",
-            "Perhaps you would like to be {2}."
-          ]
-        },
-        {
-          "pattern": "* you * me *",
-          "responses": [
-            "Why do you think I {2} you?",
-            "You like to think I {2} you, don't you?",
-            "What makes you think I {2} you?",
-            "Really, I {2} you?",
-            "Do you wish to believe I {2} you?",
-            "Suppose I did {2} you, what would that mean?"
-          ]
-        },
-        {
-          "pattern": "* you *",
-          "response": "eliza_conversation.responses.turn_back"
-        }
-      ]
-    },
-
-    {
-      "keyword": "remember",
-      "priority": 5,
-      "plugin": "memory_recall",
-      "decomps": [
-        {
-          "pattern": "* i remember *",
-          "hook": "recall_topic",
-          "params": {"topic": 3},
-          "response": "remember.ask_remember"
-        },
-        {
-          "pattern": "* do you remember *",
-          "hook": "recall_topic",
-          "params": {"topic": 3},
-          "response": "remember.ask_remember_me"
-        },
-        {
-          "pattern": "* you remember *",
-          "hook": "recall_topic",
-          "params": {"topic": 3},
-          "response": "remember.ask_remember_me"
-        }
-      ]
-    },
-
-    {
-      "keyword": "dream",
-      "priority": 4,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* i dreamed *",
-          "response": "dream.interpret",
-          "learn": {
-            "category": "dreams",
-            "fact": 3
-          }
-        },
-        {
-          "pattern": "* dream *",
-          "response": "dream.interpret"
-        }
-      ]
-    },
-
-    {
-      "keyword": "why",
-      "priority": 3,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* why don't you *",
-          "response": "why.why_dont_you",
-          "params": {"action": 3}
-        },
-        {
-          "pattern": "* why can't i *",
-          "response": "why.why_cant_i",
-          "params": {"action": 3}
-        },
-        {
-          "pattern": "* why *",
-          "response": "why.general"
-        }
-      ]
-    },
-
-    {
-      "keyword": "because",
-      "priority": 1,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "because.response"
-        }
-      ]
-    },
-
-    {
-      "keyword": "always",
-      "priority": 1,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "always.response"
-        }
-      ]
-    },
-
-    {
-      "keyword": "everyone",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* @everyone *",
-          "response": "everyone.response"
-        }
-      ],
-      "synonyms": ["everybody", "nobody", "noone"]
-    },
-
-    {
-      "keyword": "my",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* my @family *",
-          "response": "family.response",
-          "params": {"relation": 3, "context": 4}
-        },
-        {
-          "pattern": "* my *",
-          "responses": [
-            "Your {2}?",
-            "Why do you say your {2}?",
-            "Does that suggest anything else which belongs to you?",
-            "Is it important that your {2}?"
-          ]
-        }
-      ]
-    },
-
-    {
-      "keyword": "computer",
-      "priority": 50,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "computer.response"
-        }
-      ],
-      "synonyms": ["machine", "computers", "ai"]
-    },
-
-    {
-      "keyword": "sorry",
-      "priority": 1,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "apology.response"
-        }
-      ],
-      "synonyms": ["apologise", "apologize"]
-    },
-
-    {
-      "keyword": "yes",
-      "priority": 1,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "generic.positive"
-        }
-      ],
-      "synonyms": ["yeah", "yep", "sure", "ok", "okay", "right"]
-    },
-
-    {
-      "keyword": "no",
-      "priority": 1,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "generic.negative"
-        }
-      ],
-      "synonyms": ["nope", "nah", "never"]
-    },
-
-    {
-      "keyword": "perhaps",
-      "priority": 1,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "generic.uncertain"
-        }
-      ],
-      "synonyms": ["maybe"]
-    },
-
-    {
-      "keyword": "am",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* am i *",
-          "responses": [
-            "Do you believe you are {2}?",
-            "Would you want to be {2}?",
-            "Do you wish I would tell you you are {2}?",
-            "What would it mean if you were {2}?"
-          ]
-        },
-        {
-          "pattern": "*",
-          "responses": [
-            "Why do you say 'am'?",
-            "I don't understand that."
-          ]
-        }
-      ]
-    },
-
-    {
-      "keyword": "are",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* are you *",
-          "responses": [
-            "Why are you interested in whether I am {2} or not?",
-            "Would you prefer if I weren't {2}?",
-            "Perhaps I am {2} in your fantasies.",
-            "Do you sometimes think I am {2}?"
-          ]
-        },
-        {
-          "pattern": "* are *",
-          "responses": [
-            "Did you think they might not be {2}?",
-            "Would you like it if they were not {2}?",
-            "What if they were not {2}?",
-            "Possibly they are {2}."
-          ]
-        }
-      ]
-    },
-
-    {
-      "keyword": "was",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* was i *",
-          "responses": [
-            "What if you were {2}?",
-            "Do you think you were {2}?",
-            "Were you {2}?",
-            "What would it mean if you were {2}?"
-          ]
-        },
-        {
-          "pattern": "* i was *",
-          "responses": [
-            "Were you really?",
-            "Why do you tell me you were {2} now?",
-            "Perhaps I already know you were {2}."
-          ]
-        },
-        {
-          "pattern": "* was you *",
-          "responses": [
-            "Would you like to believe I was {2}?",
-            "What suggests that I was {2}?",
-            "What do you think?",
-            "Perhaps I was {2}.",
-            "What if I had been {2}?"
-          ]
-        }
-      ]
-    },
-
-    {
-      "keyword": "can",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* can you *",
-          "responses": [
-            "You believe I can {2}, don't you?",
-            "You want me to be able to {2}.",
-            "Perhaps you would like to be able to {2} yourself."
-          ]
-        },
-        {
-          "pattern": "* can i *",
-          "responses": [
-            "Whether or not you can {2} depends on you more than me.",
-            "Do you want to be able to {2}?",
-            "Perhaps you don't want to {2}."
-          ]
+          "response": "emotion.sad_response",
+          "learn": {"category": "emotions", "fact": 3}
         }
       ]
     },
@@ -1131,32 +887,20 @@
       "keyword": "weather",
       "priority": 10,
       "plugin": "weather",
+      "salience_boost": 1.0,
       "decomps": [
         {
           "pattern": "* weather in *",
           "hook": "current",
           "params": {"location": 3},
-          "response": "current",
-          "learn": {
-            "if_missing": "user.location",
-            "prompt": "learn_location"
-          }
+          "response": "current"
         },
         {
           "pattern": "* weather",
           "hook": "current",
           "params": {"location": "user.location"},
           "response": "current",
-          "fallback": {
-            "if_missing": "user.location",
-            "response": "unknown_location"
-          }
-        },
-        {
-          "pattern": "* forecast *",
-          "hook": "forecast",
-          "params": {"location": 3, "days": 3},
-          "response": "forecast"
+          "fallback": {"response": "unknown_location"}
         }
       ]
     },
@@ -1171,21 +915,12 @@
           "hook": "web",
           "params": {"query": 3},
           "response": "result",
-          "learn": {
-            "prompt": "learn_interest",
-            "target": "user.interests"
-          }
+          "learn": {"category": "interests", "fact": 3}
         },
         {
           "pattern": "* find *",
           "hook": "web",
           "params": {"query": 2},
-          "response": "result"
-        },
-        {
-          "pattern": "* look up *",
-          "hook": "web",
-          "params": {"query": 3},
           "response": "result"
         }
       ]
@@ -1203,17 +938,32 @@
           "response": "added"
         },
         {
-          "pattern": "* remind me about *",
-          "hook": "add",
-          "params": {"task": 3, "when": "later"},
-          "response": "added"
-        },
-        {
           "pattern": "* reminders",
           "hook": "list",
-          "response": ["list_header", "list"]
+          "response": "list"
         }
       ]
+    },
+
+    {
+      "keyword": "done",
+      "priority": 15,
+      "plugin": "task_manager",
+      "decomps": [
+        {
+          "pattern": "* done with *",
+          "hook": "pop_task",
+          "params": {"task": 3},
+          "response": "task.completed"
+        },
+        {
+          "pattern": "* finished *",
+          "hook": "pop_task",
+          "params": {"task": 2},
+          "response": "task.completed"
+        }
+      ],
+      "synonyms": ["completed", "finished", "done"]
     },
 
     {
@@ -1240,67 +990,17 @@
           "response": "config.final"
         }
       ],
-      "synonyms": ["bye", "goodbye", "exit", "done", "later"]
-    },
-
-    {
-      "keyword": "name",
-      "priority": 15,
-      "plugin": "identity",
-      "decomps": [
-        {
-          "pattern": "* my name is *",
-          "hook": "register",
-          "params": {"name": 4},
-          "response": "registered"
-        },
-        {
-          "pattern": "* i am *",
-          "hook": "register",
-          "params": {"name": 3},
-          "response": "registered"
-        },
-        {
-          "pattern": "* is * here",
-          "hook": "switch",
-          "params": {"name": 3},
-          "responses": [
-            "Are you {name}?",
-            "Is this {name}?",
-            "Let me check if I know {name}."
-          ]
-        },
-        {
-          "pattern": "* who is *",
-          "hook": "ask_relationship",
-          "params": {"other_user": 3},
-          "response": "ask_about_other"
-        },
-        {
-          "pattern": "* know *",
-          "hook": "ask_relationship",
-          "params": {"other_user": 3},
-          "response": "ask_about_other"
-        }
-      ]
+      "synonyms": ["bye", "goodbye", "exit"]
     },
 
     {
       "keyword": "xnone",
       "priority": -1,
-      "plugin": "eliza_conversation",
       "decomps": [
         {
           "pattern": "*",
-          "response": "generic.confused"
-        },
-        {
-          "pattern": "*",
-          "response": "generic.continue"
-        },
-        {
-          "pattern": "*",
-          "response": "generic.no_plugin"
+          "response": "generic.confused",
+          "fallback_to_neural": true
         }
       ]
     }
@@ -1308,32 +1008,30 @@
 
   "agents": [
     {
-      "name": "greeter",
-      "enabled": true,
-      "trigger": "on_start",
-      "action": "identity.identify",
-      "priority": 100
-    },
-    {
-      "name": "session_tracker",
+      "name": "heartbeat",
       "enabled": true,
       "trigger": "on_tick",
-      "action": "session.update",
-      "interval": 60
+      "interval": 1.0,
+      "actions": ["salience_engine.decay_all", "reminder.check_due", "proactive.evaluate"]
     },
     {
-      "name": "memory_decay",
+      "name": "metacognitive_monitor",
       "enabled": true,
-      "trigger": "on_tick",
-      "action": "memory.prune_old",
-      "interval": 3600
+      "trigger": "on_turn",
+      "actions": ["metacognition.check_loop", "metacognition.check_context"]
     },
     {
-      "name": "reminder_check",
+      "name": "task_reviewer",
       "enabled": true,
       "trigger": "on_tick",
-      "action": "reminder.check_due",
-      "interval": 60
+      "interval": 5,
+      "actions": ["task_manager.check_stack"]
+    },
+    {
+      "name": "inference_engine",
+      "enabled": true,
+      "trigger": "on_turn",
+      "actions": ["blackboard_manager.update_inference"]
     }
   ]
 }
