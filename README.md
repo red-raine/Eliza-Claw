@@ -48,10 +48,37 @@ Mad Libs + Eliza + Menu list<br>
 load → parse → route → execute → template → respond<br>
 
   [CLI / Input]<br>
-[Parser / Router ← Eliza-style pattern matching]<br>
-  [Plugins     ← Skills, each with hooks + state]<br>
-[State Manager ← JSON memory, reads/writes on tick]<br>
-   [Heartbeat ← The loop that makes it alive]<br>
+[Parser / Router -- Eliza-style pattern matching]<br>
+  [Plugins     -- Skills, each with hooks + state]<br>
+[State Manager --JSON memory, reads/writes on tick]<br>
+   [Heartbeat -- The loop that makes it alive]<br>
+
+
+<h4>Planned Architecture</h4>
+
+Plugins as Class Extensions
+
+Each plugin inherits from a base class and registers itself with the shell:
+
+<b>Plugin</b><br>
+-- keywords: patterns it matches       {json}<br>
+--hooks: functions it can run         {python}<br>
+--templates: mad-lib responses        {toml}<br>
+--state: any persistent data it needs {json}<br>
+<br>
+When input comes in, the shell iterates through registered plugins, finds a match, and fires the hook. 
+
+<b>JSON as Memory</b>
+
+ memory/<br>
+   -- user.json         -- name, location, preferences<br>
+   -- interests.json    -- topics, sources, frequency<br>
+   -- history.json      -- recent interactions<br>
+   -- plugins/<br>
+      -- -- weather.json  -- cached forecasts<br>
+      -- -- news.json     -- saved articles<br>
+
+      
 
 https://github.com/wadetb/eliza/tree/master
 
