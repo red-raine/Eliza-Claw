@@ -25,7 +25,10 @@ The Challenge: Create an agentic framework inspired by Eliza's pattern-matching 
 # Plan
 
 I'll publish my failures and successes in roughly historical order — building up from Eliza's roots. Feel free to submit ideas or lesson plans.
+<br>
 
+
+<br>
 Phase 1: Rewrite Eliza as a friendly task-manager agentic framework. Add a plugin structure. See what tasks ElizaClaw can do reliably.
 
 Let's find out.
@@ -33,6 +36,13 @@ Let's find out.
 # Suggested Start
 
 Mad Libs + Eliza + Menu list
+
+
+  [CLI / Input]<br>
+[Parser / Router ← Eliza-style pattern matching]<br>
+  [Plugins     ← Skills, each with hooks + state]<br>
+[State Manager ← JSON memory, reads/writes on tick]<br>
+   [Heartbeat ← The loop that makes it alive]<br>
 
 https://github.com/wadetb/eliza/tree/master
 
