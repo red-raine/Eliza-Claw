@@ -16,8 +16,10 @@ import re
 import time
 
 from elizaclaw import nlu, plugins as _plugins
+from elizaclaw.lexicon import Lexicon
 from elizaclaw.plugin import REGISTRY
 from elizaclaw.state import State
+from elizaclaw.wordweb import WordWeb
 
 
 def _kw_rx(h):
@@ -32,11 +34,18 @@ class Shell:
             self.cfg = json.load(fh)
         root = memory_root or self.cfg["config"].get("memory_path", "./memory/")
         self.state = State(root.strip("/"))
+        # --- Wave 1-4 brain modules (all optional, all degrade gracefully)
+        self.lexicon = Lexicon(root.strip("/"))
+        self.wordweb = WordWeb(root=self.cfg["config"].get(
+            "wordweb_path", "data"), lex=self.lexicon)
+        self.wordweb.load()                      # silent if not built yet
         self.turn = 0
         self._outbox = []
         self._compiled = {}          # pattern -> regex cache
         self.plugins = {}
         self._load_plugins()
+        self._expand_synonyms()
+        self._load_clan_scripts()
         self._build_keys()
 
     # ----------------------------------------------------------- bootstrap
@@ -64,6 +73,41 @@ class Shell:
                 if pat not in self._compiled:
                     self._compiled[pat] = nlu.compile_pattern(pat, syn)
 
+    # -------------------------------------------------- wave 1: synonym growth
+    def _expand_synonyms(self):
+        """WordNet-grown @syn sets (memoized in memory/synsets_expanded.json).
+        Eliza's DOCTOR script hand-wrote 'alike equal same identical'; we mine
+        150k synsets so every key speaks in more than one dialect."""
+        if not self.lexicon.has_wordnet:
+            return
+        cache = self.state.load("synsets_expanded", {})
+        changed = False
+        for name, words in list(self.cfg["synonyms"].items()):
+            if name in cache:
+                self.cfg["synonyms"][name] = cache[name]
+                continue
+            try:
+                grown = self.lexicon.expand_synset(words)
+            except Exception:
+                grown = words
+            cache[name] = grown
+            self.cfg["synonyms"][name] = grown
+            changed = True
+        if changed:
+            self.state.save("synsets_expanded", cache)
+
+    # --------------------------------------------------- wave 3: clan scripts
+    def _load_clan_scripts(self):
+        from elizaclaw import clan
+        folder = self.cfg["config"].get("scripts_path", "scripts")
+        self._clan_loaded = clan.load_scripts(self, folder)
+
+    def reload_scripts(self):
+        self._compiled.clear()
+        self._load_clan_scripts()
+        self._build_keys()
+        return getattr(self, "_clan_loaded", [])
+
     # ------------------------------------------------------------ pipeline
     def step(self, text):
         """One full turn: load->parse->route->execute->template->respond."""
@@ -79,9 +123,19 @@ class Shell:
         intent = nlu.classify_intent(sentence,
                                      self.cfg["intent_classifier"],
                                      self.cfg["synonyms"])
+        # Wave 4: the Bayesian word-web votes too (Pandemonium, Selfridge 1956:
+        # let every specialist demon shout, then take the loudest consensus).
+        web_route, web_conf, web_tab = (None, 0.0, {})
+        if self.wordweb.w3:
+            try:
+                web_route, web_conf, web_tab = self.wordweb.route(sentence)
+            except Exception:
+                pass
         ctx = {"sentence": sentence, "tokens": tokens, "intent": intent,
                "captures": [], "vars": {}, "decomp": {}, "turn": self.turn,
-               "response": None, "breakout": False, "context_lost": False}
+               "response": None, "breakout": False, "context_lost": False,
+               "web_route": web_route, "web_conf": web_conf,
+               "web_scores": web_tab}
 
         exit_now = self.route(ctx)
         # on_turn agents from eliza.json (metacognition, inference engine)
@@ -112,6 +166,9 @@ class Shell:
         toks = pattern.split()
         return sum(1 for t in toks if t != "*") * 10 + len(toks)
 
+    ROUTE2KEY = {"task": "task", "reminder": "remind", "info": None,
+                 "chat": None, "system": None}
+
     def route(self, ctx):
         joined = " ".join(ctx["tokens"])
         best = None                                  # (rank, key, decomp, m)
@@ -129,7 +186,22 @@ class Shell:
                         best = (rank, key, decomp, m, ng)
                     break                            # within-key, first hit
         if not best:
-            return False
+            return self._web_fallback(ctx)
+        _, key, decomp, m, ng = best
+        # Word-web arbitration (Wave 4): the Bayesian router casts a vote.
+        # Strong statistical evidence outranks a weak pattern match -- but
+        # never overrides an explicit high-priority keyword rule.
+        wr = ctx.get("web_route")
+        prio = key.get("priority", 0)
+        if wr and ctx.get("web_conf", 0) >= 0.5 and prio <= 10:
+            matched_key = key["keyword"]
+            want = self.ROUTE2KEY.get(wr)
+            if want and want != matched_key and want != "xnone":
+                alt = self._key_for_route(want, joined)
+                if alt and -alt[0][0] >= -prio:      # alt priority >= ours
+                    best = alt
+        if not best:
+            return self._web_fallback(ctx)
         _, key, decomp, m, ng = best
         ctx["key"] = key
         ctx["decomp"] = decomp

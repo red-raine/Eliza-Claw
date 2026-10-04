@@ -32,6 +32,27 @@ class SalienceEngine(Plugin):
                            (boost if boost is not None
                             else cfg["boost_on_match"]))
         st["topics"][topic] = cur
+        # --- semantic propagation (WordNet/ConceptNet-flavoured spreading
+        # activation): related topics get a fraction of the boost, so talking
+        # about 'work' keeps 'task' and 'project' warm in attention_focus.
+        lex = getattr(self.shell, "lexicon", None)
+        if lex and lex.available:
+            try:
+                for rel in lex.related(topic)[:8]:
+                    w = rel["word"]
+                    if w == topic.lower() or len(w.split()) > 2:
+                        continue
+                    kin = st["topics"].get(w)
+                    if kin is not None:
+                        kin["score"] = min(
+                            cfg["max_score"],
+                            kin["score"] + 0.3 * (boost or
+                                                  cfg["boost_on_match"]))
+                    elif rel["rel"] in ("IsA", "RelatedTo") \
+                            and w in self.shell.cfg["weights"]["topics"]:
+                        st["topics"][w] = {"score": base * 0.4}
+            except Exception:
+                pass
         self.shell.state.save("salience", st)
 
     def top(self):

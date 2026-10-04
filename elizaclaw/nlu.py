@@ -179,3 +179,99 @@ def extract_verb_object(sentence):
     obj_words = [t for t in toks[verb_idx + 1:]
                  if t not in ARTICLES and t not in PREPS and t != "to"]
     return verb, " ".join(obj_words) or None
+
+
+# ------------------------------------------------------------- time semantics
+_MONTHS = {"january": 1, "february": 2, "march": 3, "april": 4, "may": 5,
+           "june": 6, "july": 7, "august": 8, "september": 9, "october": 10,
+           "november": 11, "december": 12}
+_WEEKDAYS = {"monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
+             "friday": 4, "saturday": 5, "sunday": 6}
+_NUM_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+              "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+              "twelve": 12, "fifteen": 15, "twenty": 20, "half": 30}
+
+
+def parse_time(text, now=None):
+    """Tiny temporal expression parser (Timex-lite). Understands:
+
+      'tonight' 'tomorrow' 'this afternoon/evening/morning' 'in N minutes/hours'
+      'at 5pm' 'at 17:30' 'on friday' 'next week/month' '<Month> 12' 'noon'
+
+    Returns an epoch float, or None. No model, no regex monsters -- a table.
+    """
+    import datetime as _dt
+    now = now or _dt.datetime.now()
+    toks = tokenize(text)
+    joined = " ".join(toks)
+    m = re.search(r"\bin\s+(?:(\d+)|(\w+))\s+(minute|hour|day|week)s?\b", joined)
+    if m:
+        n = int(m.group(1)) if m.group(1) else _NUM_WORDS.get(m.group(2), 1)
+        unit = m.group(3)
+        delta = {"minute": _dt.timedelta(minutes=n),
+                 "hour": _dt.timedelta(hours=n),
+                 "day": _dt.timedelta(days=n),
+                 "week": _dt.timedelta(weeks=n)}[unit]
+        return (now + delta).timestamp()
+    m = re.search(r"\bat\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\b", joined)
+    if m:
+        h = int(m.group(1))
+        if m.group(3) == "pm" and h < 12:
+            h += 12
+        if m.group(3) == "am" and h == 12:
+            h = 0
+        target = now.replace(hour=h, minute=int(m.group(2) or 0),
+                             second=0, microsecond=0)
+        if target < now:                       # 'at 9am' said at 10am -> tomorrow
+            target += _dt.timedelta(days=1)
+        return target.timestamp()
+    if "tonight" in toks or "midnight" in toks:
+        return now.replace(hour=21 if "tonight" in toks else 0,
+                           minute=0, second=0, microsecond=0).timestamp()
+    if "noon" in toks:
+        return now.replace(hour=12, minute=0, second=0,
+                           microsecond=0).timestamp()
+    day_shift = 1 if "tomorrow" in toks else 0
+    if "afternoon" in toks:
+        return (now + _dt.timedelta(days=day_shift)).replace(
+            hour=15, minute=0, second=0, microsecond=0).timestamp()
+    if "evening" in toks:
+        return (now + _dt.timedelta(days=day_shift)).replace(
+            hour=19, minute=0, second=0, microsecond=0).timestamp()
+    if "morning" in toks:
+        return (now + _dt.timedelta(days=day_shift)).replace(
+            hour=9, minute=0, second=0, microsecond=0).timestamp()
+    if "weekend" in toks:
+        add = (5 - now.weekday()) % 7 or 7
+        return (now + _dt.timedelta(days=add)).replace(
+            hour=10, minute=0, second=0, microsecond=0).timestamp()
+    for wd, idx in _WEEKDAYS.items():
+        if wd in toks:
+            add = (idx - now.weekday()) % 7 or (7 if "next" in toks else 0)
+            if "next" in toks and add <= 0:
+                add = 7
+            return (now + _dt.timedelta(days=add)).replace(
+                hour=9, minute=0, second=0, microsecond=0).timestamp()
+    if "tomorrow" in toks:
+        return (now + _dt.timedelta(days=1)).replace(
+            hour=9, minute=0, second=0, microsecond=0).timestamp()
+    if "month" in toks and ("next" in toks or "in" in toks):
+        return (now + _dt.timedelta(days=30)).replace(
+            hour=9, minute=0, second=0, microsecond=0).timestamp()
+    if "week" in toks and "next" in toks:
+        return (now + _dt.timedelta(weeks=1)).replace(
+            hour=9, minute=0, second=0, microsecond=0).timestamp()
+    for mon, num in _MONTHS.items():
+        if mon in toks:
+            i = toks.index(mon)
+            dom = None
+            for cand in toks[i + 1:i + 3]:
+                if re.fullmatch(r"\d{1,2}", cand):
+                    dom = int(cand)
+            if dom:
+                yr = now.year + (1 if num < now.month else 0)
+                try:
+                    return _dt.datetime(yr, num, dom, 9).timestamp()
+                except ValueError:
+                    return None
+    return None

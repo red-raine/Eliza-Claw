@@ -143,6 +143,14 @@ class Reminder(Plugin):
         task = self.param(ctx, ctx["decomp"].get("params", {}).get("task", 3))
         when = self.param(ctx, ctx["decomp"].get("params", {}).get("when", 4))
         due = parse_when(ctx["sentence"])
+        if due is None:
+            # lexicon-powered Timex parser: weekdays, months, 'next week',
+            # 'in twenty minutes' -- the regex above only knows digits
+            try:
+                from elizaclaw import nlu
+                due = nlu.parse_time(ctx["sentence"])
+            except Exception:
+                due = None
         if not task:
             return False
         item = {"task": str(task), "due": due or time.time() + 3600,
