@@ -771,6 +771,41 @@
     "Tell me more about {object}.",
     "When did {object} start being a problem?"
    ]
+  },
+  "conversation": {
+   "deeptopic": [
+    "{aside}Let's talk about {topic}. {question}",
+    "{aside}{topic} -- good pick. {question}",
+    "{aside}I like {topic} as a subject. {question}"
+   ]
+  },
+  "websearch": {
+   "answer": [
+    "Top result for \"{query}\": {title} -- {snippet} ({url})",
+    "Found {n} results for \"{query}\". Best: {title}. {snippet}"
+   ]
+  },
+  "factcheck": {
+   "confirmed": [
+    "Cross-checked: {evidence} appears across {sources} independent sources. Confident on \"{claim}\".",
+    "\"{claim}\" checks out -- {sources} sources agree on: {evidence}."
+   ],
+   "single_source": [
+    "Only one source so far: {top}. Treat it as unverified.",
+    "One hit for \"{claim}\", not corroborated yet: {top}"
+   ],
+   "hedge": [
+    "I can't reach the web right now, and I won't invent facts offline. Ask again with network, or tell me what you know.",
+    "No connection, no claim. Unlike some famous chatbots, I refuse to guess confidently."
+   ]
+  },
+  "memory": {
+   "stats": [
+    "Memory tiers -- short-term {stm}, mid {mtm}, long {ltm}, episodic {epi}."
+   ],
+   "remembered": [
+    "Stored in long-term memory: {key} = {value}"
+   ]
   }
  },
  "plugins": [
@@ -1498,11 +1533,17 @@
    "decomps": [
     {
      "pattern": "*",
+     "hook": "chat",
+     "response": "auto"
+    },
+    {
+     "pattern": "*",
      "hook": "mirror",
      "response": "auto"
     }
    ],
-   "plugin": "eliza_conversation"
+   "plugin": "conversation",
+   "notes": "Wave1: conversation first, ELIZA mirror fallback"
   },
   {
    "keyword": "feel",
@@ -1528,6 +1569,71 @@
     {
      "pattern": "*",
      "response": "probe"
+    }
+   ]
+  },
+  {
+   "keyword": "verify",
+   "priority": 9,
+   "plugin": "factcheck",
+   "synonyms": [
+    "factcheck",
+    "fact check",
+    "is it true"
+   ],
+   "decomps": [
+    {
+     "pattern": "* is * true *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap2"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* fact check *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap1"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* verify *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap1"
+     },
+     "response": "auto"
+    }
+   ]
+  },
+  {
+   "keyword": "remember",
+   "priority": 8,
+   "plugin": "memory_tiers_plugin",
+   "synonyms": [
+    "recall",
+    "what do you know about me"
+   ],
+   "decomps": [
+    {
+     "pattern": "* remember that *",
+     "hook": "store",
+     "params": {
+      "text": "cap1"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* what do you remember *",
+     "hook": "show",
+     "response": "auto"
+    },
+    {
+     "pattern": "* memory stats *",
+     "hook": "stats",
+     "response": "auto"
     }
    ]
   }

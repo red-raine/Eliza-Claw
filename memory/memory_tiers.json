@@ -1,0 +1,23 @@
+{
+ "mtm": [
+  {
+   "kind": "turn",
+   "text": "user: memory stats",
+   "t": 1791149740.9348538,
+   "activation": 1.0,
+   "hits": 0
+  }
+ ],
+ "ltm": {},
+ "epi": [
+  {
+   "what": "memory stats",
+   "who": "user",
+   "topic": "(untopic)",
+   "valence": 0.0,
+   "t": 1791149740.9496064,
+   "activation": 1.0
+  }
+ ],
+ "hits": {}
+}

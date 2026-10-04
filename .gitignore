@@ -1,6 +1,6 @@
-# Python bytecode and caches
+# Compiled/Binary files
 __pycache__/
 *.pyc
 
-# Temporary files
-tmp/
+# Environment files
+.env

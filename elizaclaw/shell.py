@@ -50,6 +50,16 @@ class Shell:
 
     # ----------------------------------------------------------- bootstrap
     def _load_plugins(self):
+        # Wave 1 backends: tiered memory + zero-token RAG live on the shell
+        # so every plugin shares one instance (constructed before plugins).
+        from elizaclaw.memory_tiers import MemoryTiers
+        from elizaclaw.rag import Rag
+        self.tiers = MemoryTiers(self.state)
+        self.rag = Rag()
+        try:
+            self.rag.load_corpus()          # silent if corpus not built yet
+        except FileNotFoundError:
+            pass
         for mod in pkgutil.iter_modules(_plugins.__path__):
             importlib.import_module("elizaclaw.plugins." + mod.name)
         spec = {p["name"]: p for p in self.cfg.get("plugins", [])}
@@ -345,6 +355,14 @@ class Shell:
         plugin = self.plugins.get(plugin_name,
                                   self.plugins["eliza_conversation"])
         fired = plugin.handle(key, decomp, ctx)
+        # Wave 1: the conversation plugin declines (returns False, response
+        # untouched) when no corpus topic matches -- fall through to the
+        # classic ELIZA mirror reflex so the bot never goes silent.
+        if not fired and ctx.get("response") is None and \
+                plugin_name == "conversation":
+            fb_key = {"keyword": "xnone", "plugin": "eliza_conversation"}
+            fb_dec = {"pattern": "*", "hook": "mirror", "response": "auto"}
+            self.plugins["eliza_conversation"].handle(fb_key, fb_dec, ctx)
 
         # response selection per JSON spec
         resp = decomp.get("response", "")

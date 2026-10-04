@@ -1,54 +1,15 @@
 {
  "topics": {
-  "hello": {
-   "score": 10.0
-  },
-  "my": {
-   "score": 7.5
-  },
-  "i": {
-   "score": 10.0
-  },
-  "need": {
-   "score": 4.5
-  },
-  "to debug the authentication module": {
-   "score": 5.5
-  },
-  "error": {
-   "score": 7.5
-  },
-  "debug error": {
-   "score": 5.5
-  },
   "remind": {
-   "score": 10.0
-  },
-  "weather": {
-   "score": 5.5
-  },
-  "search": {
-   "score": 8.0
-  },
-  "done": {
    "score": 3.0
   },
-  "please": {
-   "score": 3.0
-  },
-  "list": {
-   "score": 3.0
-  },
-  "quit": {
-   "score": 3.0
-  },
-  "add": {
+  "remember": {
    "score": 4.5
   },
-  "help": {
-   "score": 4.5
+  "memory": {
+   "score": 3.0
   }
  },
- "last_decay": 1791141883.9496386,
- "_updated": 1791144415.448489
+ "last_decay": 1791149740.919425,
+ "_updated": 1791149740.954353
 }

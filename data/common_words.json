@@ -1,0 +1,3599 @@
+{
+ "count": 599,
+ "words": [
+  {
+   "word": "the",
+   "rank": 1,
+   "stop": true,
+   "slang": true
+  },
+  {
+   "word": "be",
+   "rank": 2,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to",
+   "rank": 3,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "of",
+   "rank": 4,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "and",
+   "rank": 5,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "a",
+   "rank": 6,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "in",
+   "rank": 7,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "that",
+   "rank": 8,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "have",
+   "rank": 9,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "i",
+   "rank": 10,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "it",
+   "rank": 11,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "for",
+   "rank": 12,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "not",
+   "rank": 13,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "on",
+   "rank": 14,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "with",
+   "rank": 15,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "he",
+   "rank": 16,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "as",
+   "rank": 17,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you",
+   "rank": 18,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "do",
+   "rank": 19,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "at",
+   "rank": 20,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "this",
+   "rank": 21,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "but",
+   "rank": 22,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "his",
+   "rank": 23,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "by",
+   "rank": 24,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "from",
+   "rank": 25,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "they",
+   "rank": 26,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "we",
+   "rank": 27,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "say",
+   "rank": 28,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "her",
+   "rank": 29,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "she",
+   "rank": 30,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "or",
+   "rank": 31,
+   "stop": true,
+   "slang": true
+  },
+  {
+   "word": "an",
+   "rank": 32,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "will",
+   "rank": 33,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "my",
+   "rank": 34,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "one",
+   "rank": 35,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "all",
+   "rank": 36,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would",
+   "rank": 37,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "there",
+   "rank": 38,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "their",
+   "rank": 39,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what",
+   "rank": 40,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "so",
+   "rank": 41,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "up",
+   "rank": 42,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "out",
+   "rank": 43,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "if",
+   "rank": 44,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about",
+   "rank": 45,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "who",
+   "rank": 46,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "get",
+   "rank": 47,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "which",
+   "rank": 48,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "go",
+   "rank": 49,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me",
+   "rank": 50,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "when",
+   "rank": 51,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "make",
+   "rank": 52,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "can",
+   "rank": 53,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "like",
+   "rank": 54,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "time",
+   "rank": 55,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "no",
+   "rank": 56,
+   "stop": true,
+   "slang": true
+  },
+  {
+   "word": "just",
+   "rank": 57,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "him",
+   "rank": 58,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "know",
+   "rank": 59,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "take",
+   "rank": 60,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people",
+   "rank": 61,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "into",
+   "rank": 62,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "year",
+   "rank": 63,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "your",
+   "rank": 64,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "good",
+   "rank": 65,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "some",
+   "rank": 66,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "could",
+   "rank": 67,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "them",
+   "rank": 68,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "see",
+   "rank": 69,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "other",
+   "rank": 70,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "than",
+   "rank": 71,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "then",
+   "rank": 72,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "now",
+   "rank": 73,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "look",
+   "rank": 74,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "only",
+   "rank": 75,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "come",
+   "rank": 76,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "its",
+   "rank": 77,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "over",
+   "rank": 78,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "think",
+   "rank": 79,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "also",
+   "rank": 80,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "back",
+   "rank": 81,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "after",
+   "rank": 82,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "use",
+   "rank": 83,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "two",
+   "rank": 84,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how",
+   "rank": 85,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "our",
+   "rank": 86,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "work",
+   "rank": 87,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "first",
+   "rank": 88,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "well",
+   "rank": 89,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "way",
+   "rank": 90,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "even",
+   "rank": 91,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "new",
+   "rank": 92,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "want",
+   "rank": 93,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "because",
+   "rank": 94,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "any",
+   "rank": 95,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "these",
+   "rank": 96,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "give",
+   "rank": 97,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "day",
+   "rank": 98,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "most",
+   "rank": 99,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "us",
+   "rank": 100,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "is",
+   "rank": 101,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "are",
+   "rank": 102,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "was",
+   "rank": 103,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "been",
+   "rank": 104,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "had",
+   "rank": 105,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "has",
+   "rank": 106,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did",
+   "rank": 107,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "says",
+   "rank": 108,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "said",
+   "rank": 109,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "going",
+   "rank": 110,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "made",
+   "rank": 111,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "taken",
+   "rank": 112,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "seen",
+   "rank": 113,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "came",
+   "rank": 114,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "went",
+   "rank": 115,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "got",
+   "rank": 116,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "things",
+   "rank": 117,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "thing",
+   "rank": 118,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "man",
+   "rank": 119,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "woman",
+   "rank": 120,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "men",
+   "rank": 121,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "women",
+   "rank": 122,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "world",
+   "rank": 123,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "life",
+   "rank": 124,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hand",
+   "rank": 125,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "part",
+   "rank": 126,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "child",
+   "rank": 127,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "children",
+   "rank": 128,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "eye",
+   "rank": 129,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "place",
+   "rank": 130,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "week",
+   "rank": 131,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "company",
+   "rank": 132,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "system",
+   "rank": 133,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "program",
+   "rank": 134,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "question",
+   "rank": 135,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "home",
+   "rank": 136,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "group",
+   "rank": 137,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "country",
+   "rank": 138,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "problem",
+   "rank": 139,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "number",
+   "rank": 140,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "write",
+   "rank": 141,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "point",
+   "rank": 142,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "city",
+   "rank": 143,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "family",
+   "rank": 144,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "student",
+   "rank": 145,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "glass",
+   "rank": 146,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "position",
+   "rank": 147,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "paper",
+   "rank": 148,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "nature",
+   "rank": 149,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "environment",
+   "rank": 150,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "health",
+   "rank": 151,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "food",
+   "rank": 152,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "music",
+   "rank": 153,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "art",
+   "rank": 154,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "story",
+   "rank": 155,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "learning",
+   "rank": 156,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "plan",
+   "rank": 157,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "practice",
+   "rank": 158,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "research",
+   "rank": 159,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "feeling",
+   "rank": 160,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "power",
+   "rank": 161,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money",
+   "rank": 162,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "month",
+   "rank": 163,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lot",
+   "rank": 164,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "right",
+   "rank": 165,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "study",
+   "rank": 166,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "book",
+   "rank": 167,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "job",
+   "rank": 168,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "word",
+   "rank": 169,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "business",
+   "rank": 170,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "issue",
+   "rank": 171,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "side",
+   "rank": 172,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "kind",
+   "rank": 173,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "head",
+   "rank": 174,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "service",
+   "rank": 175,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "friend",
+   "rank": 176,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "father",
+   "rank": 177,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mother",
+   "rank": 178,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "note",
+   "rank": 179,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "line",
+   "rank": 180,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fire",
+   "rank": 181,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reason",
+   "rank": 182,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "body",
+   "rank": 183,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "result",
+   "rank": 184,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "pass",
+   "rank": 185,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "move",
+   "rank": 186,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "night",
+   "rank": 187,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "talk",
+   "rank": 188,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "computer",
+   "rank": 189,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "press",
+   "rank": 190,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "face",
+   "rank": 191,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "interest",
+   "rank": 192,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "idea",
+   "rank": 193,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "economy",
+   "rank": 194,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "risk",
+   "rank": 195,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "death",
+   "rank": 196,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "change",
+   "rank": 197,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "area",
+   "rank": 198,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "level",
+   "rank": 199,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "relationship",
+   "rank": 200,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "action",
+   "rank": 201,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "town",
+   "rank": 202,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "goal",
+   "rank": 203,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "member",
+   "rank": 204,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "process",
+   "rank": 205,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "love",
+   "rank": 206,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "knowledge",
+   "rank": 207,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ability",
+   "rank": 208,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "activity",
+   "rank": 209,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "industry",
+   "rank": 210,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "role",
+   "rank": 211,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "event",
+   "rank": 212,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bit",
+   "rank": 213,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "cost",
+   "rank": 214,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "field",
+   "rank": 215,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "return",
+   "rank": 216,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "rate",
+   "rank": 217,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "person",
+   "rank": 218,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "experience",
+   "rank": 219,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "voice",
+   "rank": 220,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "street",
+   "rank": 221,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "deal",
+   "rank": 222,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "decision",
+   "rank": 223,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "king",
+   "rank": 224,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "exercise",
+   "rank": 225,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "case",
+   "rank": 226,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "front",
+   "rank": 227,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "age",
+   "rank": 228,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "opportunity",
+   "rank": 229,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "chance",
+   "rank": 230,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "energy",
+   "rank": 231,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "moment",
+   "rank": 232,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "leader",
+   "rank": 233,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "force",
+   "rank": 234,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "range",
+   "rank": 235,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "resource",
+   "rank": 236,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "opinion",
+   "rank": 237,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "identity",
+   "rank": 238,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "community",
+   "rank": 239,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hall",
+   "rank": 240,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "association",
+   "rank": 241,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "network",
+   "rank": 242,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "information",
+   "rank": 243,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "understanding",
+   "rank": 244,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "emotion",
+   "rank": 245,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "support",
+   "rank": 246,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "effort",
+   "rank": 247,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "approach",
+   "rank": 248,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reality",
+   "rank": 249,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "class",
+   "rank": 250,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "development",
+   "rank": 251,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "relation",
+   "rank": 252,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "library",
+   "rank": 253,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "condition",
+   "rank": 254,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "choice",
+   "rank": 255,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "direction",
+   "rank": 256,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "girl",
+   "rank": 257,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "statement",
+   "rank": 258,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "price",
+   "rank": 259,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "alcohol",
+   "rank": 260,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "presence",
+   "rank": 261,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "judgment",
+   "rank": 262,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "distance",
+   "rank": 263,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reply",
+   "rank": 264,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "owner",
+   "rank": 265,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "policy",
+   "rank": 266,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "conclusion",
+   "rank": 267,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vehicle",
+   "rank": 268,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "department",
+   "rank": 269,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "wall",
+   "rank": 270,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "manager",
+   "rank": 271,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "patience",
+   "rank": 272,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "gift",
+   "rank": 273,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "variation",
+   "rank": 274,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "database",
+   "rank": 275,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "device",
+   "rank": 276,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "situation",
+   "rank": 277,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "performance",
+   "rank": 278,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "executive",
+   "rank": 279,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "structure",
+   "rank": 280,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "career",
+   "rank": 281,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "culture",
+   "rank": 282,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "theory",
+   "rank": 283,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "step",
+   "rank": 284,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "example",
+   "rank": 285,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "image",
+   "rank": 286,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "starting",
+   "rank": 287,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "report",
+   "rank": 288,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "behavior",
+   "rank": 289,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "operation",
+   "rank": 290,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "road",
+   "rank": 291,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "connection",
+   "rank": 292,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "threshold",
+   "rank": 293,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "item",
+   "rank": 294,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "value",
+   "rank": 295,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "institution",
+   "rank": 296,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "property",
+   "rank": 297,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "security",
+   "rank": 298,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "quality",
+   "rank": 299,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "technique",
+   "rank": 300,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "region",
+   "rank": 301,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "exchange",
+   "rank": 302,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "circle",
+   "rank": 303,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "output",
+   "rank": 304,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reaction",
+   "rank": 305,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "investment",
+   "rank": 306,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "explanation",
+   "rank": 307,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mass",
+   "rank": 308,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "confidence",
+   "rank": 309,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "task",
+   "rank": 310,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sector",
+   "rank": 311,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "barrier",
+   "rank": 312,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "claim",
+   "rank": 313,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "title",
+   "rank": 314,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "strategy",
+   "rank": 315,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "expertise",
+   "rank": 316,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "exposure",
+   "rank": 317,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "interaction",
+   "rank": 318,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "pattern",
+   "rank": 319,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "occupation",
+   "rank": 320,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "document",
+   "rank": 321,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "purpose",
+   "rank": 322,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "residence",
+   "rank": 323,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "responsibility",
+   "rank": 324,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "news",
+   "rank": 325,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "attempt",
+   "rank": 326,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "denial",
+   "rank": 327,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tactic",
+   "rank": 328,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "generation",
+   "rank": 329,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "media",
+   "rank": 330,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "transport",
+   "rank": 331,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "configuration",
+   "rank": 332,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "citizen",
+   "rank": 333,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "expansion",
+   "rank": 334,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "meeting",
+   "rank": 335,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "emergency",
+   "rank": 336,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fund",
+   "rank": 337,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "possibility",
+   "rank": 338,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "insurance",
+   "rank": 339,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "boundary",
+   "rank": 340,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "competition",
+   "rank": 341,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "meal",
+   "rank": 342,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "election",
+   "rank": 343,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "crisis",
+   "rank": 344,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "perception",
+   "rank": 345,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "advantage",
+   "rank": 346,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "density",
+   "rank": 347,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "dimension",
+   "rank": 348,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "communication",
+   "rank": 349,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "photograph",
+   "rank": 350,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "scale",
+   "rank": 351,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "protocol",
+   "rank": 352,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "suggestion",
+   "rank": 353,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "growth",
+   "rank": 354,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "proportion",
+   "rank": 355,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "victory",
+   "rank": 356,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reliance",
+   "rank": 357,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "medicine",
+   "rank": 358,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "revenue",
+   "rank": 359,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "currency",
+   "rank": 360,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "route",
+   "rank": 361,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "objective",
+   "rank": 362,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ally",
+   "rank": 363,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "initiative",
+   "rank": 364,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "courtesy",
+   "rank": 365,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "authority",
+   "rank": 366,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "framework",
+   "rank": 367,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "population",
+   "rank": 368,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "impression",
+   "rank": 369,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "autonomy",
+   "rank": 370,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "court",
+   "rank": 371,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tax",
+   "rank": 372,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "allocation",
+   "rank": 373,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "opponent",
+   "rank": 374,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "passenger",
+   "rank": 375,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "legacy",
+   "rank": 376,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "craft",
+   "rank": 377,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reputation",
+   "rank": 378,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "inquiry",
+   "rank": 379,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "window",
+   "rank": 380,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "partner",
+   "rank": 381,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "citation",
+   "rank": 382,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "calculation",
+   "rank": 383,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "permission",
+   "rank": 384,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "presumption",
+   "rank": 385,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "commitment",
+   "rank": 386,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "limitation",
+   "rank": 387,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "exception",
+   "rank": 388,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "deployment",
+   "rank": 389,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "contributor",
+   "rank": 390,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "suspension",
+   "rank": 391,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "implementation",
+   "rank": 392,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "consequence",
+   "rank": 393,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "separation",
+   "rank": 394,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "instruction",
+   "rank": 395,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "trial",
+   "rank": 396,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "classification",
+   "rank": 397,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reference",
+   "rank": 398,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "documentation",
+   "rank": 399,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "submission",
+   "rank": 400,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "obligation",
+   "rank": 401,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reception",
+   "rank": 402,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "investigation",
+   "rank": 403,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "estimate",
+   "rank": 404,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "evaluation",
+   "rank": 405,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "acknowledgement",
+   "rank": 406,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "projection",
+   "rank": 407,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "indication",
+   "rank": 408,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "intention",
+   "rank": 409,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "celebration",
+   "rank": 410,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "negotiation",
+   "rank": 411,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "introduction",
+   "rank": 412,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "specification",
+   "rank": 413,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "departure",
+   "rank": 414,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "realization",
+   "rank": 415,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "consultation",
+   "rank": 416,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "participation",
+   "rank": 417,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "guidance",
+   "rank": 418,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "interpretation",
+   "rank": 419,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "motivation",
+   "rank": 420,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "adjustment",
+   "rank": 421,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "expectation",
+   "rank": 422,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recommendation",
+   "rank": 423,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "preparation",
+   "rank": 424,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "observation",
+   "rank": 425,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reflection",
+   "rank": 426,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "examination",
+   "rank": 427,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "inspiration",
+   "rank": 428,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "transformation",
+   "rank": 429,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "identification",
+   "rank": 430,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "simplification",
+   "rank": 431,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "representation",
+   "rank": 432,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "justification",
+   "rank": 433,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "administration",
+   "rank": 434,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "accommodation",
+   "rank": 435,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "stabilization",
+   "rank": 436,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "contamination",
+   "rank": 437,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "clarification",
+   "rank": 438,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "prioritization",
+   "rank": 439,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "optimization",
+   "rank": 440,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "standardization",
+   "rank": 441,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "customization",
+   "rank": 442,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lol",
+   "rank": 443,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "omg",
+   "rank": 444,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "btw",
+   "rank": 445,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "idc",
+   "rank": 446,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "imo",
+   "rank": 447,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "imho",
+   "rank": 448,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nvm",
+   "rank": 449,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tbh",
+   "rank": 450,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ty",
+   "rank": 451,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vm",
+   "rank": 452,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ttyl",
+   "rank": 453,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "brb",
+   "rank": 454,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gtg",
+   "rank": 455,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ig",
+   "rank": 456,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yr",
+   "rank": 457,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fr",
+   "rank": 458,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cap",
+   "rank": 459,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sus",
+   "rank": 460,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bet",
+   "rank": 461,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vibe",
+   "rank": 462,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vibes",
+   "rank": 463,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ghosting",
+   "rank": 464,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "catfish",
+   "rank": 465,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "red",
+   "rank": 466,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "flag",
+   "rank": 467,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "green",
+   "rank": 468,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bestie",
+   "rank": 469,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fam",
+   "rank": 470,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sis",
+   "rank": 471,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "stan",
+   "rank": 472,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tea",
+   "rank": 473,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "shade",
+   "rank": 474,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "slay",
+   "rank": 475,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ate",
+   "rank": 476,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bussin",
+   "rank": 477,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hits",
+   "rank": 478,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "different",
+   "rank": 479,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rent",
+   "rank": 480,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "free",
+   "rank": 481,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "touch",
+   "rank": 482,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "grass",
+   "rank": 483,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "main",
+   "rank": 484,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "character",
+   "rank": 485,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mood",
+   "rank": 486,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "real",
+   "rank": 487,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ones",
+   "rank": 488,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ride",
+   "rank": 489,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "die",
+   "rank": 490,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lowkey",
+   "rank": 491,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "highkey",
+   "rank": 492,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "extra",
+   "rank": 493,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "basic",
+   "rank": 494,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "salty",
+   "rank": 495,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "clapback",
+   "rank": 496,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "read",
+   "rank": 497,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ratio",
+   "rank": 498,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "w",
+   "rank": 499,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "l",
+   "rank": 500,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "based",
+   "rank": 501,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cringe",
+   "rank": 502,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cope",
+   "rank": 503,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "seethe",
+   "rank": 504,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "skill",
+   "rank": 505,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "shot",
+   "rank": 506,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "big",
+   "rank": 507,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yikes",
+   "rank": 508,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "it's",
+   "rank": 509,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "giving",
+   "rank": 510,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "periodt",
+   "rank": 511,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "understood",
+   "rank": 512,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "assignment",
+   "rank": 513,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "menace",
+   "rank": 514,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "goblin",
+   "rank": 515,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "era",
+   "rank": 516,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "canon",
+   "rank": 517,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lore",
+   "rank": 518,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rizz",
+   "rank": 519,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gyat",
+   "rank": 520,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sigma",
+   "rank": 521,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "alpha",
+   "rank": 522,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "beta",
+   "rank": 523,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "skibidi",
+   "rank": 524,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ohio",
+   "rank": 525,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "brainrot",
+   "rank": 526,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "delulu",
+   "rank": 527,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mewing",
+   "rank": 528,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "looksmax",
+   "rank": 529,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mogging",
+   "rank": 530,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fanum",
+   "rank": 531,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yapping",
+   "rank": 532,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hit",
+   "rank": 533,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "diff",
+   "rank": 534,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "glazing",
+   "rank": 535,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "edging",
+   "rank": 536,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gooning",
+   "rank": 537,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bussy",
+   "rank": 538,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gatekeep",
+   "rank": 539,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gaslight",
+   "rank": 540,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "girlboss",
+   "rank": 541,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "heal",
+   "rank": 542,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "thyself",
+   "rank": 543,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "live",
+   "rank": 544,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "laugh",
+   "rank": 545,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lobotomy",
+   "rank": 546,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "core",
+   "rank": 547,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cannon",
+   "rank": 548,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fear",
+   "rank": 549,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "romanticize",
+   "rank": 550,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "delusional",
+   "rank": 551,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "normality",
+   "rank": 552,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "paranoia",
+   "rank": 553,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "villain",
+   "rank": 554,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "arc",
+   "rank": 555,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "akasl",
+   "rank": 556,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "frfr",
+   "rank": 557,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ong",
+   "rank": 558,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "smh",
+   "rank": 559,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fomo",
+   "rank": 560,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "jomo",
+   "rank": 561,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "haha",
+   "rank": 562,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hehe",
+   "rank": 563,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lolz",
+   "rank": 564,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lmao",
+   "rank": 565,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "wtf",
+   "rank": 566,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "meh",
+   "rank": 567,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yeah",
+   "rank": 568,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yep",
+   "rank": 569,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nope",
+   "rank": 570,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nah",
+   "rank": 571,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ok",
+   "rank": 572,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "okay",
+   "rank": 573,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cool",
+   "rank": 574,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nice",
+   "rank": 575,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "awesome",
+   "rank": 576,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "great",
+   "rank": 577,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sweet",
+   "rank": 578,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "dude",
+   "rank": 579,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bro",
+   "rank": 580,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "guy",
+   "rank": 581,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "guys",
+   "rank": 582,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "literally",
+   "rank": 583,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "basically",
+   "rank": 584,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "actually",
+   "rank": 585,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "honestly",
+   "rank": 586,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "obviously",
+   "rank": 587,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "probably",
+   "rank": 588,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "maybe",
+   "rank": 589,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "perhaps",
+   "rank": 590,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "kinda",
+   "rank": 591,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sorta",
+   "rank": 592,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "wanna",
+   "rank": 593,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gonna",
+   "rank": 594,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gotta",
+   "rank": 595,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "stuff",
+   "rank": 596,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "whatever",
+   "rank": 597,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "anyways",
+   "rank": 598,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "anyway",
+   "rank": 599,
+   "stop": false,
+   "slang": true
+  }
+ ]
+}

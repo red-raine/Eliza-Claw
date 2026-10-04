@@ -1,255 +1,45 @@
 {
  "events": [
   {
-   "t": 1791144183.8212805,
-   "kind": "bot",
-   "text": "Do you feel strongly about discussing such things?"
-  },
-  {
-   "t": 1791144183.8219664,
-   "kind": "user",
-   "text": "search for cats"
-  },
-  {
-   "t": 1791144183.8243837,
-   "kind": "bot",
-   "text": "I'm not sure I understand you fully."
-  },
-  {
-   "t": 1791144183.824924,
-   "kind": "user",
-   "text": "add task finish report"
-  },
-  {
-   "t": 1791144183.8272603,
-   "kind": "bot",
-   "text": "Please go on."
-  },
-  {
-   "t": 1791144183.8278408,
-   "kind": "user",
-   "text": "my name is bob"
-  },
-  {
-   "t": 1791144183.830095,
-   "kind": "bot",
-   "text": "What does that suggest to you?"
-  },
-  {
-   "t": 1791144183.8306797,
-   "kind": "user",
-   "text": "i am sad"
-  },
-  {
-   "t": 1791144183.833493,
-   "kind": "bot",
-   "text": "That's quite interesting."
-  },
-  {
-   "t": 1791144183.8340645,
-   "kind": "user",
-   "text": "what is the weather"
-  },
-  {
-   "t": 1791144183.8365622,
-   "kind": "bot",
-   "text": "I'm not sure I understand you fully."
-  },
-  {
-   "t": 1791144183.837444,
-   "kind": "user",
-   "text": "help"
-  },
-  {
-   "t": 1791144183.8395822,
-   "kind": "bot",
-   "text": "Can you elaborate on that?"
-  },
-  {
-   "t": 1791144226.0220237,
-   "kind": "user",
-   "text": "hello"
-  },
-  {
-   "t": 1791144226.029675,
-   "kind": "bot",
-   "text": "I don't believe we've been introduced."
-  },
-  {
-   "t": 1791144226.0305338,
+   "t": 1791149740.9174378,
    "kind": "user",
    "text": "remind me to buy milk"
   },
   {
-   "t": 1791144226.0351102,
+   "t": 1791149740.9217257,
    "kind": "bot",
-   "text": "Reminder set: me to buy milk me to buy milk."
+   "text": "Reminder set: buy milk buy milk."
   },
   {
-   "t": 1791144226.0359278,
+   "t": 1791149740.9220524,
    "kind": "user",
-   "text": "search for cats"
+   "text": "remember that my cat is named miso"
   },
   {
-   "t": 1791144226.039314,
-   "kind": "bot",
-   "text": "Please go on."
-  },
-  {
-   "t": 1791144226.0401075,
-   "kind": "user",
-   "text": "add task finish report"
-  },
-  {
-   "t": 1791144226.0436027,
-   "kind": "bot",
-   "text": "Do you feel strongly about discussing such things?"
-  },
-  {
-   "t": 1791144226.0444045,
-   "kind": "user",
-   "text": "my name is bob"
-  },
-  {
-   "t": 1791144226.0476277,
-   "kind": "bot",
-   "text": "What does that suggest to you?"
-  },
-  {
-   "t": 1791144226.0484438,
-   "kind": "user",
-   "text": "i am sad"
-  },
-  {
-   "t": 1791144226.0539377,
-   "kind": "bot",
-   "text": "Can you elaborate on that?"
-  },
-  {
-   "t": 1791144226.0547566,
-   "kind": "user",
-   "text": "what is the weather"
-  },
-  {
-   "t": 1791144226.0582874,
-   "kind": "bot",
-   "text": "I'm not sure I understand you fully."
-  },
-  {
-   "t": 1791144226.05908,
-   "kind": "user",
-   "text": "help"
-  },
-  {
-   "t": 1791144226.0621145,
-   "kind": "bot",
-   "text": "Please go on."
-  },
-  {
-   "t": 1791144226.0629122,
-   "kind": "user",
-   "text": "please remind me to call mom at 5pm"
-  },
-  {
-   "t": 1791144226.067089,
-   "kind": "bot",
-   "text": "Reminder set: me to call mom at 5pm me to call mom at 5pm."
-  },
-  {
-   "t": 1791144415.2799299,
-   "kind": "user",
-   "text": "hello"
-  },
-  {
-   "t": 1791144415.3734076,
-   "kind": "bot",
-   "text": "I don't believe we've been introduced."
-  },
-  {
-   "t": 1791144415.3739986,
-   "kind": "user",
-   "text": "remind me to buy milk"
-  },
-  {
-   "t": 1791144415.3774962,
-   "kind": "bot",
-   "text": "Got it. I'll remind you about buy milk buy milk."
-  },
-  {
-   "t": 1791144415.3780406,
-   "kind": "user",
-   "text": "search for cats"
-  },
-  {
-   "t": 1791144415.4311104,
-   "kind": "learn",
-   "text": "interests:  cats"
-  },
-  {
-   "t": 1791144415.432569,
-   "kind": "bot",
-   "text": "Couldn't find anything on that."
-  },
-  {
-   "t": 1791144415.433372,
-   "kind": "user",
-   "text": "add task finish report"
-  },
-  {
-   "t": 1791144415.4359958,
+   "t": 1791149740.9246147,
    "kind": "bot",
    "text": "That's quite interesting."
   },
   {
-   "t": 1791144415.4366827,
+   "t": 1791149740.9248831,
    "kind": "user",
-   "text": "my name is bob"
+   "text": "memory stats"
   },
   {
-   "t": 1791144415.4385977,
+   "t": 1791149740.952155,
    "kind": "bot",
-   "text": "Can you elaborate on that?"
+   "text": "Do you feel strongly about discussing such things?"
   },
   {
-   "t": 1791144415.4393346,
+   "t": 1791149740.9525824,
    "kind": "user",
-   "text": "i am sad"
+   "text": "what do you remember"
   },
   {
-   "t": 1791144415.4411006,
+   "t": 1791149740.9554687,
    "kind": "bot",
-   "text": "I'm not sure I understand you fully."
-  },
-  {
-   "t": 1791144415.4416437,
-   "kind": "user",
-   "text": "what is the weather"
-  },
-  {
-   "t": 1791144415.4438982,
-   "kind": "bot",
-   "text": "Please go on."
-  },
-  {
-   "t": 1791144415.4445148,
-   "kind": "user",
-   "text": "help"
-  },
-  {
-   "t": 1791144415.4463952,
-   "kind": "bot",
-   "text": "What does that suggest to you?"
-  },
-  {
-   "t": 1791144415.4469774,
-   "kind": "user",
-   "text": "please remind me to call mom at 5pm"
-  },
-  {
-   "t": 1791144415.449458,
-   "kind": "bot",
-   "text": "Reminder set: call mom 5pm."
+   "text": "Memory tiers -- short-term 1, mid 1, long 0, episodic 1."
   }
  ],
- "_updated": 1791144415.4494572
+ "_updated": 1791149740.9554675
 }
