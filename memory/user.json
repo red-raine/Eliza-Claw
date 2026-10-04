@@ -1,13 +1,19 @@
 {
  "name": null,
  "location": null,
- "interests": [],
+ "interests": [
+  "cats"
+ ],
  "facts": {
   "there is an": {
    "category": "issues",
    "turn": 6
+  },
+  " cats": {
+   "category": "interests",
+   "turn": 3
   }
  },
  "preferences": {},
- "_updated": 1791141912.8912697
+ "_updated": 1791144415.4308457
 }

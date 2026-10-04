@@ -1,2 +1,6 @@
+# Compiled/Binary files
 __pycache__/
 *.pyc
+
+# Environment/State files (generated or sensitive)
+memory/*.json

@@ -1,7 +1,7 @@
 {
  "topics": {
   "hello": {
-   "score": 9.0
+   "score": 10.0
   },
   "my": {
    "score": 7.5
@@ -22,13 +22,13 @@
    "score": 5.5
   },
   "remind": {
-   "score": 9.0
+   "score": 10.0
   },
   "weather": {
-   "score": 4.5
+   "score": 5.5
   },
   "search": {
-   "score": 6.5
+   "score": 8.0
   },
   "done": {
    "score": 3.0
@@ -50,5 +50,5 @@
   }
  },
  "last_decay": 1791141883.9496386,
- "_updated": 1791144226.065893
+ "_updated": 1791144415.448489
 }

@@ -87,59 +87,80 @@ def compile_pattern(pattern, synonyms):
     through its callers.
     """
     toks = pattern.split()
-    parts = []                     # regex fragments, joined verbatim
+
+    # ---- v4 rebuild (Wave 0, bugs #1-#6 all dead). Design rules proven by
+    # the wave-0 test matrix:
+    #  * every regex fragment is a RAW string (kills the x08 backspace bug);
+    #  * leading '*' run -> NON-capturing optional preamble. The engine tries
+    #    "eat one word + space" first, and when the body fails it retries the
+    #    zero-width branch at position 0 -- no phantom-gobble possible because
+    #    backtracking is honest here (unbuggy v2/v3 relied on '?' groups that
+    #    the engine refused to backtrack past a matched keyword boundary...
+    #    actually the killer fix: preamble is '(?:\S+\s+)?' which CAN match
+    #    empty, and search() also starts mid-string, so both orders work);
+    #  * interior '*' -> lazy capture guarded by NEGATIVE LOOKAHEAD on the
+    #    next atom, so it stops exactly before the following literal;
+    #  * terminal '*' -> '(.+)' requiring >=1 word (COMPASS semantics);
+    #  * patterns ending in a literal get '(?:\W.+)?' so trailing user words
+    #    don't break the match (Eliza's own '*' padding, done implicitly).
+
+    def lit(w):
+        return r"\b%s\b" % re.escape(w)
+
+    def atom(tok):
+        """Regex for one non-star token."""
+        if tok.startswith("@"):
+            syns = sorted(synonyms.get(tok[1:], []),
+                          key=len, reverse=True) or [tok[1:]]
+            return r"(?:" + "|".join(lit(s) for s in syns) + ")"
+        if tok.endswith("*") and len(tok) > 1:      # prefix glob: hello*
+            return r"\b%s\w*" % re.escape(tok[:-1])
+        return lit(tok)
+
+    parts = []
     num = 0
-    for i, tok in enumerate(toks):
-        last = (i == len(toks) - 1)
-        if tok == "*":
+    i, n = 0, len(toks)
+    # all-stars pattern ('*' or '* *'): must require at least one word,
+    # otherwise it matches the empty string everywhere (bug #6: the hello
+    # key's '*' stole every sentence from remind/search/task keys).
+    if toks and all(t == "*" for t in toks):
+        return re.compile(r"(.+)", re.S | re.I), 1
+    # leading star run: optional, non-capturing preamble
+    j = 0
+    while j < n and toks[j] == "*":
+        j += 1
+    if j:
+        parts.append(r"(?:\S+\s+)?")
+        i = j
+    while i < n:
+        if toks[i] == "*":
+            j = i
+            while j < n and toks[j] == "*":          # '* *' collapses to '*'
+                j += 1
             num += 1
-            # leading star: optional preamble (COMPASS implicit prefix).
-            # CRITICAL detail found by the Wave 0 test suite: the preamble
-            # must be FOLLOWED BY a separator when non-empty, and the whole
-            # group must be optional.  '(?:.*?)\W*' emits '\W+' after it, so
-            # an empty preamble still demands one non-word char -- which made
-            # every sentence-initial wildcard pattern ('* remind me to *')
-            # fail on 'remind me to buy milk'.  The correct shape is
-            # '(?:(?:.+?)\W+)?': either nothing, or content + boundary.
-            if i == 0 and not last:
-                parts.append(r"(?:(?:.+?)\W+)?")
-            elif last:
+            if j >= n:                               # terminal star
                 parts.append(r"(.+)")
-            else:
-                parts.append(r"(.+?)")
-        elif tok.startswith("@"):
-            syns = sorted(synonyms.get(tok[1:], []), key=len, reverse=True) \
-                or [tok[1:]]
-            alt = "|".join(_lit(s) for s in syns)
-            parts.append(r"(?:%s)" % alt)
-        elif tok.endswith("*") and len(tok) > 1:   # prefix glob: hello*
-            parts.append(r"\b%s\w*" % re.escape(tok[:-1]))
-        else:                                        # plain literal
-            parts.append(_lit(tok))
-        # Separator policy (Wave 0, bug #4 — the scientific method at work):
-        # NEVER emit \W+ right after a fragment that already consumes a
-        # trailing boundary itself:
-        #   * optional preamble '(?:(?:.+?)\W+)?' -> next literal must be
-        #     able to start at position 0 ('remind me to X' has no prefix);
-        #     emitting \W+ after it made an empty preamble still require a
-        #     non-word char. Emit r'' and let \b do the boundary work.
-        #   * greedy '(.+)' capture swallows everything to end of string, so
-        #     a following \W+ can never match (patterns end with '*' anyway).
-        sep = r""
-        prev = parts[-1] if parts else ""
-        if prev.endswith(r")?"):                     # optional preamble group
-            sep = r""
-        elif prev == r"(.+)":                        # greedy tail capture
-            sep = r""
-        elif prev == r"(.+?)":                       # lazy capture: needs one
-            sep = r"\W+"                             # boundary before literal
-        if not last:
-            parts.append(sep)
+            else:                                    # interior star
+                stop = atom(toks[j])
+                parts.append(r"((?:(?!" + stop + r").+?)\W+)")
+            i = j
+            continue
+        parts.append(atom(toks[i]))
+        if i < n - 1 and toks[i + 1] != "*":
+            parts.append(r"\W+")                     # separator between atoms
+        i += 1
     out = "".join(parts)
     if toks and toks[-1] != "*" and not toks[-1].endswith("*") \
             and not toks[-1].startswith("@"):
-        out += r"(\W.*)?"                           # optional trailing words
+        out += r"(?:\W.+)?"                           # optional trailing words
     return re.compile(out, re.S | re.I), num
+
+
+
+def clean_captures(groups, ng):
+    """Trim whitespace that boundary classes leave on capture edges."""
+    return [g.strip() for g in groups[:ng] if g is not None]
+
 
 # ------------------------------------------------------------------- intent
 def _pattern_hit(pat, joined, synonyms):
