@@ -72,7 +72,18 @@ class Search(Plugin):
     priority = 8
 
     def hook_web(self, ctx):
-        q = self.param(ctx, ctx["decomp"].get("params", {}).get("query", 3))
+        spec = ctx["decomp"].get("params", {}).get("query", 3)
+        q = self.param(ctx, spec)
+        # bug #24: '* search for *' binds TWO captures (prefix + query);
+        # param(spec=3) falls back to capture index 3 -> wrong slot. If the
+        # resolved text still contains the trigger verb, take the LAST
+        # non-empty capture instead -- that is always the real query.
+        caps = [c for c in ctx.get("captures", []) if c]
+        if caps and q in caps[:-1]:
+            q = caps[-1]
+        if isinstance(q, str):
+            q = re.sub(r"^\s*(?:search|find|look\s*up|google)\s*(?:for)?\s+",
+                       "", q, flags=re.I).strip() or q
         if not q:
             return False
         ctx["vars"]["query"] = str(q)
@@ -102,6 +113,20 @@ TIME_RX = re.compile(
     r"(?:in\s+(\d+)\s*(second|minute|hour|day)s?)"
     r"|(?:at\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)?)"
     r"|(tonight|tomorrow|morning|evening|noon)", re.I)
+
+# Wave 0 bug #23: '* remind me *' greedily captures the time phrase too,
+# so 'remind me to buy milk at 5pm' -> cap1='buy milk at 5pm'. The template
+# then prints '{task} {when}' and we get '... at 5pm at 5pm'. Strip the
+# trailing temporal span from the task text whenever a 'when' was named.
+TAIL_TIME_RX = re.compile(
+    r"\s+\b(?:at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm)?|in\s+(?:\d+|\w+)\s+"
+    r"(?:seconds?|minutes?|hours?|days?|weeks?|months?)|tonight|tomorrow|"
+    r"next\s+\w+|this\s+\w+|on\s+\w+|noon|midnight|morning|afternoon|"
+    r"evening)\b.*$", re.I)
+
+
+def strip_tail_time(text):
+    return TAIL_TIME_RX.sub("", text or "").strip() or (text or "")
 
 
 def parse_when(text):
@@ -140,8 +165,9 @@ class Reminder(Plugin):
     priority = 9
 
     def hook_add(self, ctx):
-        task = self.param(ctx, ctx["decomp"].get("params", {}).get("task", 3))
-        when = self.param(ctx, ctx["decomp"].get("params", {}).get("when", 4))
+        spec = ctx["decomp"].get("params", {})
+        raw_task = self.param(ctx, spec.get("task", 3))
+        when = self.param(ctx, spec.get("when", 4))
         due = parse_when(ctx["sentence"])
         if due is None:
             # lexicon-powered Timex parser: weekdays, months, 'next week',
@@ -151,8 +177,17 @@ class Reminder(Plugin):
                 due = nlu.parse_time(ctx["sentence"])
             except Exception:
                 due = None
-        if not task:
+        task = strip_tail_time(str(raw_task)) if raw_task else ""
+        # bug #22: empty wildcard capture -> recover from the sentence by
+        # cutting out the trigger phrase ('remind me to ...').
+        if not task.strip():
+            m = re.search(r"remind(?:\s+me)?(?:\s+to)?\s+(.*)",
+                          ctx["sentence"], re.I)
+            task = strip_tail_time(m.group(1).strip()) if m else ""
+        if not task.strip():
             return False
+        if not when or str(when).strip() in ("", "later"):
+            when = None
         item = {"task": str(task), "due": due or time.time() + 3600,
                 "fired": False}
         st = self.shell.state.reminders

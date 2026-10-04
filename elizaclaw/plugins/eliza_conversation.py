@@ -26,6 +26,29 @@ class ElizaConversation(Plugin):
         del mem[:-15]
         self.save()
 
+    def hook_mirror(self, ctx):
+        """xnone reflex (Weizenbaum 1966): never admit defeat -- reflect.
+
+        The whole art of ELIZA was that 'I'm not sure I understand you
+        fully' was a last resort, not a first reflex. So: mirror the
+        sentence with person-flip; on repeat turns escalate to an open
+        probe that quotes the user's own words back as a topic."""
+        joined = " ".join(ctx["tokens"])
+        if not joined:
+            return False
+        flipped = nlu.reflect(joined, self.shell.cfg["transformers"]["post"])
+        ctx["vars"]["segment"] = flipped
+        hist = self.state.setdefault("mirrored", [])
+        prior = sum(1 for h in hist if h == flipped)
+        del hist[:-10]
+        if prior >= 2 or len(flipped.split()) < 3:
+            ctx["response"] = "generic.continue"
+        else:
+            ctx["response"] = "generic.mirror"
+        hist.append(flipped)
+        self.save()
+        return True
+
     def hook_pos_reflect(self, ctx):
         """Verb-focus reflection: 'I want to finish the project' ->
         'What is stopping you from finishing it?'"""

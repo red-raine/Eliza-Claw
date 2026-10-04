@@ -21,9 +21,10 @@ class Identity(Plugin):
 
     def hook_identify(self, ctx):
         u = self.shell.state.user
+        s = ctx["sentence"]
         # explicit self-report wins: "my name is alice"
         m = NAME_RX.search(ctx["sentence"])
-        if m:
+        if m and not re.search(r"\byour name\b|\bthe name\b", s, re.I):
             name = m.group(1).capitalize()
             if name.lower() in ("not", "so", "really", "here", "fine",
                                 "good", "back", "sorry", "feeling", "thinking"):
@@ -36,6 +37,20 @@ class Identity(Plugin):
             self.shell.state.save("user", u)
             ctx["vars"]["location"] = u["location"]
             ctx["response"] = "generic.remember_location"
+            return True
+        # asking about names?  'what is your name' -> the bot answers about
+        # ITSELF (classic ELIZA had no self-model; Wave 0 gives it one).
+        if re.search(r"\byour name\b", s, re.I):
+            ctx["vars"]["name"] = self.shell.cfg["config"].get(
+                "bot_name", "Eliza-Claw")
+            ctx["response"] = "identity.self_name"
+            return True
+        if re.search(r"\b(my|your)\s+name\b|\bwho\s+are\s+(you|i)\b", s, re.I):
+            if u.get("name"):
+                ctx["vars"]["name"] = u["name"]
+                ctx["response"] = "identity.greet_known"
+            else:
+                ctx["response"] = "identity.ask_name"
             return True
         if u.get("name"):
             ctx["vars"]["name"] = u["name"]

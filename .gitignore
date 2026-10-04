@@ -1,5 +1,6 @@
-# Python compiled files
+# Python bytecode and caches
 __pycache__/
 *.pyc
 
-# Source code (not ignored, but ensuring pycache is handled)
+# Temporary files
+tmp/

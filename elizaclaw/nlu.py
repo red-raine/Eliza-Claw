@@ -210,7 +210,27 @@ def compile_pattern(pattern, synonyms):
         # leftover words after the last consumed atom, COMPASS patterns like
         # '* error *' already handle it via stars; plain 'i am *' captures
         # everything after.  Nothing extra needed -- bind() consumed greedily.
-        return [" ".join(s) for s in caps[:ns]]
+        #
+        # bug #25 (COMPASS binding rule, Weizenbaum & Bailey 1966): when a
+        # leading '*' binds zero words, the NEXT star must not swallow the
+        # trigger phrase's own preposition ('remind me to | buy milk' was
+        # captured as 'to buy milk').  If cap0 is empty and cap1 opens with
+        # a preposition/article that the pattern itself contains, drop it.
+        if ns >= 2 and caps and caps[0] == "":
+            patsyn = set()
+            for t in toks:
+                if t.startswith("@"):
+                    for m in synonyms.get(t[1:], []):
+                        patsyn.update(str(m).split())
+                elif t != "*":
+                    patsyn.add(t)
+            first = caps[1].split(" ", 1)
+            if first and first[0] in patsyn \
+                    and first[0] in ("to", "for", "about", "of", "on",
+                                     "in", "at", "with"):
+                caps[1] = first[1] if len(first) > 1 else ""
+        return [" ".join(s) if isinstance(s, list) else s
+                for s in caps[:ns]]
 
     return match, ns
 

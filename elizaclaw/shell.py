@@ -59,8 +59,48 @@ class Shell:
             inst = cls(self)
             self.plugins[inst.name] = inst
 
+    # ------------------------------------------------- wave 0: JSON hygiene
+    BUILTIN_KEYS = {
+        # Safety net for eliza.json drift: every intent classifier category
+        # must be reachable. If the script author forgot a key, we inject a
+        # minimal one here (Weizenbaum's xnone trick generalized: the shell
+        # guarantees coverage, the JSON only customizes it).
+        "name": {"keyword": "name", "priority": 25, "plugin": "identity",
+                 "synonyms": ["call", "called", "who"],
+                 "decomps": [{"pattern": "* your name", "hook": "identify",
+                              "response": "auto"},
+                             {"pattern": "* name is *", "hook": "identify",
+                              "response": "auto"}]},
+        "task": {"keyword": "task", "priority": 12, "plugin": "task_manager",
+                 "synonyms": ["todo", "to-do", "add task"],
+                 "decomps": [{"pattern": "* add task *", "hook": "push_task",
+                              "params": {"task": "cap1"},
+                              "response": "task.acknowledged"},
+                             {"pattern": "* new task *", "hook": "push_task",
+                              "params": {"task": "cap1"},
+                              "response": "task.acknowledged"},
+                             {"pattern": "* tasks", "hook": "check_stack",
+                              "response": "auto"}]},
+        "help": {"keyword": "help", "priority": 22, "plugin": None,
+                 "synonyms": [],
+                 "decomps": [{"pattern": "* help *", "response":
+                              "generic.help"}]},
+        "thanks": {"keyword": "thanks", "priority": 6, "plugin": None,
+                   "synonyms": ["thank"],
+                   "decomps": [{"pattern": "*", "response":
+                                "generic.thanks"}]},
+        "goodbye": {"keyword": "goodbye", "priority": 6, "plugin": None,
+                    "synonyms": ["bye", "see you"],
+                    "decomps": [{"pattern": "*", "response":
+                                 "generic.goodbye"}]},
+    }
+
     def _build_keys(self):
         """Sort keys by priority and precompile every decomp pattern."""
+        names = {k["keyword"] for k in self.cfg["keys"]}
+        for nm, spec in self.BUILTIN_KEYS.items():
+            if nm not in names:
+                self.cfg["keys"].append(dict(spec))
         self.keys = sorted(self.cfg["keys"],
                            key=lambda k: -k.get("priority", 0))
         syn = self.cfg["synonyms"]
@@ -201,7 +241,14 @@ class Shell:
                                       " ".join(ctx["tokens"]))
             if alt:
                 return self._dispatch(alt, ctx)
-        return False                                 # let xnone handle it
+        xn = next((k for k in self.keys if k["keyword"] == "xnone"), None)
+        if xn:
+            fn, ng = self._compiled[xn["decomps"][0]["pattern"].lower()]
+            caps = fn(" ".join(ctx["tokens"]))
+            if caps is not None:
+                return self._dispatch(((0, 0), xn, xn["decomps"][0],
+                                       caps, ng), ctx)
+        return False                                 # nothing left to try
 
     def _dispatch(self, best, ctx):
         _, key, decomp, caps, ng = best
@@ -210,10 +257,13 @@ class Shell:
         ctx["captures"] = [c for c in caps[:ng] if c != ""] or []
         return False
 
-    def route(self, ctx):
-        joined = " ".join(ctx["tokens"])
-        best = None                                  # (rank, key, decomp, caps)
+    def _best_match(self, joined, only=None):
+        """Scan all keys (or just plugin/key == `only`) for the highest-ranked
+        decomp pattern match. Returns (rank, key, decomp, caps, ng) or None."""
+        best = None
         for key in self.keys:
+            if only and key.get("plugin") != only and key["keyword"] != only:
+                continue
             if key["_hits"] and not any(rx.search(joined)
                                         for rx in key["_rxs"]):
                 continue                             # cheap keyword gate
@@ -226,16 +276,20 @@ class Shell:
                     if best is None or rank < best[0]:
                         best = (rank, key, decomp, caps, ng)
                     break                            # within-key, first hit
+        return best
+
+    def route(self, ctx):
+        joined = " ".join(ctx["tokens"])
+        best = self._best_match(joined)
         if not best:
             return self._web_fallback(ctx)
-        _, key, decomp, caps, ng = best
         # Word-web arbitration (Wave 4): the Bayesian router casts a vote.
         # Strong statistical evidence outranks a weak pattern match -- but
         # never overrides an explicit high-priority keyword rule.
         wr = ctx.get("web_route")
-        prio = key.get("priority", 0)
+        prio = best[1].get("priority", 0)
         if wr and ctx.get("web_conf", 0) >= 0.5 and prio <= 10:
-            matched_key = key["keyword"]
+            matched_key = best[1]["keyword"]
             want = self.ROUTE2KEY.get(wr)
             if want and want != matched_key and want != "xnone":
                 alt = self._key_for_route(want, joined)
@@ -246,7 +300,30 @@ class Shell:
         _, key, decomp, caps, ng = best
         ctx["key"] = key
         ctx["decomp"] = decomp
-        ctx["captures"] = [c for c in caps if c != ""]
+        # Wave 0 (bug #22): a pattern may legitimately bind an empty capture
+        # ('* remind me *' on 'remind me about the taxes later' -> cap1='').
+        # Keep every capture in positional order and remember which slots
+        # were blank; plugins that want only non-empty spans call clean().
+        ctx["captures"] = list(caps[:ng])
+        ctx["empty_caps"] = [i for i, c in enumerate(ctx["captures"])
+                             if c == ""]
+
+        # ---- intent-driven task auto-capture (ELIZA's 'need' key, promoted
+        # to a general reflex). If nothing more specific claimed this turn as
+        # an action, but the sentence is a request ('can you ...', 'please
+        # ...', imperative opener), push it onto the task stack. This is the
+        # zero-token answer to "agent memory": we simply write down what was
+        # asked, exactly like Colbys object-assumption frames fill slots.
+        if (key["keyword"] == "xnone" and ctx.get("intent") == "command"
+                and len(ctx["tokens"]) >= 3):
+            tm = self.plugins.get("task_manager")
+            if tm:
+                tctx = dict(ctx)
+                tctx["captures"] = [" ".join(ctx["tokens"])]
+                tctx["decomp"] = {"pattern": "*"}
+                if tm.hook_push_task(tctx) and tctx.get("response"):
+                    ctx["vars"].update(tctx["vars"])
+                    ctx["response"] = tctx["response"]
 
         # salience boost + blackboard signal straight from the JSON spec
         topic = key["keyword"] if key["keyword"] != "xnone" else \

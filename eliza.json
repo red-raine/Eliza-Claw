@@ -18,7 +18,8 @@
    "model": "llama3",
    "trigger": "xnone_threshold",
    "threshold": 3
-  }
+  },
+  "bot_name": "Eliza-Claw"
  },
  "sovereign_logic": {
   "always_prioritize": [
@@ -602,6 +603,23 @@
    "remember_location": [
     "I've noted you're in {location}.",
     "{location}, got it. Anything else?"
+   ],
+   "help": [
+    "I read your words and answer with patterns -- no model, no tokens. Try: 'remind me to X at 5pm', 'add task X', 'search for X', 'weather in X', 'my name is X', or just tell me how you feel."
+   ],
+   "thanks": [
+    "Anytime. Pattern-matching is its own reward.",
+    "You're welcome. I am mostly JSON and good intentions."
+   ],
+   "goodbye": [
+    "Goodbye. The heartbeat keeps ticking while you're away.",
+    "See you later. I'll be here, dreaming in TOML and JSON."
+   ],
+   "mirror": [
+    "What does '{segment}' suggest to you?",
+    "You say {segment} -- tell me more.",
+    "Let's set that aside for a moment: {segment}.",
+    "In your words, '{segment}' -- what would change if that were true?"
    ]
   },
   "identity": {
@@ -616,14 +634,12 @@
     "I don't recognize you. Have we met?"
    ],
    "greet_known": [
-    "Hello, {name}. Good to see you again.",
-    "Welcome back, {name}.",
-    "{name}! How have you been?"
+    "Hello again, {name}.",
+    "Welcome back, {name}. The lobster state is warm."
    ],
    "greet_new": [
-    "Hello! I don't think we've met.",
-    "Hi there! You're new, aren't you?",
-    "I don't believe we've been introduced."
+    "Hi there. I don't believe we've been introduced.",
+    "Hello! Tell me your name sometime; I keep a list."
    ],
    "ask_relationship": [
     "How do you know {other}?",
@@ -631,8 +647,16 @@
     "Are you a friend of {other}?"
    ],
    "name_learned": [
-    "Nice to meet you, {name}. I'll remember that.",
-    "Got it -- you're {name}. What brings you here?"
+    "Nice to meet you, {name}. I've written it down -- JSON never forgets.",
+    "{name}. Got it. Filed under memory/user.json, right next to my feelings."
+   ],
+   "ask_name": [
+    "I don't think we've met. What should I call you?",
+    "No name on file. Who am I speaking with?"
+   ],
+   "self_name": [
+    "I'm Eliza-Claw -- pattern-matched, not token-burned. {name}, at your service.",
+    "They call me Eliza-Claw. A micro AI OS with a heartbeat and no language model."
    ]
   },
   "task": {
@@ -708,6 +732,20 @@
     "I hear you. Let's work through this.",
     "Frustrating stuff. What's the blocker?",
     "Take a breath. We'll figure it out."
+   ],
+   "desire": [
+    "What would it mean to you if you got {segment}?",
+    "Do you really want {segment}?",
+    "Wanting is half the work. Tell me more about {segment}."
+   ],
+   "reflect_emotion": [
+    "Why do you feel {feeling}?",
+    "Let's write that down: you feel {feeling}.",
+    "Feelings are data. Filing '{feeling}' under topics."
+   ],
+   "probe": [
+    "Tell me more about that feeling.",
+    "How long have you felt that way?"
    ]
   },
   "reminder": {
@@ -1239,7 +1277,7 @@
   {
    "keyword": "need",
    "priority": 10,
-   "plugin": "task_manager",
+   "plugin": null,
    "decomps": [
     {
      "pattern": "* i need to *",
@@ -1309,7 +1347,7 @@
      "pattern": "* search for *",
      "hook": "web",
      "params": {
-      "query": 1
+      "query": "cap1"
      },
      "response": "result",
      "learn": {
@@ -1321,10 +1359,16 @@
      "pattern": "* find *",
      "hook": "web",
      "params": {
-      "query": 1
+      "query": "cap1"
      },
      "response": "result"
     }
+   ],
+   "synonyms": [
+    "duckduckgo",
+    "find out",
+    "google",
+    "look up"
    ]
   },
   {
@@ -1333,16 +1377,23 @@
    "plugin": "reminder",
    "decomps": [
     {
-     "pattern": "* remind me to * at *",
+     "pattern": "* remind me to *",
      "hook": "add",
      "params": {
-      "task": "cap1",
-      "when": "cap2"
+      "task": "cap1"
      },
      "response": "added"
     },
     {
-     "pattern": "* remind me to *",
+     "pattern": "* remind me of *",
+     "hook": "add",
+     "params": {
+      "task": "cap1"
+     },
+     "response": "added"
+    },
+    {
+     "pattern": "* remind me about *",
      "hook": "add",
      "params": {
       "task": "cap1"
@@ -1447,8 +1498,36 @@
    "decomps": [
     {
      "pattern": "*",
-     "response": "generic.confused",
-     "fallback_to_neural": true
+     "hook": "mirror",
+     "response": "auto"
+    }
+   ],
+   "plugin": "eliza_conversation"
+  },
+  {
+   "keyword": "feel",
+   "priority": 5,
+   "plugin": "eliza_conversation",
+   "synonyms": [
+    "feeling",
+    "feelings",
+    "emotional"
+   ],
+   "decomps": [
+    {
+     "pattern": "* @desire *",
+     "response": "desire"
+    },
+    {
+     "pattern": "* i feel *",
+     "learn": {
+      "category": "emotion"
+     },
+     "response": "reflect_emotion"
+    },
+    {
+     "pattern": "*",
+     "response": "probe"
     }
    ]
   }
@@ -1491,5 +1570,9 @@
     "blackboard_manager.update_inference"
    ]
   }
- ]
+ ],
+ "_wave0_meta": {
+  "last_touched": "wave0-completion",
+  "notes": "added help/thanks/goodbye pools, ask_name, search synonyms"
+ }
 }
