@@ -1,0 +1,98 @@
+{
+ "belief": [
+  "feel",
+  "think",
+  "believe",
+  "wish",
+  "suppose",
+  "feeling"
+ ],
+ "desire": [
+  "want",
+  "need",
+  "wish",
+  "hope"
+ ],
+ "sad": [
+  "unhappy",
+  "depressed",
+  "sick",
+  "down",
+  "blue",
+  "frustrated",
+  "depress"
+ ],
+ "happy": [
+  "elated",
+  "glad",
+  "better",
+  "great",
+  "good",
+  "excited",
+  "excite"
+ ],
+ "family": [
+  "mother",
+  "mom",
+  "father",
+  "dad",
+  "sister",
+  "brother",
+  "wife",
+  "husband",
+  "children",
+  "child",
+  "son",
+  "daughter",
+  "kid"
+ ],
+ "everyone": [
+  "everybody",
+  "nobody",
+  "noone",
+  "anyone"
+ ],
+ "error": [
+  "bug",
+  "crash",
+  "failed",
+  "broken",
+  "error",
+  "exception",
+  "fail",
+  "break"
+ ],
+ "deadline": [
+  "due",
+  "deadline",
+  "urgent",
+  "asap",
+  "tonight",
+  "tomorrow"
+ ],
+ "weather": [
+  "forecast",
+  "temperature",
+  "rain",
+  "sunny",
+  "cold",
+  "hot"
+ ],
+ "code": [
+  "function",
+  "class",
+  "module",
+  "script",
+  "program",
+  "repo",
+  "codebase",
+  "programme"
+ ],
+ "project": [
+  "task",
+  "project",
+  "work",
+  "assignment",
+  "goal"
+ ]
+}

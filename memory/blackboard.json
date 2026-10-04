@@ -1,0 +1,25 @@
+{
+ "signals": [
+  {
+   "t": 1791141912.8917882,
+   "kind": "error_detected",
+   "priority": 10,
+   "action": "focus"
+  },
+  {
+   "t": 1791141913.9650064,
+   "kind": "task_completed",
+   "priority": 5,
+   "action": "acknowledge"
+  }
+ ],
+ "inferred_state": {
+  "technical_level": "expert",
+  "emotional_state": "neutral",
+  "urgency": "high",
+  "attention_focus": "i",
+  "weather_condition": "clear "
+ },
+ "_updated": 1791141913.9860127,
+ "last_inference": 1791141913.9860294
+}

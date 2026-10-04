@@ -59,7 +59,21 @@ class Plugin:
             if 1 <= spec <= len(ctx["captures"]):
                 return ctx["captures"][spec - 1]
             pos = self._token_at(ctx, spec)
-            return pos if pos is not None else default
+            if pos is not None:
+                return pos
+            # last resort: named capture slot from eliza.json params
+            # e.g. {"task": "cap1"} -> first wildcard capture
+            return default
+        if isinstance(spec, str) and spec.startswith("cap"):
+            # Wave 0 addition: 'capN' names the Nth '*' capture directly,
+            # immune to word-position drift. {"task": "cap1"} == capture 1.
+            try:
+                i = int(spec[3:])
+                if 1 <= i <= len(ctx["captures"]):
+                    return ctx["captures"][i - 1]
+            except ValueError:
+                pass
+            return default
         if isinstance(spec, str) and "." in spec:
             head, rest = spec.split(".", 1)
             src = {"user": self.shell.state.user,

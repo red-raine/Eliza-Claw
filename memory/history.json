@@ -1,0 +1,215 @@
+{
+ "events": [
+  {
+   "t": 1791141883.9467301,
+   "kind": "user",
+   "text": "hello"
+  },
+  {
+   "t": 1791141883.9518776,
+   "kind": "bot",
+   "text": "I don't believe we've been introduced."
+  },
+  {
+   "t": 1791141883.95227,
+   "kind": "user",
+   "text": "my name is Alice"
+  },
+  {
+   "t": 1791141883.9544833,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791141883.954726,
+   "kind": "user",
+   "text": "i live in Seattle"
+  },
+  {
+   "t": 1791141883.956678,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  },
+  {
+   "t": 1791141883.9569285,
+   "kind": "user",
+   "text": "I'm feeling frustrated about my code"
+  },
+  {
+   "t": 1791141883.9591548,
+   "kind": "bot",
+   "text": "That's quite interesting."
+  },
+  {
+   "t": 1791141883.959431,
+   "kind": "user",
+   "text": "I need to debug the authentication module"
+  },
+  {
+   "t": 1791141912.6068156,
+   "kind": "user",
+   "text": "hello"
+  },
+  {
+   "t": 1791141912.7028773,
+   "kind": "bot",
+   "text": "I don't believe we've been introduced."
+  },
+  {
+   "t": 1791141912.7032204,
+   "kind": "user",
+   "text": "my name is Alice"
+  },
+  {
+   "t": 1791141912.7054622,
+   "kind": "bot",
+   "text": "Please go on."
+  },
+  {
+   "t": 1791141912.7057598,
+   "kind": "user",
+   "text": "i live in Seattle"
+  },
+  {
+   "t": 1791141912.707792,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  },
+  {
+   "t": 1791141912.7081034,
+   "kind": "user",
+   "text": "I'm feeling frustrated about my code"
+  },
+  {
+   "t": 1791141912.7102408,
+   "kind": "bot",
+   "text": "Can you elaborate on that?"
+  },
+  {
+   "t": 1791141912.7105775,
+   "kind": "user",
+   "text": "I need to debug the authentication module"
+  },
+  {
+   "t": 1791141912.8832724,
+   "kind": "bot",
+   "text": "I'll track to debug the authentication module for you."
+  },
+  {
+   "t": 1791141912.883674,
+   "kind": "user",
+   "text": "there is an error in my script"
+  },
+  {
+   "t": 1791141912.8914018,
+   "kind": "learn",
+   "text": "issues: there is an"
+  },
+  {
+   "t": 1791141912.8969493,
+   "kind": "bot",
+   "text": "Added debug error to the stack."
+  },
+  {
+   "t": 1791141912.897363,
+   "kind": "user",
+   "text": "remind me to submit the report at 5pm"
+  },
+  {
+   "t": 1791141912.8998873,
+   "kind": "bot",
+   "text": "Pending reminders: nothing."
+  },
+  {
+   "t": 1791141912.9002855,
+   "kind": "user",
+   "text": "what's the weather in Seattle"
+  },
+  {
+   "t": 1791141913.9505599,
+   "kind": "bot",
+   "text": "Right now in Le Perrier: 69\u00b0, clear ."
+  },
+  {
+   "t": 1791141913.9511378,
+   "kind": "user",
+   "text": "search for python context engineering"
+  },
+  {
+   "t": 1791141913.9565213,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791141913.9571612,
+   "kind": "user",
+   "text": "I am done with debug the authentication module"
+  },
+  {
+   "t": 1791141913.9656827,
+   "kind": "bot",
+   "text": "One down. debug error finished."
+  },
+  {
+   "t": 1791141913.9664938,
+   "kind": "user",
+   "text": "please help me finish the project"
+  },
+  {
+   "t": 1791141913.9701815,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  },
+  {
+   "t": 1791141913.9708633,
+   "kind": "user",
+   "text": "i think we are going nowhere"
+  },
+  {
+   "t": 1791141913.9754343,
+   "kind": "bot",
+   "text": "I'm not sure I understand you fully."
+  },
+  {
+   "t": 1791141913.9759324,
+   "kind": "user",
+   "text": "i think we are going nowhere"
+  },
+  {
+   "t": 1791141913.9783864,
+   "kind": "bot",
+   "text": "That's quite interesting."
+  },
+  {
+   "t": 1791141913.9788322,
+   "kind": "user",
+   "text": "i think we are going nowhere"
+  },
+  {
+   "t": 1791141913.9812145,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791141913.9817228,
+   "kind": "user",
+   "text": "list my reminders"
+  },
+  {
+   "t": 1791141913.9838226,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  },
+  {
+   "t": 1791141913.9842927,
+   "kind": "user",
+   "text": "goodbye"
+  },
+  {
+   "t": 1791141913.9863167,
+   "kind": "bot",
+   "text": "Please go on."
+  }
+ ],
+ "_updated": 1791141913.986316
+}

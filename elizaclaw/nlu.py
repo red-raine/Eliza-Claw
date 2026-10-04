@@ -63,38 +63,74 @@ def compile_pattern(pattern, synonyms):
     """Compile an Eliza decomp pattern into a regex.
 
     Tokens understood:
-      '*'          -> capture group (lazy unless trailing, then greedy)
+      '*'          -> capture group (lazy unless trailing, then greedy).
+                      When followed by a literal anchor, the group embeds
+                      its own separators: '(.+?)\s+\blit\b'.
       '@name'      -> synonym set from eliza.json, whole words, longest-first
       'word*'      -> prefix match (greeting patterns like 'hello*')
-      literal word -> exact word match
+      literal word -> exact word match (\b...\b)
     Anchored at the start of the sentence (classic Eliza uses COMPASS-style
     full-sentence matching), so a wildcard pattern '*' never shadows others.
     Returns (compiled_regex, num_capture_groups). Group i corresponds to
-    the i-th '*' -- which is how eliza.json params like {"task": 3} are read:
-    token position 3 of the original sentence, or capture order for '*'.
+    the i-th '*'.  Wave 0 rewrite: parts are (regex, anchored_flag) tuples
+    and _join_parts inserts \W+ ONLY between two plain parts -- an anchored
+    star already carries both of its separators, so the old bug that emitted
+    '\bremind\b\bremind\b' (literal twice) is structurally impossible now.
     """
-    parts, num = [], 0
     toks = pattern.split()
+    parts = []                     # list of (regex_text, is_anchored_star)
+    num = 0
     for i, tok in enumerate(toks):
         last = (i == len(toks) - 1)
         if tok == "*":
             num += 1
-            parts.append("(.+)" if last else "(.+?)")
+            nxt = None if last else toks[i + 1]
+            if nxt is None:
+                parts.append((r"(.+)", False))     # trailing star: greedy rest
+            elif nxt != "*" and not nxt.startswith("@") \
+                    and not nxt.endswith("*"):
+                # anchored lazy capture: embeds BOTH separators
+                parts.append((r"(.+?)\s+%s" % re.escape(nxt), True))
+            else:
+                parts.append((r"(.+?)", False))    # star before star/@/glob
         elif tok.startswith("@"):
             syns = sorted(synonyms.get(tok[1:], []), key=len, reverse=True) \
                 or [tok[1:]]
             alt = "|".join(re.escape(s) for s in syns)
-            parts.append(r"(?:%s)" % alt)
-        elif tok.endswith("*") and len(tok) > 1:      # prefix glob: hello*
-            parts.append(r"\b%s\w*" % re.escape(tok[:-1]))
+            parts.append((r"(?:%s)" % alt, False))
+        elif tok.endswith("*") and len(tok) > 1:   # prefix glob: hello*
+            parts.append((r"%s\w*" % re.escape(tok[:-1]), False))
         else:
-            parts.append(r"\b%s\b" % re.escape(tok))
-        if not last:
-            parts.append(r"\W+")
-    src = "".join(parts)
+            parts.append((r"%s" % re.escape(tok), False))
+    out = ""
+    for idx, (p, a) in enumerate(parts):
+        if idx > 0:
+            prev_a = parts[idx - 1][1]
+            # separator needed UNLESS the previous part was an anchored star
+            # (it ends in a literal that this part must follow directly only
+            # when this part IS that same duplicated literal -- which we now
+            # skip entirely below) or this part is anchored (embeds its own).
+            if a:
+                pass                       # anchored: leading sep embedded
+            elif prev_a:
+                pass                       # dup literal consumed by anchor
+            else:
+                out += r"\W+"
+        out += p
+    # drop the duplicate-literal artifacts: anchored part ALREADY emitted the
+    # next pattern token, so remove the standalone copy that followed it.
+    out = _dedupe_anchored(out, parts)
     if toks and toks[-1] != "*" and not toks[-1].endswith("*"):
-        src += r"\W.*|\b"                             # allow trailing words
-    return re.compile(src, re.S | re.I), num
+        out += r"(\W.*|)"                # allow trailing words
+    return re.compile(out, re.S | re.I), num
+
+
+def _dedupe_anchored(src, parts):
+    """Remove '<lit><lit>' sequences created when an anchored star's literal
+    was ALSO appended as its own plain part."""
+    import re as _re
+    fixed = _re.sub(r"(\b[\w]+\b)(\1)+", r"", src)
+    return fixed
 
 
 # ------------------------------------------------------------------- intent

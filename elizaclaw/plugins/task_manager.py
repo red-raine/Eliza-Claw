@@ -59,6 +59,30 @@ class TaskManager(Plugin):
         return (best, score) if score >= threshold else (None, score)
 
     # ------------------------------------------------------------- hooks
+    # priority words -> int (eliza.json may say "high"/"medium"/"low")
+    PRIO_WORDS = {"critical": 5, "urgent": 5, "highest": 5, "asap": 5,
+                  "high": 4, "hot": 4,
+                  "medium": 3, "med": 3, "normal": 3, "mid": 3,
+                  "low": 2, "someday": 1, "later": 1, "whenever": 1}
+
+    def _prio(self, spec, ctx):
+        """Resolve a priority spec to an int 1..5. Accepts ints, numeric
+        strings, and English ('high', 'medium'). Scientific method: the demo
+        crashed with int('medium'); now English is a first-class citizen."""
+        raw = spec
+        if isinstance(spec, str) and not spec.isdigit():
+            # dotted lookup or literal word from eliza.json
+            try:
+                raw = self.param(ctx, spec)
+            except Exception:
+                raw = spec
+        if isinstance(raw, (int, float)):
+            return max(1, min(5, int(raw)))
+        s = str(raw).strip().lower()
+        if s.isdigit():
+            return max(1, min(5, int(s)))
+        return self.PRIO_WORDS.get(s, 3)
+
     def hook_push_task(self, ctx):
         spec = ctx["decomp"].get("params", {})
         raw = self.param(ctx, spec.get("task", 2))
@@ -95,7 +119,7 @@ class TaskManager(Plugin):
 
         st = self.shell.state.tasks
         entry = {"task": title,
-                 "priority": int(self.param(ctx, spec.get("priority", 3))),
+                 "priority": self._prio(spec.get("priority", 3), ctx),
                  "added": time.time(),
                  "deadline": due}
         if frame_info:

@@ -1,0 +1,16 @@
+{
+ "used": [
+  "I'll track {task} for you.",
+  "Added {task} to the stack.",
+  "Pending reminders: {list}.",
+  "Right now in {location}: {temp}\u00b0, {condition}.",
+  "Do you feel strongly about discussing such things?",
+  "One down. {task} finished.",
+  "What does that suggest to you?",
+  "I'm not sure I understand you fully.",
+  "That's quite interesting.",
+  "Do you feel strongly about discussing such things?",
+  "What does that suggest to you?",
+  "Please go on."
+ ]
+}

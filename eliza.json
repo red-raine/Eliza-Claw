@@ -1333,19 +1333,35 @@
    "plugin": "reminder",
    "decomps": [
     {
-     "pattern": "* remind me to *",
+     "pattern": "* remind me to * at *",
      "hook": "add",
      "params": {
-      "task": 1
+      "task": "cap1",
+      "when": "cap2"
      },
      "response": "added"
     },
     {
-     "pattern": "* remind me to * at *",
+     "pattern": "* remind me to *",
      "hook": "add",
      "params": {
-      "task": 1,
-      "when": 2
+      "task": "cap1"
+     },
+     "response": "added"
+    },
+    {
+     "pattern": "* remind me *",
+     "hook": "add",
+     "params": {
+      "task": "cap1"
+     },
+     "response": "added"
+    },
+    {
+     "pattern": "* remind *",
+     "hook": "add",
+     "params": {
+      "task": "cap1"
      },
      "response": "added"
     },
@@ -1353,7 +1369,16 @@
      "pattern": "* reminders",
      "hook": "list",
      "response": "list"
+    },
+    {
+     "pattern": "* reminder",
+     "hook": "list",
+     "response": "list"
     }
+   ],
+   "synonyms": [
+    "reminder",
+    "reminders"
    ]
   },
   {
