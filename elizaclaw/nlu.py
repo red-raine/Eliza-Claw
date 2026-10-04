@@ -59,178 +59,172 @@ def apply_pre(text, table):
 
 
 # ------------------------------------------------------ pattern compilation
-def _lit(w):
-    """Anchored literal word: real \\b boundaries, escaped body."""
-    return r"\b%s\b" % re.escape(w)
-
-
 def compile_pattern(pattern, synonyms):
-    """Compile an Eliza decomp pattern into a regex.  Wave 0 rebuild.
+    """Compile an Eliza decomp pattern into a word-level matcher.
 
-    Tokens understood:
-      '*'          -> capture group (.+?), lazy unless trailing (then greedy)
-      '@name'      -> synonym set from eliza.json, longest-first alternation
-      'word*'      -> prefix glob (greeting patterns like 'hello*')
-      literal word -> exact whole-word match via \\b...\\b
-    The compiled regex is NOT start-anchored; callers use .search() on the
-    joined token stream, which matches classic COMPASS behaviour closely
-    enough while keeping wildcard fallbacks honest.
-    Returns (compiled_regex, num_capture_groups); group i is the i-th '*'.
+    Wave 0, v12 -- the final rebuild.  Post-mortem of bugs #1-#20 (logged in
+    llm_wiki/decisions.md): every hand-built REGEX variant eventually failed
+    on capture alignment.  Python's engine ate neighbouring atoms' spaces
+    into groups; zero-width lookarounds around multi-word synonym sets were
+    unmaintainable.  The real lesson from COMPASS (Weizenbaum & Bailey, 1966
+    ACM session): Eliza never used regex captures at all.  It matched words,
+    THEN bound segments.  So we do exactly that here with a tiny dynamic
+    program over token spans.  Deterministic, dependency-free, testable.
 
-    Bug post-mortem (this function has now been rebuilt three times -- the
-    scientific method working as intended): earlier revisions built regex
-    fragments with '%' string formatting using NON-raw strings, so Python
-    silently converted the backslash-b sequences into BACKSPACE control
-    characters (x08) inside the regex source.  Every pattern then matched
-    nothing.  Lesson recorded in llm_wiki/decisions: keep every regex
-    fragment a raw string, and unit-test the compiler directly, not only
-    through its callers.
+    Grammar:
+      literal word   matches one identical token
+      'word*'        prefix glob ('hello*' eats 'hello', 'hellos', ...)
+      '@synset'      any member of eliza.json synonyms[name]; members may be
+                     multi-word and consume several tokens (longest first)
+      '*'            binds ZERO OR MORE words (COMPASS semantics); multiple
+                     stars split left-greedy, but always leave enough words
+                     for the rest of the pattern to match
+      unanchored     a pattern without leading '*' floats: it may start at
+                     any token; same for trailing overflow when no '*' ends
+                     the pattern (classic Eliza padded decomps with '* *').
+
+    Returns (matcher_fn, num_stars).  matcher_fn(joined_tokens) -> list of
+    captured strings (one per '*', '' allowed) or None if no match.
     """
-    toks = pattern.split()
+    toks = pattern.lower().split()
+    ns = sum(1 for t in toks if t == "*")
 
-    # ---- v4 rebuild (Wave 0, bugs #1-#6 all dead). Design rules proven by
-    # the wave-0 test matrix:
-    #  * every regex fragment is a RAW string (kills the x08 backspace bug);
-    #  * leading '*' run -> NON-capturing optional preamble. The engine tries
-    #    "eat one word + space" first, and when the body fails it retries the
-    #    zero-width branch at position 0 -- no phantom-gobble possible because
-    #    backtracking is honest here (unbuggy v2/v3 relied on '?' groups that
-    #    the engine refused to backtrack past a matched keyword boundary...
-    #    actually the killer fix: preamble is '(?:\S+\s+)?' which CAN match
-    #    empty, and search() also starts mid-string, so both orders work);
-    #  * interior '*' -> lazy capture guarded by NEGATIVE LOOKAHEAD on the
-    #    next atom, so it stops exactly before the following literal;
-    #  * terminal '*' -> '(.+)' requiring >=1 word (COMPASS semantics);
-    #  * patterns ending in a literal get '(?:\W.+)?' so trailing user words
-    #    don't break the match (Eliza's own '*' padding, done implicitly).
-
-    def lit(w):
-        # Boundary classes instead of \b so single-char synonym members like
-        # 'a'/'i' don't get stranded (bug #7: '@a *' never matched 'a cat').
-        # The tokenizer strips punctuation, so word-adjacency is guaranteed.
-        return r"(?<![A-Za-z0-9_])%s(?![A-Za-z0-9_])" % re.escape(w)
-
-    def atom(tok):
-        """Regex for one non-star token."""
-        if tok.startswith("@"):
-            raw = synonyms.get(tok[1:], [])
-            # Bug #8: a bare multi-word synonym set ('i am') must also match
-            # its own key text even when the list omits it.
-            syns = list(raw) + [tok[1:]]
-            syns = sorted({s for s in syns if s}, key=len, reverse=True)
-            return r"(?:" + "|".join(lit(s) for s in syns) + ")"
-        if tok.endswith("*") and len(tok) > 1:      # prefix glob: hello*
-            return r"(?<![A-Za-z0-9_])%s\w*" % re.escape(tok[:-1])
-        return lit(tok)
-
-    parts = []
-    num = 0
-    i, n = 0, len(toks)
-    # all-stars pattern ('*' or '* *'): must require at least one word,
-    # otherwise it matches the empty string everywhere (bug #6: the hello
-    # key's '*' stole every sentence from remind/search/task keys).
-    if toks and all(t == "*" for t in toks):
-        return re.compile(r"(.+)", re.S | re.I), 1
-
-    # ---- v9 rebuild (Wave 0).  Tokenizer-anchored semantics: input is
-    # always a space-joined token stream, so compilation happens over TOKEN
-    # SPANS and matching uses re.fullmatch.  This kills bug #14 for good --
-    # no search()-start-position weirdness survives fullmatch.  Rules that
-    # the wave-0 matrix proved:
-    #  * literal atoms are whole tokens -> wrap in (?<!\S)/(?!\w) guards;
-    #  * star runs consume >=1 WHOLE tokens; each consumed unit is
-    #    '\S+ ' (word + its own trailing space), lazy;
-    #  * interior stars stop exactly before the next atom via a left-edge
-    #    guard on that atom (bug #13/#16: unbounded .+ or missing right
-    #    boundaries let captures swallow neighbours);
-    #  * leading/trailing padding ('(?:\S+ )?' / '(?:\S+ )*') only when
-    #    the pattern STARTS/ENDS with a literal -- COMPASS decomp matches
-    #    the whole sentence, but keyword routing wants subsequence hits.
-    def syn_members(t):
-        """Ordered unique synonym members for '@name' (longest first)."""
-        raw = list(synonyms.get(t[1:], [])) + [t[1:]]
-        return sorted({s for s in raw if s}, key=len, reverse=True)
-
-    def lit(t):
-        """Whole-token regex for one non-star pattern token."""
+    def atom_variants(t):
+        """List of token-lists this pattern atom can consume."""
         if t.startswith("@"):
-            return r"(?:" + "|".join(r"(?<!\S)" + re.escape(s) + r"(?!\w)"
-                                     for s in syn_members(t)) + ")"
-        if t.endswith("*") and len(t) > 1:           # prefix glob: hello*
-            return r"(?<!\S)" + re.escape(t[:-1]) + r"\w*(?!\w)"
-        return r"(?<!\S)" + re.escape(t) + r"(?!\w)"
-
-    def guard_of(t):
-        """Left-edge-only guard for the atom following an interior star."""
-        if t.startswith("@"):
-            return r"(?:" + "|".join(r"(?<!\S)" + re.escape(s)
-                                     for s in syn_members(t)) + ")"
+            raw = list(synonyms.get(t[1:], [])) + [t[1:]]
+            # bug #21: synonym members may be stored as LISTS (wordnet
+            # expansion output) or plain strings -- normalise both, then
+            # hash tuples to dedupe.
+            norm = {tuple(str(x).split()) if isinstance(x, str)
+                    else tuple(x) for x in raw}
+            norm.discard(())
+            return sorted(norm, key=len, reverse=True)
         if t.endswith("*") and len(t) > 1:
-            return r"(?<!\S)" + re.escape(t[:-1])
-        return r"(?<!\S)" + re.escape(t) + r"(?!\w)"
+            return ("glob", t[:-1])                 # special-cased below
+        return [t.split()]
 
-    UNIT = r"(?:\S+ )"          # one whole word plus its trailing space
+    variants = [atom_variants(t) for t in toks]
 
-    parts = []
-    num = 0
-    i, n = 0, len(toks)
-    if toks and all(t == "*" for t in toks):         # '*' or '* *': >=1 word
-        return re.compile(r"(.+)", re.S | re.I), 1
-    while i < n:
-        if toks[i] == "*":
-            j = i
-            while j < n and toks[j] == "*":          # '* *' collapses to '*'
-                j += 1
-            num += 1
-            if j >= n:                               # terminal star: rest
-                # Bug #17: '(.+)' demands a char after the previous atom;
-                # when the pattern's last literal sits at end-of-string
-                # ('* error *' vs 'there is an error') it can never match.
-                # Make the tail optional -- capture may be empty and
-                # clean_captures() drops empties (COMPASS allows this).
-                prev_lit = bool(parts) and not parts[-1].endswith(")") \
-                    or True
-                parts.append(r"(?: ?(.+))?")
-            else:                                    # interior / leading star
-                g = guard_of(toks[j])
-                first = (i == 0)                     # leading preamble MAY be
-                unit = (r"(?:\S+ )?" if first else   # zero words long
-                        r"(?:\S+ )")
-                parts.append(r"(" + unit + r"(?:(?!" + g + r")." + UNIT
-                             + r")*?)")
-            i = j
-            continue
-        parts.append(lit(toks[i]))
-        if i < n - 1 and toks[i + 1] != "*":
-            parts.append(r" ")                       # exact single separator
-        i += 1
-    out = "".join(parts)
-    # Padding: allow words before/after the matched span ONLY where the
-    # pattern doesn't already capture them with a star.
-    if toks[0] != "*":
-        out = r"(?:\S+ )?" + out
-    if toks[-1] != "*" and not toks[-1].endswith("*"):
-        out = out + r" ?(?: \S+(?: \S+)*)?"
-    rx = re.compile(out, re.S | re.I)
-    # Callers use .search(); emulate fullmatch semantics by anchoring both
-    # ends so mid-word starts can't hijack captures.  Bug #16: Python's
-    # search() DOES advance past zero-width lookbehinds like (?<!\S); the
-    # earlier failures were the missing-space bug (#17 family), not this.
-    rx = re.compile(r"(?<!\S)" + rx.pattern + r"(?!\w|\S$)"
-                    if False else r"(?<!\S)" + rx.pattern, re.S | re.I)
-    return rx, num
+    def consumes(a, words, i):
+        """End indices j reachable by matching atom a at words[i:]."""
+        kind = variants[a]
+        out = []
+        if isinstance(kind, tuple) and kind[0] == "glob":
+            if i < len(words) and words[i].startswith(kind[1]):
+                out.append(i + 1)
+            return out
+        for m in kind:
+            L = len(m)
+            if i + L <= len(words) and tuple(words[i:i + L]) == tuple(m):
+                out.append(i + L)
+        return sorted(set(out), reverse=True)       # longest first
+
+    def star_ok_after(a, words, i):
+        """Can pattern atoms a.. bind words starting at i (stars flexible)?"""
+        memo = {}
+        def go(p, q):
+            if p == len(toks):
+                return True
+            key = (p, q)
+            if key in memo:
+                return memo[key]
+            memo[key] = False
+            if toks[p] == "*":
+                for nq in range(q, len(words) + 1):
+                    if go(p + 1, nq):
+                        memo[key] = True
+                        return True
+            else:
+                for e in consumes(p, words, q):
+                    if go(p + 1, e):
+                        memo[key] = True
+                        return True
+            return False
+        return go(a, i)
+
+    def match(joined):
+        words = joined.split()
+        nw = len(words)
+        if nw == 0:
+            return [""] * ns if not any(t != "*" for t in toks) else None
+
+        # ---- recursive descent with COMPASS binding order:
+        # non-star atoms take their match eagerly; a '*' takes as many words
+        # as possible while still letting the SUFFIX of the pattern match
+        # (leftmost-longest).  Leading float: try start positions left->right.
+        result = None
+
+        def bind(a, i, spans):
+            """Match atoms[a:] against words[i:]; append star captures."""
+            nonlocal result
+            if result is not None:
+                return True
+            if a == len(toks):
+                result = list(spans)
+                return True
+            if toks[a] == "*":
+                # greedy: longest span first, but suffix must still match
+                for end in range(nw, i - 1, -1):
+                    if star_ok_after(a + 1, words, end):
+                        # also require the exact-match path from `end`
+                        if bind_exact(a + 1, end, spans + [words[i:end]]):
+                            return True
+                return False
+            for e in consumes(a, words, i):
+                if bind_exact(a + 1, e, spans):
+                    return True
+            return False
+
+        def bind_exact(a, i, spans):
+            """Like bind but anchored at input position i (no float)."""
+            nonlocal result
+            if result is not None:
+                return True
+            if a == len(toks):
+                result = list(spans)
+                return True
+            if toks[a] == "*":
+                for end in range(nw, i - 1, -1):
+                    if star_ok_after(a + 1, words, end):
+                        if bind_exact(a + 1, end, spans + [words[i:end]]):
+                            return True
+                return False
+            for e in consumes(a, words, i):
+                if bind_exact(a + 1, e, spans):
+                    return True
+            return False
+
+        if toks[0] == "*":
+            ok = bind_exact(0, 0, [])
+        else:
+            ok = False
+            for st in range(nw):                    # float the start
+                if bind_exact(0, st, []):
+                    ok = True
+                    break
+        if result is None:
+            return None
+        caps = result
+        # trailing overflow: if pattern ends with a literal and there are
+        # leftover words after the last consumed atom, COMPASS patterns like
+        # '* error *' already handle it via stars; plain 'i am *' captures
+        # everything after.  Nothing extra needed -- bind() consumed greedily.
+        return [" ".join(s) for s in caps[:ns]]
+
+    return match, ns
 
 
-
-def clean_captures(groups, ng):
-    """Trim whitespace that boundary classes leave on capture edges."""
-    return [g.strip() for g in groups[:ng] if g is not None]
+def run_pattern(pattern, synonyms, joined):
+    """Convenience one-shot: returns capture list or None."""
+    fn, _ = compile_pattern(pattern, synonyms)
+    return fn(joined)
 
 
 # ------------------------------------------------------------------- intent
 def _pattern_hit(pat, joined, synonyms):
-    rx, _ = compile_pattern(pat, synonyms)
-    return bool(rx.search(joined))
+    fn, _ = compile_pattern(pat, synonyms)
+    return fn(joined) is not None
 
 
 def classify_intent(sentence, classifier, synonyms):

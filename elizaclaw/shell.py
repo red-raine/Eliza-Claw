@@ -179,12 +179,12 @@ class Shell:
                 continue
             prio = key.get("priority", 0)
             for decomp in key["decomps"]:
-                rx, ng = self._compiled[decomp["pattern"].lower()]
-                m = rx.search(joined)
-                if m:
+                fn, ng = self._compiled[decomp["pattern"].lower()]
+                caps = fn(joined)
+                if caps is not None:
                     rank = (-prio, -self._specificity(decomp["pattern"]))
                     if cand is None or rank < cand[0]:
-                        cand = (rank, key, decomp, m, ng)
+                        cand = (rank, key, decomp, caps, ng)
                     break
         return cand
 
@@ -204,31 +204,31 @@ class Shell:
         return False                                 # let xnone handle it
 
     def _dispatch(self, best, ctx):
-        _, key, decomp, m, ng = best
+        _, key, decomp, caps, ng = best
         ctx["key"] = key
         ctx["decomp"] = decomp
-        ctx["captures"] = [g for g in m.groups()[:ng] if g is not None]
+        ctx["captures"] = [c for c in caps[:ng] if c != ""] or []
         return False
 
     def route(self, ctx):
         joined = " ".join(ctx["tokens"])
-        best = None                                  # (rank, key, decomp, m)
+        best = None                                  # (rank, key, decomp, caps)
         for key in self.keys:
             if key["_hits"] and not any(rx.search(joined)
                                         for rx in key["_rxs"]):
                 continue                             # cheap keyword gate
             prio = key.get("priority", 0)
             for decomp in key["decomps"]:
-                rx, ng = self._compiled[decomp["pattern"].lower()]
-                m = rx.search(joined)
-                if m:
+                fn, ng = self._compiled[decomp["pattern"].lower()]
+                caps = fn(joined)
+                if caps is not None:
                     rank = (-prio, -self._specificity(decomp["pattern"]))
                     if best is None or rank < best[0]:
-                        best = (rank, key, decomp, m, ng)
+                        best = (rank, key, decomp, caps, ng)
                     break                            # within-key, first hit
         if not best:
             return self._web_fallback(ctx)
-        _, key, decomp, m, ng = best
+        _, key, decomp, caps, ng = best
         # Word-web arbitration (Wave 4): the Bayesian router casts a vote.
         # Strong statistical evidence outranks a weak pattern match -- but
         # never overrides an explicit high-priority keyword rule.
@@ -243,10 +243,10 @@ class Shell:
                     best = alt
         if not best:
             return self._web_fallback(ctx)
-        _, key, decomp, m, ng = best
+        _, key, decomp, caps, ng = best
         ctx["key"] = key
         ctx["decomp"] = decomp
-        ctx["captures"] = [g for g in m.groups() if g is not None]
+        ctx["captures"] = [c for c in caps if c != ""]
 
         # salience boost + blackboard signal straight from the JSON spec
         topic = key["keyword"] if key["keyword"] != "xnone" else \

@@ -1,0 +1,15 @@
+{
+ "name": null,
+ "location": null,
+ "interests": [
+  "cat"
+ ],
+ "facts": {
+  "cat facts": {
+   "category": "interests",
+   "turn": 7
+  }
+ },
+ "preferences": {},
+ "_updated": 1791147205.081929
+}
