@@ -188,6 +188,13 @@ class Shell:
                "web_scores": web_tab}
 
         exit_now = self.route(ctx)
+        # Wave 1: give every plugin a post-route lifecycle hook (conversation
+        # records ALL turns into STM/MTM here, not just topic-claimed ones).
+        for p in self.plugins.values():
+            try:
+                p.on_turn()
+            except Exception:
+                pass                   # lifecycle hooks must never kill the beat
         # on_turn agents from eliza.json (metacognition, inference engine)
         for agent in self.cfg.get("agents", []):
             if agent.get("trigger") == "on_turn" and agent.get("enabled"):
@@ -195,6 +202,13 @@ class Shell:
                     self.run_action(action, ctx)
 
         reply = self.render_ctx(ctx)
+        # RAG sync: memory tiers feed the retrieval index each turn so the
+        # next question can cite what was just said (zero-token RAG loop).
+        if getattr(self, "rag", None) and getattr(self, "tiers", None):
+            try:
+                self.rag.sync_memory(self.tiers)
+            except Exception:
+                pass
         # metacognition sees the ACTUAL outgoing reply; a loop it detects
         # surfaces on the next beat via the heartbeat queue.
         if self.plugins["metacognition"].hook_check_loop({"reply": reply}):
@@ -368,22 +382,32 @@ class Shell:
             fb_dec = {"pattern": "*", "hook": "mirror", "response": "auto"}
             self.plugins["eliza_conversation"].handle(fb_key, fb_dec, ctx)
 
-        # response selection per JSON spec
+        # ---- response selection per JSON spec
+        # Bug fix (wave 1 e2e): 'response' can be dotted ("generic.confused")
+        # or bare ("result" / "added" / "current"). Bare names must resolve
+        # against the ROUTED keyword's own responses tree first -- the old
+        # prefix allowlist missed "search."/"reminder." style trees for keys
+        # whose plugin name differs from the key name (search->websearch).
         resp = decomp.get("response", "")
         if resp == "auto":
             pass                                   # hook chose ctx['response']
-        elif resp.startswith(("generic.", "identity.", "task.", "emotion.",
-                              "code.", "weather.", "search.", "pos.")):
-            ctx.setdefault("explicit_response", resp)
-            if ctx.get("response") is None:
-                ctx["response"] = resp
         elif resp:
-            head = plugin_name if plugin_name not in ("task_manager",
-                                                      "eliza_conversation",
-                                                      "identity") else "generic"
-            ctx.setdefault("explicit_response", "%s.%s" % (head, resp))
+            dotted = resp if "." in resp else "%s.%s" % (plugin_name, resp)
+            if "." not in resp:
+                # try routed-key tree, then plugin tree, then generic tree
+                for head in (key["keyword"], plugin_name, "generic"):
+                    cand = "%s.%s" % (head, resp)
+                    try:
+                        node = self.cfg["responses"]
+                        for part in cand.split("."):
+                            node = node[part]
+                        dotted = cand
+                        break
+                    except (KeyError, TypeError):
+                        continue
+            ctx.setdefault("explicit_response", dotted)
             if ctx.get("response") is None:
-                ctx["response"] = "%s.%s" % (head, resp)
+                ctx["response"] = dotted
 
         # 'learn' directive -> eliza_conversation stores the revealed fact
         learn = decomp.get("learn")

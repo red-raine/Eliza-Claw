@@ -37,9 +37,30 @@ class Plugin:
         """Default dispatch: fire the decomp's hook if we implement it.
 
         Returns True if something actionable happened.
+
+        Wave 1 bug fix (e2e): eliza.json used hook names that didn't exist
+        on the plugin -- "search" on Search (real name: hook_web), and
+        "current"/"add" style specs pointing at class names. Add a tiny
+        alias table so JSON typos can never silently drop a turn to xnone;
+        unknown hooks still return False (graceful ELIZA fallback).
         """
         hook = decomp.get("hook")
-        fn = getattr(self, "hook_" + hook, None) if hook else None
+        if not hook:
+            return False
+        fn = getattr(self, "hook_" + hook, None)
+        if fn is None:
+            aliases = {
+                # declared-in-JSON -> implemented-on-plugin
+                "search": ["web", "ddg"],
+                "chat": ["mirror"],
+                "verify": ["factcheck"],
+                "store": ["remember"],
+                "show": ["recall"],
+            }
+            for alt in aliases.get(hook, []):
+                fn = getattr(self, "hook_" + alt, None)
+                if fn is not None:
+                    break
         if fn:
             fn(ctx)
             return True

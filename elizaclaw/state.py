@@ -104,6 +104,15 @@ class State:
         del h["events"][:-50]                     # bounded ring, 50 events
         self.save("history", h)
 
+    def log_tail(self, n=10):
+        """Last n history events as (kind, text) pairs, oldest first.
+
+        Wave 1: plugins (conversation.on_turn) use this to see the raw user
+        input for the current turn regardless of which plugin routed it.
+        """
+        evs = self.history["events"][-n:]
+        return [(e["kind"], e["text"]) for e in evs]
+
     def plugin_state(self, name, default=None):
         return self.bump("plugins/" + name, default or {})
 

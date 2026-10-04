@@ -1386,7 +1386,7 @@
    "decomps": [
     {
      "pattern": "* search for *",
-     "hook": "search",
+     "hook": "web",
      "params": {
       "query": "cap1"
      },
@@ -1398,7 +1398,7 @@
     },
     {
      "pattern": "* find * *",
-     "hook": "search",
+     "hook": "web",
      "params": {
       "query": "cap2"
      },
@@ -1687,6 +1687,44 @@
       "text": "cap1"
      },
      "response": "auto"
+    }
+   ]
+  },
+  {
+   "keyword": "websearch",
+   "priority": 8,
+   "plugin": "websearch",
+   "synonyms": [
+    "google it",
+    "look it up",
+    "search the web",
+    "duckduckgo"
+   ],
+   "notes": "Wave1: DDG-lite scrape that feeds the RAG index",
+   "decomps": [
+    {
+     "pattern": "* web search for *",
+     "hook": "search",
+     "params": {
+      "query": "cap1"
+     },
+     "response": "answer"
+    },
+    {
+     "pattern": "* search the web for *",
+     "hook": "search",
+     "params": {
+      "query": "cap1"
+     },
+     "response": "answer"
+    },
+    {
+     "pattern": "* google *",
+     "hook": "search",
+     "params": {
+      "query": "cap2"
+     },
+     "response": "answer"
     }
    ]
   }

@@ -62,32 +62,72 @@ class Conversation(Plugin):
         self.mem = getattr(shell, "tiers", None)
         self.rag = getattr(shell, "rag", None)
 
+    # ------------------------------------------------------------- lifecycle
+    def on_turn(self):
+        """Wave 1 (bug fix): record EVERY user turn into STM/MTM.
+
+        Previously add_turn only fired when this plugin claimed the turn,
+        so command turns ('remind me to...', 'search for...') never entered
+        the mid-term store and RAG could not retrieve them later. The shell
+        calls on_turn after each user input regardless of routing.
+        """
+        if self.mem is None:
+            self._ensure_backends()
+        last_user = None
+        for item in reversed(getattr(self.mem, "stm", []) if self.mem else []):
+            if item.get("role") == "user":
+                last_user = item["text"]
+                break
+        hist = self.shell.state.log_tail(2) if hasattr(
+            self.shell.state, "log_tail") else []
+        for role, text in hist:
+            if role == "user" and text != last_user and self.mem:
+                self.mem.add_turn("user", text)
+                break
+
     # ------------------------------------------------------------------ hooks
     def hook_chat(self, ctx):
         text = ctx["sentence"]
         topic = self.detect_topic(text, ctx)
-        if not topic:
-            # Wave 1 fallback: small talk still flows through memory tiers so
-            # the STM/MTM/episodic record keeps growing even on chit-chat.
-            self._ensure_backends()
-            if self.mem:
-                self.mem.add_turn("user", text)
-                try:
-                    val = shell_sentiment(self.shell, text)
-                except Exception:
-                    val = 0.0
-                self.mem.record_episode(text, topic="(untopic)", valence=val)
-            return False               # let ELIZA mirror-reflect instead
         self._ensure_backends()
         valence = 0.0
         try:
             valence = shell_sentiment(self.shell, text)
         except Exception:
             pass
-        # --- write memory tiers
+        if not topic:
+            # Wave 1 fallback: small talk still flows through memory tiers so
+            # the STM/MTM/episodic record keeps growing even on chit-chat.
+            # Bug fix (wave 1 e2e): only write if on_turn hasn't already
+            # recorded this exact turn -- prevents duplicate episodes.
+            if self.mem:
+                last_user = None
+                for item in reversed(self.mem.stm):
+                    if item.get("role") == "user":
+                        last_user = item["text"]
+                        break
+                if last_user != text:
+                    self.mem.add_turn("user", text)
+                dup = any(e["what"] == text and e.get("topic") == "(untopic)"
+                          for e in self.mem.epi[-8:])
+                if not dup:
+                    self.mem.record_episode(text, topic="(untopic)",
+                                            valence=valence)
+            return False               # let ELIZA mirror-reflect instead
+        # --- write memory tiers (dedup vs on_turn, same guard as above)
         if self.mem:
-            self.mem.add_turn("user", text)
-            self.mem.record_episode(text, topic=topic["name"], valence=valence)
+            last_user = None
+            for item in reversed(self.mem.stm):
+                if item.get("role") == "user":
+                    last_user = item["text"]
+                    break
+            if last_user != text:
+                self.mem.add_turn("user", text)
+            dup = any(e["what"] == text and e.get("topic") == topic["name"]
+                      for e in self.mem.epi[-8:])
+            if not dup:
+                self.mem.record_episode(text, topic=topic["name"],
+                                        valence=valence)
         # --- pick the next rung on the follow-up ladder
         prog = self.state.setdefault("ladder", {})
         step = prog.get(topic["name"], 0)
@@ -134,8 +174,12 @@ class Conversation(Plugin):
             if not hit:
                 continue
             for t in tlist:
+                # count how many of this topic's aliases the sentence hits;
+                # single words match folded tokens, phrases match substring.
+                # (bug fix e2e: the old one-liner `if x if y else z` inside a
+                # generator was invalid Python -- syntax error at import.)
                 n = sum(1 for a in t["aliases"]
-                        if (a in folded) if " " not in a else (a in text))
+                        if ((a in folded) if " " not in a else (a in text)))
                 if len(alias.split()) > 1:
                     n += 2                       # phrase alias bonus
                 if n > best_n:
