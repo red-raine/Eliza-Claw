@@ -1,1037 +1,1470 @@
 {
-  "meta": {
-    "name": "eliza-claw",
-    "version": "0.4.0",
-    "description": "A micro AI OS with sovereign context engineering"
-  },
-
-  "config": {
-    "initial": "How do you do. Please tell me your problem.",
-    "final": "Goodbye. Thank you for talking to me.",
-    "heartbeat_interval": 1.0,
-    "memory_path": "./memory/",
-    "response_mode": "varied",
-    "multi_user": true,
-    "session_timeout": 3600,
-    "neural_fallback": {
-      "enabled": false,
-      "endpoint": "http://localhost:11434/api/generate",
-      "model": "llama3",
-      "trigger": "xnone_threshold",
-      "threshold": 3
-    }
-  },
-
-  "sovereign_logic": {
-    "always_prioritize": ["error", "alarm", "deadline", "urgent"],
-    "proactive_threshold": 0.8,
-    "memory_retention_days": 7,
-    "identity_persistence": "sovereign",
-    "loop_detection": {
-      "enabled": true,
-      "window": 5,
-      "trigger_threshold": 3,
-      "breakout_responses": [
-        "We seem to be going in circles. Let me suggest something different.",
-        "I notice we're stuck on this. Should we try another approach?",
-        "Let's step back. What's the actual problem you're trying to solve?",
-        "We've been here before. Want to pivot?"
-      ]
-    },
-    "laws": [
-      "Never invent facts about the user",
-      "Always confirm before learning new preferences",
-      "Prioritize active tasks over new requests",
-      "Signal when context is lost"
-    ]
-  },
-
-  "response_settings": {
-    "mode": "varied",
-    "avoid_repeat_last": 3,
-    "track_usage": true,
-    "entropy": 0.7,
-    "algorithmic_bias": "recursive",
-    "fallback_style": "eliza",
-    "personality": "adaptive"
-  },
-
-  "weights": {
-    "salience": {
-      "decay_rate": 0.1,
-      "boost_on_match": 1.5,
-      "max_score": 10.0,
-      "min_threshold": 0.5
-    },
-    "topics": {
-      "error": {"base": 9.0, "decay": 0.05},
-      "deadline": {"base": 8.5, "decay": 0.05},
-      "alarm": {"base": 9.0, "decay": 0.1},
-      "weather": {"base": 3.0, "decay": 0.2},
-      "search": {"base": 4.0, "decay": 0.15},
-      "reminder": {"base": 6.0, "decay": 0.1},
-      "emotion": {"base": 5.0, "decay": 0.1},
-      "dream": {"base": 2.0, "decay": 0.3},
-      "family": {"base": 4.0, "decay": 0.15},
-      "computer": {"base": 5.0, "decay": 0.1},
-      "project": {"base": 7.0, "decay": 0.05},
-      "code": {"base": 7.5, "decay": 0.05}
-    },
-    "intent_modifiers": {
-      "command": 1.5,
-      "question": 1.2,
-      "statement": 1.0,
-      "greeting": 0.5
-    }
-  },
-
-  "personalities": {
-    "adaptive": {
-      "tone": "context-dependent",
-      "shift_on": {
-        "technical_level": {
-          "beginner": {"contractions": true, "explain_more": true},
-          "expert": {"contractions": true, "explain_more": false},
-          "advanced": {"contractions": false, "explain_more": false}
-        },
-        "project_phase": {
-          "ideation": {"probing": true, "suggesting": true},
-          "debugging": {"probing": true, "suggesting": false},
-          "refactoring": {"probing": false, "suggesting": true}
-        },
-        "emotional_state": {
-          "frustrated": {"tone": "calm", "probing": true},
-          "curious": {"tone": "engaged", "probing": false},
-          "happy": {"tone": "warm", "probing": false}
-        }
-      }
-    }
-  },
-
-  "blackboard": {
-    "description": "Shared working memory for inter-plugin communication",
-    "schema": {
-      "current_task": null,
-      "active_plugins": [],
-      "inferred_state": {
-        "technical_level": "unknown",
-        "project_phase": "unknown",
-        "emotional_state": "neutral",
-        "urgency": "normal",
-        "attention_focus": null
-      },
-      "pending_questions": [],
-      "signals": [],
-      "last_inference": null
-    },
-    "signals": {
-      "error_detected": {"priority": 10, "action": "focus"},
-      "deadline_approaching": {"priority": 9, "action": "alert"},
-      "user_frustrated": {"priority": 7, "action": "shift_tone"},
-      "task_completed": {"priority": 5, "action": "acknowledge"},
-      "context_lost": {"priority": 8, "action": "clarify"},
-      "loop_detected": {"priority": 6, "action": "breakout"}
-    }
-  },
-
-  "memory": {
-    "users": {
-      "path": "users.json",
-      "schema": {
-        "users": {
-          "known": [],
-          "current": null,
-          "last_active": null
-        }
-      }
-    },
-    "user_profile": {
-      "schema": {
-        "id": null,
-        "name": null,
-        "aliases": [],
-        "location": null,
-        "timezone": null,
-        "interests": [],
-        "relationships": {},
-        "preferences": {},
-        "technical_level": "unknown",
-        "history": {
-          "first_met": null,
-          "conversations": 0,
-          "last_seen": null,
-          "topics_discussed": [],
-          "emotions_expressed": [],
-          "tasks_completed": []
-        },
-        "facts_known": []
-      }
-    },
-    "session": {
-      "schema": {
-        "active_user": null,
-        "started": null,
-        "turns": 0,
-        "recent_topics": []
-      }
-    },
-    "task_stack": {
-      "path": "task_stack.json",
-      "schema": {
-        "stack": [],
-        "completed": [],
-        "deferred": []
-      },
-      "max_depth": 10,
-      "check_interval": 5
-    },
-    "context_stack": {
-      "schema": {
-        "short_term": [],
-        "active_code_refs": [],
-        "current_intent_chain": []
-      }
-    },
-    "response_history": {
-      "schema": {
-        "plugin": null,
-        "templates_used": [],
-        "last_responses": [],
-        "loop_detection_window": []
-      }
-    },
-    "salience_state": {
-      "schema": {
-        "active_topics": {},
-        "last_decay": null,
-        "history": []
-      }
-    }
-  },
-
-  "intent_classifier": {
-    "enabled": true,
-    "method": "rule_based",
-    "fallback_method": "keyword",
-    "categories": {
-      "command": {
-        "patterns": ["* me to *", "* please *", "can you *", "go ahead and *"],
-        "indicators": ["imperative", "request", "directive"]
-      },
-      "question": {
-        "patterns": ["* what *", "* how *", "* why *", "* when *", "* where *", "* who *", "* ?"],
-        "indicators": ["interrogative", "inquiry"]
-      },
-      "statement": {
-        "patterns": ["* i am *", "* i have *", "* i think *", "* i feel *"],
-        "indicators": ["declarative", "expression"]
-      },
-      "greeting": {
-        "patterns": ["hello*", "hi*", "hey*", "good morning*", "good evening*"],
-        "indicators": ["salutation"]
-      }
-    },
-    "routing": {
-      "command": "execute",
-      "question": "search_or_reflect",
-      "statement": "eliza_mirror",
-      "greeting": "identify"
-    }
-  },
-
-  "pos_transformers": {
-    "enabled": true,
-    "library": "nltk",
-    "rules": [
-      {
-        "trigger": "verb_identification",
-        "description": "Identify main verb for smarter reflection",
-        "example": {
-          "input": "I want to finish the project",
-          "verb": "finish",
-          "reflection": "What is stopping you from finishing it?"
-        }
-      },
-      {
-        "trigger": "object_extraction",
-        "description": "Extract object for context-aware responses",
-        "example": {
-          "input": "I need to debug the authentication module",
-          "object": "authentication module",
-          "hook": "code.assist"
-        }
-      }
-    ],
-    "reflection_templates": {
-      "verb_focus": [
-        "What is stopping you from {verb}ing it?",
-        "What would help you {verb} it?",
-        "How long have you been trying to {verb} that?",
-        "What have you tried to {verb} it?"
-      ],
-      "object_focus": [
-        "Tell me more about {object}.",
-        "What's the issue with {object}?",
-        "When did {object} start being a problem?"
-      ]
-    }
-  },
-
-  "proactive": {
-    "enabled": true,
-    "triggers": [
-      {
-        "name": "session_idle",
-        "condition": "session.idle_time > session_timeout * 0.8",
-        "action": "prompt_continue",
-        "responses": [
-          "Still there, {name}?",
-          "You've been quiet. Everything okay?",
-          "Need more time to think?"
-        ]
-      },
-      {
-        "name": "storm_alert",
-        "condition": "weather.condition contains 'storm' AND weather.alerted == false",
-        "action": "weather_alert",
-        "responses": [
-          "Heads up, {name}. Storm warning in your area.",
-          "Weather alert: Storm approaching {location}. Stay safe.",
-          "Just so you know, there's a storm coming."
-        ]
-      },
-      {
-        "name": "task_reminder",
-        "condition": "task_stack.has_overdue",
-        "action": "remind_task",
-        "responses": [
-          "You mentioned {task} earlier. Still working on that?",
-          "Quick check: {task} — done yet?",
-          "Don't forget about {task}."
-        ]
-      },
-      {
-        "name": "deadline_warning",
-        "condition": "blackboard.inferred_state.urgency == 'high'",
-        "action": "priority_check",
-        "responses": [
-          "We have high-priority items. Should we focus there?",
-          "Something urgent is pending. Want to address it?",
-          "Deadlines approaching. Should we check priorities?"
-        ]
-      },
-      {
-        "name": "news_update",
-        "condition": "news.has_new_for_interests AND session.turns > 3",
-        "action": "offer_news",
-        "responses": [
-          "By the way, there's new on {topic}. Want the scoop?",
-          "Saw something about {topic}. Interested?",
-          "Quick update on {topic} came in."
-        ]
-      }
-    ],
-    "cooldown": 300
-  },
-
-  "transformers": {
-    "pre": {
-      "dont": "don't",
-      "cant": "can't",
-      "wont": "won't",
-      "recollect": "remember",
-      "dreamt": "dreamed",
-      "dreams": "dream",
-      "maybe": "perhaps",
-      "certainly": "yes",
-      "machine": "computer",
-      "computers": "computer",
-      "were": "was",
-      "you're": "you are",
-      "i'm": "i am",
-      "same": "alike"
-    },
-    "post": {
-      "am": "are",
-      "your": "my",
-      "me": "you",
-      "myself": "yourself",
-      "yourself": "myself",
-      "i": "you",
-      "you": "I",
-      "my": "your",
-      "i'm": "you are"
-    }
-  },
-
-  "synonyms": {
-    "belief": ["feel", "think", "believe", "wish", "suppose"],
-    "desire": ["want", "need", "wish", "hope"],
-    "sad": ["unhappy", "depressed", "sick", "down", "blue", "frustrated"],
-    "happy": ["elated", "glad", "better", "great", "good", "excited"],
-    "family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "husband", "children", "child", "son", "daughter"],
-    "everyone": ["everybody", "nobody", "noone", "anyone"],
-    "error": ["bug", "crash", "failed", "broken", "error", "exception"],
-    "deadline": ["due", "deadline", "urgent", "asap", "tonight", "tomorrow"],
-    "weather": ["forecast", "temperature", "rain", "sunny", "cold", "hot"],
-    "code": ["function", "class", "module", "script", "program", "repo", "codebase"],
-    "project": ["task", "project", "work", "assignment", "goal"]
-  },
-
-  "responses": {
-    "generic": {
-      "confused": [
-        "I'm not sure I understand you fully.",
-        "Please go on.",
-        "What does that suggest to you?",
-        "Do you feel strongly about discussing such things?",
-        "Can you elaborate on that?",
-        "That's quite interesting."
-      ],
-      "continue": [
-        "Please go on.",
-        "Tell me more.",
-        "What else?",
-        "Go on...",
-        "I'm listening."
-      ],
-      "breakout": [
-        "We seem to be going in circles. Let me suggest something different.",
-        "I notice we're stuck on this. Should we try another approach?",
-        "Let's step back. What's the actual problem you're trying to solve?",
-        "We've been here before. Want to pivot?"
-      ],
-      "context_lost": [
-        "I want to make sure I'm following. Can you recap?",
-        "Let me check: we were talking about {last_topic}. Still relevant?",
-        "I might have lost the thread. Where were we?",
-        "Remind me what we're working on?"
-      ],
-      "priority_shift": [
-        "This seems urgent. Should we focus here?",
-        "I'm noticing something important. Want to address it?",
-        "Let me flag this as high priority."
-      ]
-    },
-    "identity": {
-      "confirm_identity": [
-        "Are you {name}?",
-        "Is this {name}?",
-        "{name}, is that you?"
-      ],
-      "not_recognized": [
-        "I don't think we've met. What's your name?",
-        "You're new to me. Who are you?",
-        "I don't recognize you. Have we met?"
-      ],
-      "greet_known": [
-        "Hello, {name}. Good to see you again.",
-        "Welcome back, {name}.",
-        "{name}! How have you been?"
-      ],
-      "greet_new": [
-        "Hello! I don't think we've met.",
-        "Hi there! You're new, aren't you?",
-        "I don't believe we've been introduced."
-      ],
-      "ask_relationship": [
-        "How do you know {other}?",
-        "What's your relationship with {other}?",
-        "Are you a friend of {other}?"
-      ]
-    },
-    "task": {
-      "acknowledged": [
-        "Got it. {task} is now on my radar.",
-        "I'll track {task} for you.",
-        "Added {task} to the stack."
-      ],
-      "progress_check": [
-        "Still working on {task}?",
-        "How's {task} coming along?",
-        "Any progress on {task}?"
-      ],
-      "completed": [
-        "Nice! {task} is done.",
-        "Marked {task} as complete.",
-        "One down. {task} finished."
-      ],
-      "deferred": [
-        "I'll hold off on {task} for now.",
-        "{task} moved to later.",
-        "Deferring {task}."
-      ]
-    },
-    "weather": {
-      "current": [
-        "Currently {temp}° and {condition} in {location}.",
-        "Right now in {location}: {temp}°, {condition}.",
-        "Weather check for {location}: {condition}, {temp}°."
-      ],
-      "alert": [
-        "Heads up! {alert_type} in {location}.",
-        "Weather alert: {alert_type}. Stay safe!",
-        "Just so you know — {alert_type} expected in {location}."
-      ]
-    },
-    "search": {
-      "result": [
-        "Found this: {title} — {snippet}",
-        "Here's what I found: {title}. {snippet}",
-        "Top result: {title}"
-      ],
-      "no_results": [
-        "Couldn't find anything on that.",
-        "No results for {query}.",
-        "Nothing came up."
-      ]
-    },
-    "code": {
-      "debug_prompt": [
-        "What's the error message?",
-        "What did you expect vs. what happened?",
-        "Show me the traceback."
-      ],
-      "suggest_approach": [
-        "Have you tried {approach}?",
-        "What about {approach}?",
-        "Maybe consider {approach}."
-      ]
-    },
-    "emotion": {
-      "sad_response": [
-        "I'm sorry to hear you're {feeling}.",
-        "That sounds tough. Want to talk about it?",
-        "I'm here. What's going on?"
-      ],
-      "happy_response": [
-        "That's great that you're {feeling}!",
-        "Nice! What's making you {feeling}?",
-        "Love to hear that."
-      ],
-      "frustrated_response": [
-        "I hear you. Let's work through this.",
-        "Frustrating stuff. What's the blocker?",
-        "Take a breath. We'll figure it out."
-      ]
-    }
-  },
-
-  "plugins": [
-    {
-      "name": "blackboard_manager",
-      "enabled": true,
-      "priority": 99,
-      "description": "Manages shared state and inter-plugin signals",
-      "hooks": {
-        "update_inference": {
-          "function": "blackboard.infer_state",
-          "params": ["session_context"],
-          "triggers": ["on_turn", "on_task_change"]
-        },
-        "emit_signal": {
-          "function": "blackboard.signal",
-          "params": ["signal_type", "data"],
-          "triggers": ["on_error", "on_deadline", "on_loop"]
-        },
-        "shift_personality": {
-          "function": "personality.adapt",
-          "params": ["inferred_state"],
-          "triggers": ["on_inference_change"]
-        }
-      },
-      "inference_rules": [
-        {
-          "infer": "technical_level",
-          "rules": [
-            {"if_matches": ["* class *", "* function *", "* import *"], "then": "expert"},
-            {"if_matches": ["* how do i *", "* what is *", "* explain *"], "then": "beginner"},
-            {"if_matches": ["* refactor *", "* optimize *", "* architecture *"], "then": "advanced"}
-          ]
-        },
-        {
-          "infer": "project_phase",
-          "rules": [
-            {"if_matches": ["* idea *", "* thinking about *", "* design *"], "then": "ideation"},
-            {"if_matches": ["* bug *", "* error *", "* not working *", "* crash *"], "then": "debugging"},
-            {"if_matches": ["* clean *", "* refactor *", "* optimize *"], "then": "refactoring"}
-          ]
-        },
-        {
-          "infer": "emotional_state",
-          "rules": [
-            {"if_matches": ["* frustrated *", "* stuck *", "* can't *", "* hate *"], "then": "frustrated"},
-            {"if_matches": ["* happy *", "* excited *", "* love *", "* great *"], "then": "happy"},
-            {"if_matches": ["* curious *", "* wonder *", "* how *", "* why *"], "then": "curious"}
-          ]
-        },
-        {
-          "infer": "urgency",
-          "rules": [
-            {"if_matches": ["* asap *", "* urgent *", "* deadline *", "* tonight *"], "then": "high"},
-            {"if_matches": ["* when *", "* eventually *", "* someday *"], "then": "low"},
-            {"default": "normal"}
-          ]
-        }
-      ]
-    },
-
-    {
-      "name": "salience_engine",
-      "enabled": true,
-      "priority": 98,
-      "description": "Dynamic priority management for topics",
-      "hooks": {
-        "update_salience": {
-          "function": "salience.update",
-          "params": ["topic", "action"],
-          "triggers": ["on_keyword_match"]
-        },
-        "decay_all": {
-          "function": "salience.decay",
-          "params": [],
-          "triggers": ["on_tick"],
-          "interval": 60
-        },
-        "get_top_topic": {
-          "function": "salience.top",
-          "params": [],
-          "returns": "highest_salience_topic"
-        }
-      }
-    },
-
-    {
-      "name": "metacognition",
-      "enabled": true,
-      "priority": 97,
-      "description": "Detects loops and lost context",
-      "hooks": {
-        "check_loop": {
-          "function": "meta.detect_loop",
-          "params": ["response_history"],
-          "triggers": ["on_turn"],
-          "threshold": 3
-        },
-        "check_context": {
-          "function": "meta.verify_context",
-          "params": ["session_context"],
-          "triggers": ["on_turn"],
-          "interval": 5
-        },
-        "breakout": {
-          "function": "meta.trigger_breakout",
-          "params": [],
-          "triggers": ["on_loop_detected", "on_context_lost"]
-        }
-      }
-    },
-
-    {
-      "name": "task_manager",
-      "enabled": true,
-      "priority": 90,
-      "description": "Manages recursive task stack",
-      "hooks": {
-        "push_task": {
-          "function": "task_stack.push",
-          "params": ["task", "priority"],
-          "triggers": ["on_user_intent_command"]
-        },
-        "pop_task": {
-          "function": "task_stack.pop",
-          "params": [],
-          "triggers": ["on_task_complete"]
-        },
-        "check_stack": {
-          "function": "task_stack.review",
-          "params": [],
-          "triggers": ["on_tick"],
-          "interval": 5
-        },
-        "defer_task": {
-          "function": "task_stack.defer",
-          "params": ["task_id"],
-          "triggers": ["on_user_request"]
-        }
-      },
-      "responses": {
-        "stack_check": [
-          "By the way, we were working on {task}. Still relevant?",
-          "Quick check: {task} — done or still pending?",
-          "Earlier you mentioned {task}. Where does that stand?"
-        ]
-      }
-    },
-
-    {
-      "name": "identity",
-      "enabled": true,
-      "priority": 100,
-      "triggers": ["on_start", "on_unknown_user", "on_user_switch"],
-      "hooks": {
-        "identify": {
-          "function": "identity.identify_user",
-          "params": []
-        },
-        "register": {
-          "function": "identity.register_user",
-          "params": ["name"],
-          "learn": true
-        }
-      },
-      "responses": {
-        "confirm_identity": ["Are you {name}?", "Is this {name}?"],
-        "greet_known": ["Hello, {name}. Good to see you.", "Welcome back, {name}."],
-        "greet_new": ["Hello! I don't think we've met.", "You're new to me. What's your name?"]
-      }
-    },
-
-    {
-      "name": "weather",
-      "enabled": true,
-      "priority": 10,
-      "hooks": {
-        "current": {
-          "function": "weather.current",
-          "params": ["location"]
-        },
-        "forecast": {
-          "function": "weather.forecast",
-          "params": ["location", "days"]
-        }
-      },
-      "responses": {
-        "current": ["Currently {temp}° and {condition} in {location}.", "Right now in {location}: {temp}°, {condition}."],
-        "unknown_location": ["I don't know your location. Where should I check?"]
-      }
-    },
-
-    {
-      "name": "search",
-      "enabled": true,
-      "priority": 8,
-      "hooks": {
-        "web": {
-          "function": "search.web",
-          "params": ["query"]
-        }
-      },
-      "responses": {
-        "result": ["Found this: {title} — {snippet}", "Here's what I found: {title}. {snippet}"],
-        "no_results": ["Couldn't find anything.", "No results for {query}."]
-      }
-    },
-
-    {
-      "name": "reminder",
-      "enabled": true,
-      "priority": 9,
-      "hooks": {
-        "add": {
-          "function": "reminder.add",
-          "params": ["task", "when"]
-        },
-        "list": {
-          "function": "reminder.list",
-          "params": []
-        },
-        "check_due": {
-          "function": "reminder.check_due",
-          "params": [],
-          "triggers": ["on_tick"],
-          "interval": 60
-        }
-      },
-      "responses": {
-        "added": ["Got it. I'll remind you about {task} {when}.", "Reminder set: {task} {when}."],
-        "due": ["Hey, {task} is due.", "Reminder: {task}."]
-      }
-    },
-
-    {
-      "name": "eliza_conversation",
-      "enabled": true,
-      "priority": 1,
-      "hooks": {
-        "reflect": {
-          "function": "eliza.reflect",
-          "params": ["input"]
-        },
-        "pos_reflect": {
-          "function": "eliza.pos_reflect",
-          "params": ["input", "verb", "object"]
-        }
-      },
-      "responses": {
-        "verb_focus": [
-          "What is stopping you from {verb}ing it?",
-          "What would help you {verb} it?",
-          "How long have you been trying to {verb} that?"
-        ],
-        "probe": [
-          "What does that suggest to you?",
-          "Do you feel strongly about that?",
-          "Tell me more."
-        ]
-      }
-    },
-
-    {
-      "name": "neural_fallback",
-      "enabled": false,
-      "priority": -10,
-      "hooks": {
-        "generate": {
-          "function": "ollama.generate",
-          "params": ["context", "prompt"],
-          "style": "eliza"
-        }
-      }
-    }
+ "meta": {
+  "name": "eliza-claw",
+  "version": "0.4.0",
+  "description": "A micro AI OS with sovereign context engineering"
+ },
+ "config": {
+  "initial": "How do you do. Please tell me your problem.",
+  "final": "Goodbye. Thank you for talking to me.",
+  "heartbeat_interval": 1.0,
+  "memory_path": "./memory/",
+  "response_mode": "varied",
+  "multi_user": true,
+  "session_timeout": 3600,
+  "neural_fallback": {
+   "enabled": false,
+   "endpoint": "http://localhost:11434/api/generate",
+   "model": "llama3",
+   "trigger": "xnone_threshold",
+   "threshold": 3
+  }
+ },
+ "sovereign_logic": {
+  "always_prioritize": [
+   "error",
+   "alarm",
+   "deadline",
+   "urgent"
   ],
-
-  "keys": [
-    {
-      "keyword": "error",
-      "priority": 50,
-      "plugin": "task_manager",
-      "salience_boost": 3.0,
-      "decomps": [
-        {
-          "pattern": "* error *",
-          "hook": "push_task",
-          "params": {"task": "debug error", "priority": "high"},
-          "response": "code.debug_prompt",
-          "learn": {"category": "issues", "fact": 2},
-          "blackboard_signal": "error_detected"
-        }
-      ],
-      "synonyms": ["bug", "crash", "failed", "broken", "exception"]
-    },
-
-    {
-      "keyword": "deadline",
-      "priority": 45,
-      "plugin": "task_manager",
-      "salience_boost": 2.5,
-      "decomps": [
-        {
-          "pattern": "* deadline *",
-          "hook": "push_task",
-          "params": {"task": 2, "priority": "high"},
-          "response": "task.acknowledged",
-          "blackboard_signal": "deadline_approaching"
-        }
-      ],
-      "synonyms": ["due", "urgent", "asap"]
-    },
-
-    {
-      "keyword": "need",
-      "priority": 10,
-      "plugin": "task_manager",
-      "decomps": [
-        {
-          "pattern": "* i need to *",
-          "hook": "push_task",
-          "params": {"task": 3, "priority": "medium"},
-          "response": "task.acknowledged",
-          "intent": "command"
-        },
-        {
-          "pattern": "* need *",
-          "hook": "push_task",
-          "params": {"task": 2, "priority": "medium"},
-          "response": "task.acknowledged"
-        }
-      ]
-    },
-
-    {
-      "keyword": "i",
-      "priority": 2,
-      "plugin": "eliza_conversation",
-      "decomps": [
-        {
-          "pattern": "* i @desire to *",
-          "hook": "pos_reflect",
-          "params": {"verb": 3},
-          "response": "verb_focus"
-        },
-        {
-          "pattern": "* i am * @sad *",
-          "response": "emotion.sad_response",
-          "learn": {"category": "emotions", "fact": 3},
-          "blackboard_signal": "user_frustrated"
-        },
-        {
-          "pattern": "* i am * @happy *",
-          "response": "emotion.happy_response",
-          "learn": {"category": "emotions", "fact": 3}
-        },
-        {
-          "pattern": "* i remember *",
-          "response": "generic.continue",
-          "learn": {"category": "memory", "fact": 3}
-        },
-        {
-          "pattern": "* i feel *",
-          "response": "emotion.sad_response",
-          "learn": {"category": "emotions", "fact": 3}
-        }
-      ]
-    },
-
-    {
-      "keyword": "weather",
-      "priority": 10,
-      "plugin": "weather",
-      "salience_boost": 1.0,
-      "decomps": [
-        {
-          "pattern": "* weather in *",
-          "hook": "current",
-          "params": {"location": 3},
-          "response": "current"
-        },
-        {
-          "pattern": "* weather",
-          "hook": "current",
-          "params": {"location": "user.location"},
-          "response": "current",
-          "fallback": {"response": "unknown_location"}
-        }
-      ]
-    },
-
-    {
-      "keyword": "search",
-      "priority": 8,
-      "plugin": "search",
-      "decomps": [
-        {
-          "pattern": "* search for *",
-          "hook": "web",
-          "params": {"query": 3},
-          "response": "result",
-          "learn": {"category": "interests", "fact": 3}
-        },
-        {
-          "pattern": "* find *",
-          "hook": "web",
-          "params": {"query": 2},
-          "response": "result"
-        }
-      ]
-    },
-
-    {
-      "keyword": "remind",
-      "priority": 9,
-      "plugin": "reminder",
-      "decomps": [
-        {
-          "pattern": "* remind me to * at *",
-          "hook": "add",
-          "params": {"task": 3, "when": 4},
-          "response": "added"
-        },
-        {
-          "pattern": "* reminders",
-          "hook": "list",
-          "response": "list"
-        }
-      ]
-    },
-
-    {
-      "keyword": "done",
-      "priority": 15,
-      "plugin": "task_manager",
-      "decomps": [
-        {
-          "pattern": "* done with *",
-          "hook": "pop_task",
-          "params": {"task": 3},
-          "response": "task.completed"
-        },
-        {
-          "pattern": "* finished *",
-          "hook": "pop_task",
-          "params": {"task": 2},
-          "response": "task.completed"
-        }
-      ],
-      "synonyms": ["completed", "finished", "done"]
-    },
-
-    {
-      "keyword": "hello",
-      "priority": 20,
-      "plugin": "identity",
-      "decomps": [
-        {
-          "pattern": "*",
-          "hook": "identify",
-          "response": "auto"
-        }
-      ],
-      "synonyms": ["hi", "hey", "howdy"]
-    },
-
-    {
-      "keyword": "quit",
-      "priority": 0,
-      "decomps": [
-        {
-          "pattern": "*",
-          "action": "exit",
-          "response": "config.final"
-        }
-      ],
-      "synonyms": ["bye", "goodbye", "exit"]
-    },
-
-    {
-      "keyword": "xnone",
-      "priority": -1,
-      "decomps": [
-        {
-          "pattern": "*",
-          "response": "generic.confused",
-          "fallback_to_neural": true
-        }
-      ]
-    }
-  ],
-
-  "agents": [
-    {
-      "name": "heartbeat",
-      "enabled": true,
-      "trigger": "on_tick",
-      "interval": 1.0,
-      "actions": ["salience_engine.decay_all", "reminder.check_due", "proactive.evaluate"]
-    },
-    {
-      "name": "metacognitive_monitor",
-      "enabled": true,
-      "trigger": "on_turn",
-      "actions": ["metacognition.check_loop", "metacognition.check_context"]
-    },
-    {
-      "name": "task_reviewer",
-      "enabled": true,
-      "trigger": "on_tick",
-      "interval": 5,
-      "actions": ["task_manager.check_stack"]
-    },
-    {
-      "name": "inference_engine",
-      "enabled": true,
-      "trigger": "on_turn",
-      "actions": ["blackboard_manager.update_inference"]
-    }
+  "proactive_threshold": 0.8,
+  "memory_retention_days": 7,
+  "identity_persistence": "sovereign",
+  "loop_detection": {
+   "enabled": true,
+   "window": 5,
+   "trigger_threshold": 3,
+   "breakout_responses": [
+    "We seem to be going in circles. Let me suggest something different.",
+    "I notice we're stuck on this. Should we try another approach?",
+    "Let's step back. What's the actual problem you're trying to solve?",
+    "We've been here before. Want to pivot?"
+   ]
+  },
+  "laws": [
+   "Never invent facts about the user",
+   "Always confirm before learning new preferences",
+   "Prioritize active tasks over new requests",
+   "Signal when context is lost"
   ]
+ },
+ "response_settings": {
+  "mode": "varied",
+  "avoid_repeat_last": 3,
+  "track_usage": true,
+  "entropy": 0.7,
+  "algorithmic_bias": "recursive",
+  "fallback_style": "eliza",
+  "personality": "adaptive"
+ },
+ "weights": {
+  "salience": {
+   "decay_rate": 0.1,
+   "boost_on_match": 1.5,
+   "max_score": 10.0,
+   "min_threshold": 0.5
+  },
+  "topics": {
+   "error": {
+    "base": 9.0,
+    "decay": 0.05
+   },
+   "deadline": {
+    "base": 8.5,
+    "decay": 0.05
+   },
+   "alarm": {
+    "base": 9.0,
+    "decay": 0.1
+   },
+   "weather": {
+    "base": 3.0,
+    "decay": 0.2
+   },
+   "search": {
+    "base": 4.0,
+    "decay": 0.15
+   },
+   "reminder": {
+    "base": 6.0,
+    "decay": 0.1
+   },
+   "emotion": {
+    "base": 5.0,
+    "decay": 0.1
+   },
+   "dream": {
+    "base": 2.0,
+    "decay": 0.3
+   },
+   "family": {
+    "base": 4.0,
+    "decay": 0.15
+   },
+   "computer": {
+    "base": 5.0,
+    "decay": 0.1
+   },
+   "project": {
+    "base": 7.0,
+    "decay": 0.05
+   },
+   "code": {
+    "base": 7.5,
+    "decay": 0.05
+   }
+  },
+  "intent_modifiers": {
+   "command": 1.5,
+   "question": 1.2,
+   "statement": 1.0,
+   "greeting": 0.5
+  }
+ },
+ "personalities": {
+  "adaptive": {
+   "tone": "context-dependent",
+   "shift_on": {
+    "technical_level": {
+     "beginner": {
+      "contractions": true,
+      "explain_more": true
+     },
+     "expert": {
+      "contractions": true,
+      "explain_more": false
+     },
+     "advanced": {
+      "contractions": false,
+      "explain_more": false
+     }
+    },
+    "project_phase": {
+     "ideation": {
+      "probing": true,
+      "suggesting": true
+     },
+     "debugging": {
+      "probing": true,
+      "suggesting": false
+     },
+     "refactoring": {
+      "probing": false,
+      "suggesting": true
+     }
+    },
+    "emotional_state": {
+     "frustrated": {
+      "tone": "calm",
+      "probing": true
+     },
+     "curious": {
+      "tone": "engaged",
+      "probing": false
+     },
+     "happy": {
+      "tone": "warm",
+      "probing": false
+     }
+    }
+   }
+  }
+ },
+ "blackboard": {
+  "description": "Shared working memory for inter-plugin communication",
+  "schema": {
+   "current_task": null,
+   "active_plugins": [],
+   "inferred_state": {
+    "technical_level": "unknown",
+    "project_phase": "unknown",
+    "emotional_state": "neutral",
+    "urgency": "normal",
+    "attention_focus": null
+   },
+   "pending_questions": [],
+   "signals": [],
+   "last_inference": null
+  },
+  "signals": {
+   "error_detected": {
+    "priority": 10,
+    "action": "focus"
+   },
+   "deadline_approaching": {
+    "priority": 9,
+    "action": "alert"
+   },
+   "user_frustrated": {
+    "priority": 7,
+    "action": "shift_tone"
+   },
+   "task_completed": {
+    "priority": 5,
+    "action": "acknowledge"
+   },
+   "context_lost": {
+    "priority": 8,
+    "action": "clarify"
+   },
+   "loop_detected": {
+    "priority": 6,
+    "action": "breakout"
+   }
+  }
+ },
+ "memory": {
+  "users": {
+   "path": "users.json",
+   "schema": {
+    "users": {
+     "known": [],
+     "current": null,
+     "last_active": null
+    }
+   }
+  },
+  "user_profile": {
+   "schema": {
+    "id": null,
+    "name": null,
+    "aliases": [],
+    "location": null,
+    "timezone": null,
+    "interests": [],
+    "relationships": {},
+    "preferences": {},
+    "technical_level": "unknown",
+    "history": {
+     "first_met": null,
+     "conversations": 0,
+     "last_seen": null,
+     "topics_discussed": [],
+     "emotions_expressed": [],
+     "tasks_completed": []
+    },
+    "facts_known": []
+   }
+  },
+  "session": {
+   "schema": {
+    "active_user": null,
+    "started": null,
+    "turns": 0,
+    "recent_topics": []
+   }
+  },
+  "task_stack": {
+   "path": "task_stack.json",
+   "schema": {
+    "stack": [],
+    "completed": [],
+    "deferred": []
+   },
+   "max_depth": 10,
+   "check_interval": 5
+  },
+  "context_stack": {
+   "schema": {
+    "short_term": [],
+    "active_code_refs": [],
+    "current_intent_chain": []
+   }
+  },
+  "response_history": {
+   "schema": {
+    "plugin": null,
+    "templates_used": [],
+    "last_responses": [],
+    "loop_detection_window": []
+   }
+  },
+  "salience_state": {
+   "schema": {
+    "active_topics": {},
+    "last_decay": null,
+    "history": []
+   }
+  }
+ },
+ "intent_classifier": {
+  "enabled": true,
+  "method": "rule_based",
+  "fallback_method": "keyword",
+  "categories": {
+   "command": {
+    "patterns": [
+     "* me to *",
+     "* please *",
+     "can you *",
+     "go ahead and *"
+    ],
+    "indicators": [
+     "imperative",
+     "request",
+     "directive"
+    ]
+   },
+   "question": {
+    "patterns": [
+     "* what *",
+     "* how *",
+     "* why *",
+     "* when *",
+     "* where *",
+     "* who *",
+     "* ?"
+    ],
+    "indicators": [
+     "interrogative",
+     "inquiry"
+    ]
+   },
+   "statement": {
+    "patterns": [
+     "* i am *",
+     "* i have *",
+     "* i think *",
+     "* i feel *"
+    ],
+    "indicators": [
+     "declarative",
+     "expression"
+    ]
+   },
+   "greeting": {
+    "patterns": [
+     "hello*",
+     "hi*",
+     "hey*",
+     "good morning*",
+     "good evening*"
+    ],
+    "indicators": [
+     "salutation"
+    ]
+   }
+  },
+  "routing": {
+   "command": "execute",
+   "question": "search_or_reflect",
+   "statement": "eliza_mirror",
+   "greeting": "identify"
+  }
+ },
+ "pos_transformers": {
+  "enabled": true,
+  "library": "nltk",
+  "rules": [
+   {
+    "trigger": "verb_identification",
+    "description": "Identify main verb for smarter reflection",
+    "example": {
+     "input": "I want to finish the project",
+     "verb": "finish",
+     "reflection": "What is stopping you from finishing it?"
+    }
+   },
+   {
+    "trigger": "object_extraction",
+    "description": "Extract object for context-aware responses",
+    "example": {
+     "input": "I need to debug the authentication module",
+     "object": "authentication module",
+     "hook": "code.assist"
+    }
+   }
+  ],
+  "reflection_templates": {
+   "verb_focus": [
+    "What is stopping you from {verb}ing it?",
+    "What would help you {verb} it?",
+    "How long have you been trying to {verb} that?",
+    "What have you tried to {verb} it?"
+   ],
+   "object_focus": [
+    "Tell me more about {object}.",
+    "What's the issue with {object}?",
+    "When did {object} start being a problem?"
+   ]
+  }
+ },
+ "proactive": {
+  "enabled": true,
+  "triggers": [
+   {
+    "name": "session_idle",
+    "condition": "session.idle_time > session_timeout * 0.8",
+    "action": "prompt_continue",
+    "responses": [
+     "Still there, {name}?",
+     "You've been quiet. Everything okay?",
+     "Need more time to think?"
+    ]
+   },
+   {
+    "name": "storm_alert",
+    "condition": "weather.condition contains 'storm' AND weather.alerted == false",
+    "action": "weather_alert",
+    "responses": [
+     "Heads up, {name}. Storm warning in your area.",
+     "Weather alert: Storm approaching {location}. Stay safe.",
+     "Just so you know, there's a storm coming."
+    ]
+   },
+   {
+    "name": "task_reminder",
+    "condition": "task_stack.has_overdue",
+    "action": "remind_task",
+    "responses": [
+     "You mentioned {task} earlier. Still working on that?",
+     "Quick check: {task} \u2014 done yet?",
+     "Don't forget about {task}."
+    ]
+   },
+   {
+    "name": "deadline_warning",
+    "condition": "blackboard.inferred_state.urgency == 'high'",
+    "action": "priority_check",
+    "responses": [
+     "We have high-priority items. Should we focus there?",
+     "Something urgent is pending. Want to address it?",
+     "Deadlines approaching. Should we check priorities?"
+    ]
+   },
+   {
+    "name": "news_update",
+    "condition": "news.has_new_for_interests AND session.turns > 3",
+    "action": "offer_news",
+    "responses": [
+     "By the way, there's new on {topic}. Want the scoop?",
+     "Saw something about {topic}. Interested?",
+     "Quick update on {topic} came in."
+    ]
+   }
+  ],
+  "cooldown": 300
+ },
+ "transformers": {
+  "pre": {
+   "dont": "don't",
+   "cant": "can't",
+   "wont": "won't",
+   "recollect": "remember",
+   "dreamt": "dreamed",
+   "dreams": "dream",
+   "maybe": "perhaps",
+   "certainly": "yes",
+   "machine": "computer",
+   "computers": "computer",
+   "were": "was",
+   "you're": "you are",
+   "i'm": "i am",
+   "same": "alike"
+  },
+  "post": {
+   "am": "are",
+   "your": "my",
+   "me": "you",
+   "myself": "yourself",
+   "yourself": "myself",
+   "i": "you",
+   "you": "I",
+   "my": "your",
+   "i'm": "you are"
+  }
+ },
+ "synonyms": {
+  "belief": [
+   "feel",
+   "think",
+   "believe",
+   "wish",
+   "suppose"
+  ],
+  "desire": [
+   "want",
+   "need",
+   "wish",
+   "hope"
+  ],
+  "sad": [
+   "unhappy",
+   "depressed",
+   "sick",
+   "down",
+   "blue",
+   "frustrated"
+  ],
+  "happy": [
+   "elated",
+   "glad",
+   "better",
+   "great",
+   "good",
+   "excited"
+  ],
+  "family": [
+   "mother",
+   "mom",
+   "father",
+   "dad",
+   "sister",
+   "brother",
+   "wife",
+   "husband",
+   "children",
+   "child",
+   "son",
+   "daughter"
+  ],
+  "everyone": [
+   "everybody",
+   "nobody",
+   "noone",
+   "anyone"
+  ],
+  "error": [
+   "bug",
+   "crash",
+   "failed",
+   "broken",
+   "error",
+   "exception"
+  ],
+  "deadline": [
+   "due",
+   "deadline",
+   "urgent",
+   "asap",
+   "tonight",
+   "tomorrow"
+  ],
+  "weather": [
+   "forecast",
+   "temperature",
+   "rain",
+   "sunny",
+   "cold",
+   "hot"
+  ],
+  "code": [
+   "function",
+   "class",
+   "module",
+   "script",
+   "program",
+   "repo",
+   "codebase"
+  ],
+  "project": [
+   "task",
+   "project",
+   "work",
+   "assignment",
+   "goal"
+  ]
+ },
+ "responses": {
+  "generic": {
+   "confused": [
+    "I'm not sure I understand you fully.",
+    "Please go on.",
+    "What does that suggest to you?",
+    "Do you feel strongly about discussing such things?",
+    "Can you elaborate on that?",
+    "That's quite interesting."
+   ],
+   "continue": [
+    "Please go on.",
+    "Tell me more.",
+    "What else?",
+    "Go on...",
+    "I'm listening."
+   ],
+   "breakout": [
+    "We seem to be going in circles. Let me suggest something different.",
+    "I notice we're stuck on this. Should we try another approach?",
+    "Let's step back. What's the actual problem you're trying to solve?",
+    "We've been here before. Want to pivot?"
+   ],
+   "context_lost": [
+    "I want to make sure I'm following. Can you recap?",
+    "Let me check: we were talking about {last_topic}. Still relevant?",
+    "I might have lost the thread. Where were we?",
+    "Remind me what we're working on?"
+   ],
+   "priority_shift": [
+    "This seems urgent. Should we focus here?",
+    "I'm noticing something important. Want to address it?",
+    "Let me flag this as high priority."
+   ],
+   "remember_location": [
+    "I've noted you're in {location}.",
+    "{location}, got it. Anything else?"
+   ]
+  },
+  "identity": {
+   "confirm_identity": [
+    "Are you {name}?",
+    "Is this {name}?",
+    "{name}, is that you?"
+   ],
+   "not_recognized": [
+    "I don't think we've met. What's your name?",
+    "You're new to me. Who are you?",
+    "I don't recognize you. Have we met?"
+   ],
+   "greet_known": [
+    "Hello, {name}. Good to see you again.",
+    "Welcome back, {name}.",
+    "{name}! How have you been?"
+   ],
+   "greet_new": [
+    "Hello! I don't think we've met.",
+    "Hi there! You're new, aren't you?",
+    "I don't believe we've been introduced."
+   ],
+   "ask_relationship": [
+    "How do you know {other}?",
+    "What's your relationship with {other}?",
+    "Are you a friend of {other}?"
+   ],
+   "name_learned": [
+    "Nice to meet you, {name}. I'll remember that.",
+    "Got it -- you're {name}. What brings you here?"
+   ]
+  },
+  "task": {
+   "acknowledged": [
+    "Got it. {task} is now on my radar.",
+    "I'll track {task} for you.",
+    "Added {task} to the stack."
+   ],
+   "progress_check": [
+    "Still working on {task}?",
+    "How's {task} coming along?",
+    "Any progress on {task}?"
+   ],
+   "completed": [
+    "Nice! {task} is done.",
+    "Marked {task} as complete.",
+    "One down. {task} finished."
+   ],
+   "deferred": [
+    "I'll hold off on {task} for now.",
+    "{task} moved to later.",
+    "Deferring {task}."
+   ]
+  },
+  "weather": {
+   "current": [
+    "Currently {temp}\u00b0 and {condition} in {location}.",
+    "Right now in {location}: {temp}\u00b0, {condition}.",
+    "Weather check for {location}: {condition}, {temp}\u00b0."
+   ],
+   "alert": [
+    "Heads up! {alert_type} in {location}.",
+    "Weather alert: {alert_type}. Stay safe!",
+    "Just so you know \u2014 {alert_type} expected in {location}."
+   ]
+  },
+  "search": {
+   "result": [
+    "Found this: {title} \u2014 {snippet}",
+    "Here's what I found: {title}. {snippet}",
+    "Top result: {title}"
+   ],
+   "no_results": [
+    "Couldn't find anything on that.",
+    "No results for {query}.",
+    "Nothing came up."
+   ]
+  },
+  "code": {
+   "debug_prompt": [
+    "What's the error message?",
+    "What did you expect vs. what happened?",
+    "Show me the traceback."
+   ],
+   "suggest_approach": [
+    "Have you tried {approach}?",
+    "What about {approach}?",
+    "Maybe consider {approach}."
+   ]
+  },
+  "emotion": {
+   "sad_response": [
+    "I'm sorry to hear you're {feeling}.",
+    "That sounds tough. Want to talk about it?",
+    "I'm here. What's going on?"
+   ],
+   "happy_response": [
+    "That's great that you're {feeling}!",
+    "Nice! What's making you {feeling}?",
+    "Love to hear that."
+   ],
+   "frustrated_response": [
+    "I hear you. Let's work through this.",
+    "Frustrating stuff. What's the blocker?",
+    "Take a breath. We'll figure it out."
+   ]
+  },
+  "reminder": {
+   "added": [
+    "Got it. I'll remind you about {task} {when}.",
+    "Reminder set: {task} {when}."
+   ],
+   "due": [
+    "Hey, {task} is due.",
+    "Reminder: {task}."
+   ],
+   "list": [
+    "You have {count} open reminder(s): {list}.",
+    "Pending reminders: {list}."
+   ]
+  },
+  "pos": {
+   "verb_focus": [
+    "What is stopping you from {verb}ing it?",
+    "How long have you been trying to {verb} that?"
+   ],
+   "object_focus": [
+    "Tell me more about {object}.",
+    "When did {object} start being a problem?"
+   ]
+  }
+ },
+ "plugins": [
+  {
+   "name": "blackboard_manager",
+   "enabled": true,
+   "priority": 99,
+   "description": "Manages shared state and inter-plugin signals",
+   "hooks": {
+    "update_inference": {
+     "function": "blackboard.infer_state",
+     "params": [
+      "session_context"
+     ],
+     "triggers": [
+      "on_turn",
+      "on_task_change"
+     ]
+    },
+    "emit_signal": {
+     "function": "blackboard.signal",
+     "params": [
+      "signal_type",
+      "data"
+     ],
+     "triggers": [
+      "on_error",
+      "on_deadline",
+      "on_loop"
+     ]
+    },
+    "shift_personality": {
+     "function": "personality.adapt",
+     "params": [
+      "inferred_state"
+     ],
+     "triggers": [
+      "on_inference_change"
+     ]
+    }
+   },
+   "inference_rules": [
+    {
+     "infer": "technical_level",
+     "rules": [
+      {
+       "if_matches": [
+        "* class *",
+        "* function *",
+        "* import *"
+       ],
+       "then": "expert"
+      },
+      {
+       "if_matches": [
+        "* how do i *",
+        "* what is *",
+        "* explain *"
+       ],
+       "then": "beginner"
+      },
+      {
+       "if_matches": [
+        "* refactor *",
+        "* optimize *",
+        "* architecture *"
+       ],
+       "then": "advanced"
+      }
+     ]
+    },
+    {
+     "infer": "project_phase",
+     "rules": [
+      {
+       "if_matches": [
+        "* idea *",
+        "* thinking about *",
+        "* design *"
+       ],
+       "then": "ideation"
+      },
+      {
+       "if_matches": [
+        "* bug *",
+        "* error *",
+        "* not working *",
+        "* crash *"
+       ],
+       "then": "debugging"
+      },
+      {
+       "if_matches": [
+        "* clean *",
+        "* refactor *",
+        "* optimize *"
+       ],
+       "then": "refactoring"
+      }
+     ]
+    },
+    {
+     "infer": "emotional_state",
+     "rules": [
+      {
+       "if_matches": [
+        "* frustrated *",
+        "* stuck *",
+        "* can't *",
+        "* hate *"
+       ],
+       "then": "frustrated"
+      },
+      {
+       "if_matches": [
+        "* happy *",
+        "* excited *",
+        "* love *",
+        "* great *"
+       ],
+       "then": "happy"
+      },
+      {
+       "if_matches": [
+        "* curious *",
+        "* wonder *",
+        "* how *",
+        "* why *"
+       ],
+       "then": "curious"
+      }
+     ]
+    },
+    {
+     "infer": "urgency",
+     "rules": [
+      {
+       "if_matches": [
+        "* asap *",
+        "* urgent *",
+        "* deadline *",
+        "* tonight *"
+       ],
+       "then": "high"
+      },
+      {
+       "if_matches": [
+        "* when *",
+        "* eventually *",
+        "* someday *"
+       ],
+       "then": "low"
+      },
+      {
+       "default": "normal"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "salience_engine",
+   "enabled": true,
+   "priority": 98,
+   "description": "Dynamic priority management for topics",
+   "hooks": {
+    "update_salience": {
+     "function": "salience.update",
+     "params": [
+      "topic",
+      "action"
+     ],
+     "triggers": [
+      "on_keyword_match"
+     ]
+    },
+    "decay_all": {
+     "function": "salience.decay",
+     "params": [],
+     "triggers": [
+      "on_tick"
+     ],
+     "interval": 60
+    },
+    "get_top_topic": {
+     "function": "salience.top",
+     "params": [],
+     "returns": "highest_salience_topic"
+    }
+   }
+  },
+  {
+   "name": "metacognition",
+   "enabled": true,
+   "priority": 97,
+   "description": "Detects loops and lost context",
+   "hooks": {
+    "check_loop": {
+     "function": "meta.detect_loop",
+     "params": [
+      "response_history"
+     ],
+     "triggers": [
+      "on_turn"
+     ],
+     "threshold": 3
+    },
+    "check_context": {
+     "function": "meta.verify_context",
+     "params": [
+      "session_context"
+     ],
+     "triggers": [
+      "on_turn"
+     ],
+     "interval": 5
+    },
+    "breakout": {
+     "function": "meta.trigger_breakout",
+     "params": [],
+     "triggers": [
+      "on_loop_detected",
+      "on_context_lost"
+     ]
+    }
+   }
+  },
+  {
+   "name": "task_manager",
+   "enabled": true,
+   "priority": 90,
+   "description": "Manages recursive task stack",
+   "hooks": {
+    "push_task": {
+     "function": "task_stack.push",
+     "params": [
+      "task",
+      "priority"
+     ],
+     "triggers": [
+      "on_user_intent_command"
+     ]
+    },
+    "pop_task": {
+     "function": "task_stack.pop",
+     "params": [],
+     "triggers": [
+      "on_task_complete"
+     ]
+    },
+    "check_stack": {
+     "function": "task_stack.review",
+     "params": [],
+     "triggers": [
+      "on_tick"
+     ],
+     "interval": 5
+    },
+    "defer_task": {
+     "function": "task_stack.defer",
+     "params": [
+      "task_id"
+     ],
+     "triggers": [
+      "on_user_request"
+     ]
+    }
+   },
+   "responses": {
+    "stack_check": [
+     "By the way, we were working on {task}. Still relevant?",
+     "Quick check: {task} \u2014 done or still pending?",
+     "Earlier you mentioned {task}. Where does that stand?"
+    ]
+   }
+  },
+  {
+   "name": "identity",
+   "enabled": true,
+   "priority": 100,
+   "triggers": [
+    "on_start",
+    "on_unknown_user",
+    "on_user_switch"
+   ],
+   "hooks": {
+    "identify": {
+     "function": "identity.identify_user",
+     "params": []
+    },
+    "register": {
+     "function": "identity.register_user",
+     "params": [
+      "name"
+     ],
+     "learn": true
+    }
+   },
+   "responses": {
+    "confirm_identity": [
+     "Are you {name}?",
+     "Is this {name}?"
+    ],
+    "greet_known": [
+     "Hello, {name}. Good to see you.",
+     "Welcome back, {name}."
+    ],
+    "greet_new": [
+     "Hello! I don't think we've met.",
+     "You're new to me. What's your name?"
+    ]
+   }
+  },
+  {
+   "name": "weather",
+   "enabled": true,
+   "priority": 10,
+   "hooks": {
+    "current": {
+     "function": "weather.current",
+     "params": [
+      "location"
+     ]
+    },
+    "forecast": {
+     "function": "weather.forecast",
+     "params": [
+      "location",
+      "days"
+     ]
+    }
+   },
+   "responses": {
+    "current": [
+     "Currently {temp}\u00b0 and {condition} in {location}.",
+     "Right now in {location}: {temp}\u00b0, {condition}."
+    ],
+    "unknown_location": [
+     "I don't know your location. Where should I check?"
+    ]
+   }
+  },
+  {
+   "name": "search",
+   "enabled": true,
+   "priority": 8,
+   "hooks": {
+    "web": {
+     "function": "search.web",
+     "params": [
+      "query"
+     ]
+    }
+   },
+   "responses": {
+    "result": [
+     "Found this: {title} \u2014 {snippet}",
+     "Here's what I found: {title}. {snippet}"
+    ],
+    "no_results": [
+     "Couldn't find anything.",
+     "No results for {query}."
+    ]
+   }
+  },
+  {
+   "name": "reminder",
+   "enabled": true,
+   "priority": 9,
+   "hooks": {
+    "add": {
+     "function": "reminder.add",
+     "params": [
+      "task",
+      "when"
+     ]
+    },
+    "list": {
+     "function": "reminder.list",
+     "params": []
+    },
+    "check_due": {
+     "function": "reminder.check_due",
+     "params": [],
+     "triggers": [
+      "on_tick"
+     ],
+     "interval": 60
+    }
+   },
+   "responses": {
+    "added": [
+     "Got it. I'll remind you about {task} {when}.",
+     "Reminder set: {task} {when}."
+    ],
+    "due": [
+     "Hey, {task} is due.",
+     "Reminder: {task}."
+    ]
+   }
+  },
+  {
+   "name": "eliza_conversation",
+   "enabled": true,
+   "priority": 1,
+   "hooks": {
+    "reflect": {
+     "function": "eliza.reflect",
+     "params": [
+      "input"
+     ]
+    },
+    "pos_reflect": {
+     "function": "eliza.pos_reflect",
+     "params": [
+      "input",
+      "verb",
+      "object"
+     ]
+    }
+   },
+   "responses": {
+    "verb_focus": [
+     "What is stopping you from {verb}ing it?",
+     "What would help you {verb} it?",
+     "How long have you been trying to {verb} that?"
+    ],
+    "probe": [
+     "What does that suggest to you?",
+     "Do you feel strongly about that?",
+     "Tell me more."
+    ]
+   }
+  },
+  {
+   "name": "neural_fallback",
+   "enabled": false,
+   "priority": -10,
+   "hooks": {
+    "generate": {
+     "function": "ollama.generate",
+     "params": [
+      "context",
+      "prompt"
+     ],
+     "style": "eliza"
+    }
+   }
+  }
+ ],
+ "keys": [
+  {
+   "keyword": "error",
+   "priority": 50,
+   "plugin": "task_manager",
+   "salience_boost": 3.0,
+   "decomps": [
+    {
+     "pattern": "* error *",
+     "hook": "push_task",
+     "params": {
+      "task": "debug error",
+      "priority": "high"
+     },
+     "response": "code.debug_prompt",
+     "learn": {
+      "category": "issues",
+      "fact": 2
+     },
+     "blackboard_signal": "error_detected"
+    }
+   ],
+   "synonyms": [
+    "bug",
+    "crash",
+    "failed",
+    "broken",
+    "exception"
+   ]
+  },
+  {
+   "keyword": "deadline",
+   "priority": 45,
+   "plugin": "task_manager",
+   "salience_boost": 2.5,
+   "decomps": [
+    {
+     "pattern": "* deadline *",
+     "hook": "push_task",
+     "params": {
+      "task": 1,
+      "priority": "high"
+     },
+     "response": "task.acknowledged",
+     "blackboard_signal": "deadline_approaching"
+    }
+   ],
+   "synonyms": [
+    "due",
+    "urgent",
+    "asap"
+   ]
+  },
+  {
+   "keyword": "need",
+   "priority": 10,
+   "plugin": "task_manager",
+   "decomps": [
+    {
+     "pattern": "* i need to *",
+     "hook": "push_task",
+     "params": {
+      "task": 3,
+      "priority": "medium"
+     },
+     "response": "task.acknowledged",
+     "intent": "command"
+    },
+    {
+     "pattern": "* need *",
+     "hook": "push_task",
+     "params": {
+      "task": 2,
+      "priority": "medium"
+     },
+     "response": "task.acknowledged"
+    }
+   ]
+  },
+  {
+   "keyword": "weather",
+   "priority": 10,
+   "plugin": "weather",
+   "salience_boost": 1.0,
+   "decomps": [
+    {
+     "pattern": "* weather in *",
+     "hook": "current",
+     "params": {
+      "location": 3
+     },
+     "response": "current"
+    },
+    {
+     "pattern": "* weather",
+     "hook": "current",
+     "params": {
+      "location": "user.location"
+     },
+     "response": "current",
+     "fallback": {
+      "response": "unknown_location"
+     }
+    },
+    {
+     "pattern": "* weather *",
+     "hook": "current",
+     "params": {
+      "location": "user.location"
+     },
+     "response": "current",
+     "fallback": {
+      "response": "unknown_location"
+     }
+    }
+   ]
+  },
+  {
+   "keyword": "search",
+   "priority": 8,
+   "plugin": "search",
+   "decomps": [
+    {
+     "pattern": "* search for *",
+     "hook": "web",
+     "params": {
+      "query": 1
+     },
+     "response": "result",
+     "learn": {
+      "category": "interests",
+      "fact": 3
+     }
+    },
+    {
+     "pattern": "* find *",
+     "hook": "web",
+     "params": {
+      "query": 1
+     },
+     "response": "result"
+    }
+   ]
+  },
+  {
+   "keyword": "remind",
+   "priority": 9,
+   "plugin": "reminder",
+   "decomps": [
+    {
+     "pattern": "* remind me to *",
+     "hook": "add",
+     "params": {
+      "task": 1
+     },
+     "response": "added"
+    },
+    {
+     "pattern": "* remind me to * at *",
+     "hook": "add",
+     "params": {
+      "task": 1,
+      "when": 2
+     },
+     "response": "added"
+    },
+    {
+     "pattern": "* reminders",
+     "hook": "list",
+     "response": "list"
+    }
+   ]
+  },
+  {
+   "keyword": "done",
+   "priority": 15,
+   "plugin": "task_manager",
+   "decomps": [
+    {
+     "pattern": "* done with *",
+     "hook": "pop_task",
+     "params": {
+      "task": 1
+     },
+     "response": "task.completed"
+    },
+    {
+     "pattern": "* finished with *",
+     "hook": "pop_task",
+     "params": {
+      "task": 1
+     },
+     "response": "task.completed"
+    }
+   ],
+   "synonyms": [
+    "completed",
+    "finished"
+   ]
+  },
+  {
+   "keyword": "hello",
+   "priority": 20,
+   "plugin": "identity",
+   "decomps": [
+    {
+     "pattern": "*",
+     "hook": "identify",
+     "response": "auto"
+    }
+   ],
+   "synonyms": [
+    "hi",
+    "hey",
+    "howdy"
+   ]
+  },
+  {
+   "keyword": "quit",
+   "priority": 0,
+   "decomps": [
+    {
+     "pattern": "*",
+     "action": "exit",
+     "response": "config.final"
+    }
+   ],
+   "synonyms": [
+    "bye",
+    "goodbye",
+    "exit"
+   ]
+  },
+  {
+   "keyword": "xnone",
+   "priority": -1,
+   "decomps": [
+    {
+     "pattern": "*",
+     "response": "generic.confused",
+     "fallback_to_neural": true
+    }
+   ]
+  }
+ ],
+ "agents": [
+  {
+   "name": "heartbeat",
+   "enabled": true,
+   "trigger": "on_tick",
+   "interval": 1.0,
+   "actions": [
+    "salience_engine.decay_all",
+    "reminder.check_due",
+    "proactive.evaluate"
+   ]
+  },
+  {
+   "name": "metacognitive_monitor",
+   "enabled": true,
+   "trigger": "on_turn",
+   "actions": [
+    "metacognition.check_loop",
+    "metacognition.check_context"
+   ]
+  },
+  {
+   "name": "task_reviewer",
+   "enabled": true,
+   "trigger": "on_tick",
+   "interval": 5,
+   "actions": [
+    "task_manager.check_stack"
+   ]
+  },
+  {
+   "name": "inference_engine",
+   "enabled": true,
+   "trigger": "on_turn",
+   "actions": [
+    "blackboard_manager.update_inference"
+   ]
+  }
+ ]
 }
