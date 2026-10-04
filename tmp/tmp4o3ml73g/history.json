@@ -1,0 +1,25 @@
+{
+ "events": [
+  {
+   "t": 1791143724.256469,
+   "kind": "user",
+   "text": "remind me to buy milk"
+  },
+  {
+   "t": 1791143724.2618968,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791143724.2621791,
+   "kind": "user",
+   "text": "list tasks"
+  },
+  {
+   "t": 1791143724.2643094,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  }
+ ],
+ "_updated": 1791143724.2643085
+}

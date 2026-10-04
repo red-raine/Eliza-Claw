@@ -1,0 +1,255 @@
+{
+ "events": [
+  {
+   "t": 1791150318.5284088,
+   "kind": "user",
+   "text": "remind me to call mom at 5pm"
+  },
+  {
+   "t": 1791150318.5316014,
+   "kind": "bot",
+   "text": "Reminder set: call mom call mom at 5pm."
+  },
+  {
+   "t": 1791150318.5323339,
+   "kind": "user",
+   "text": "hello"
+  },
+  {
+   "t": 1791150318.5354471,
+   "kind": "bot",
+   "text": "Hi there. I don't believe we've been introduced."
+  },
+  {
+   "t": 1791150318.5359447,
+   "kind": "user",
+   "text": "i am sad"
+  },
+  {
+   "t": 1791150318.5708175,
+   "kind": "bot",
+   "text": "feelings -- good pick. What usually lifts your mood?"
+  },
+  {
+   "t": 1791150336.5184276,
+   "kind": "user",
+   "text": "what do you remember about cats"
+  },
+  {
+   "t": 1791150336.6168175,
+   "kind": "bot",
+   "text": "Searching my memory for \"cats\" -- (nothing yet)"
+  },
+  {
+   "t": 1791150336.617349,
+   "kind": "user",
+   "text": "what do you remember"
+  },
+  {
+   "t": 1791150336.6200302,
+   "kind": "bot",
+   "text": "Here's what I hold: - my cat\n- what do you\n- (episode, feelings) i am sad\n- (episode, travel) what do you think about space travel\n- (episode, love) i love movies"
+  },
+  {
+   "t": 1791150336.6205053,
+   "kind": "user",
+   "text": "remember that my cat is named Whiskers"
+  },
+  {
+   "t": 1791150336.6236615,
+   "kind": "bot",
+   "text": "Stored in long-term memory: my_cat_is_named_whiskers = my cat is named whiskers"
+  },
+  {
+   "t": 1791150336.6241324,
+   "kind": "user",
+   "text": "fact check the earth is flat"
+  },
+  {
+   "t": 1791150336.658188,
+   "kind": "bot",
+   "text": "No connection, no claim. Unlike some famous chatbots, I refuse to guess confidently."
+  },
+  {
+   "t": 1791150344.994756,
+   "kind": "user",
+   "text": "what do you remember about cats"
+  },
+  {
+   "t": 1791150345.093242,
+   "kind": "bot",
+   "text": "Searching my memory for \"cats\" -- (nothing yet)"
+  },
+  {
+   "t": 1791150345.0938678,
+   "kind": "user",
+   "text": "remember that my cat is named Whiskers"
+  },
+  {
+   "t": 1791150345.0974572,
+   "kind": "bot",
+   "text": "Stored in long-term memory: my_cat_is_named_whiskers = my cat is named whiskers"
+  },
+  {
+   "t": 1791150368.498692,
+   "kind": "user",
+   "text": "tell me about dogs"
+  },
+  {
+   "t": 1791150369.1859136,
+   "kind": "bot",
+   "text": "I'll track tell me about dogs for you."
+  },
+  {
+   "t": 1791150369.1865387,
+   "kind": "user",
+   "text": "i love movies"
+  },
+  {
+   "t": 1791150369.2113445,
+   "kind": "bot",
+   "text": "love -- good pick. What's the smallest thing that makes you feel loved?"
+  },
+  {
+   "t": 1791150369.2123005,
+   "kind": "user",
+   "text": "remember that my cat is named Whiskers"
+  },
+  {
+   "t": 1791150369.2285528,
+   "kind": "bot",
+   "text": "Stored in long-term memory: my_cat = my cat"
+  },
+  {
+   "t": 1791150369.229127,
+   "kind": "user",
+   "text": "what do you remember about whiskers"
+  },
+  {
+   "t": 1791150369.2460132,
+   "kind": "bot",
+   "text": "Searching my memory for \"whiskers\" -- (nothing yet)"
+  },
+  {
+   "t": 1791150369.2466161,
+   "kind": "user",
+   "text": "what do you remember"
+  },
+  {
+   "t": 1791150369.2493176,
+   "kind": "bot",
+   "text": "Here's what I hold: - my cat\n- (episode, love) i love movies\n- (episode, (untopic)) tell me about dogs"
+  },
+  {
+   "t": 1791150369.251389,
+   "kind": "user",
+   "text": "fact check the earth is flat"
+  },
+  {
+   "t": 1791150369.295512,
+   "kind": "bot",
+   "text": "No connection, no claim. Unlike some famous chatbots, I refuse to guess confidently."
+  },
+  {
+   "t": 1791150369.2961404,
+   "kind": "user",
+   "text": "verify the sky is blue"
+  },
+  {
+   "t": 1791150369.299128,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791150369.2997081,
+   "kind": "user",
+   "text": "remind me to call mom at 5pm"
+  },
+  {
+   "t": 1791150369.3031366,
+   "kind": "bot",
+   "text": "Got it. I'll remind you about call mom call mom at 5pm."
+  },
+  {
+   "t": 1791150378.3392696,
+   "kind": "user",
+   "text": "tell me about dogs"
+  },
+  {
+   "t": 1791150379.0769098,
+   "kind": "bot",
+   "text": "Got it. tell me about dogs is now on my radar."
+  },
+  {
+   "t": 1791150379.0775433,
+   "kind": "user",
+   "text": "i love movies"
+  },
+  {
+   "t": 1791150379.1025999,
+   "kind": "bot",
+   "text": "I like love as a subject. What would you never tell anyone but would want them to know?"
+  },
+  {
+   "t": 1791150379.103189,
+   "kind": "user",
+   "text": "remember that my cat is named Whiskers"
+  },
+  {
+   "t": 1791150379.1215813,
+   "kind": "bot",
+   "text": "Stored in long-term memory: my_cat = my cat"
+  },
+  {
+   "t": 1791150379.1221852,
+   "kind": "user",
+   "text": "what do you remember about whiskers"
+  },
+  {
+   "t": 1791150379.1394331,
+   "kind": "bot",
+   "text": "Searching my memory for \"whiskers\" -- (nothing yet)"
+  },
+  {
+   "t": 1791150379.1400332,
+   "kind": "user",
+   "text": "what do you remember"
+  },
+  {
+   "t": 1791150379.1430957,
+   "kind": "bot",
+   "text": "Here's what I hold: - my cat\n- (episode, love) i love movies\n- (episode, (untopic)) tell me about dogs\n- (episode, love) i love movies"
+  },
+  {
+   "t": 1791150379.1437984,
+   "kind": "user",
+   "text": "fact check the earth is flat"
+  },
+  {
+   "t": 1791150379.1793063,
+   "kind": "bot",
+   "text": "I can't reach the web right now, and I won't invent facts offline. Ask again with network, or tell me what you know."
+  },
+  {
+   "t": 1791150379.179919,
+   "kind": "user",
+   "text": "verify the sky is blue"
+  },
+  {
+   "t": 1791150379.18291,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791150379.1834998,
+   "kind": "user",
+   "text": "remind me to call mom at 5pm"
+  },
+  {
+   "t": 1791150379.186988,
+   "kind": "bot",
+   "text": "Got it. I'll remind you about call mom call mom at 5pm."
+  }
+ ],
+ "_updated": 1791150379.1869872
+}

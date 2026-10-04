@@ -1,0 +1,16 @@
+{
+ "used": [
+  "Here's what I hold: {facts}",
+  "No connection, no claim. Unlike some famous chatbots, I refuse to guess confidently.",
+  "Do you feel strongly about discussing such things?",
+  "Got it. I'll remind you about {task} {when}.",
+  "Got it. {task} is now on my radar.",
+  "{aside}I like {topic} as a subject. {question}",
+  "Stored in long-term memory: {key} = {value}",
+  "Searching my memory for \"{query}\" -- {facts}",
+  "Here's what I hold: {facts}",
+  "I can't reach the web right now, and I won't invent facts offline. Ask again with network, or tell me what you know.",
+  "Do you feel strongly about discussing such things?",
+  "Got it. I'll remind you about {task} {when}."
+ ]
+}

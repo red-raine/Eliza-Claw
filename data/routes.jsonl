@@ -1,0 +1,316 @@
+{"text": "add a task to fix the parser bug", "label": "task"}
+{"text": "add clean the garage to my tasks", "label": "task"}
+{"text": "please add clean the garage to my tasks lol", "label": "task"}
+{"text": "create task call the dentist", "label": "task"}
+{"text": "please create task call the dentist now", "label": "task"}
+{"text": "make a new task: study linear algebra", "label": "task"}
+{"text": "new task buy milk", "label": "task"}
+{"text": "new task buy milk asap", "label": "task"}
+{"text": "set up a task for the quarterly review", "label": "task"}
+{"text": "please set up a task for the quarterly review asap", "label": "task"}
+{"text": "i want to add backup photos", "label": "task"}
+{"text": "hey i want to add backup photos thanks", "label": "task"}
+{"text": "remember that i need to fix the parser bug", "label": "task"}
+{"text": "ok remember that i need to fix the parser bug thanks", "label": "task"}
+{"text": "i need to book flights today", "label": "task"}
+{"text": "don't forget to pay rent", "label": "task"}
+{"text": "mark renew passport as done", "label": "task"}
+{"text": "complete the file taxes task", "label": "task"}
+{"text": "please complete the file taxes task now", "label": "task"}
+{"text": "finish clean the garage", "label": "task"}
+{"text": "i finished clean the garage", "label": "task"}
+{"text": "i finished clean the garage thanks", "label": "task"}
+{"text": "ship the release is done", "label": "task"}
+{"text": "ok ship the release is done now", "label": "task"}
+{"text": "check off ship the release", "label": "task"}
+{"text": "delete ship the release", "label": "task"}
+{"text": "hey delete ship the release thanks", "label": "task"}
+{"text": "remove the write the report task", "label": "task"}
+{"text": "cancel refactor the router", "label": "task"}
+{"text": "hey cancel refactor the router lol", "label": "task"}
+{"text": "drop task refactor the router", "label": "task"}
+{"text": "clear completed tasks", "label": "task"}
+{"text": "ok clear completed tasks asap", "label": "task"}
+{"text": "list my tasks", "label": "task"}
+{"text": "show my todo list", "label": "task"}
+{"text": "what are my tasks", "label": "task"}
+{"text": "hey what are my tasks lol", "label": "task"}
+{"text": "any pending tasks?", "label": "task"}
+{"text": "tasks for today", "label": "task"}
+{"text": "display open tasks", "label": "task"}
+{"text": "display open tasks lol", "label": "task"}
+{"text": "do i have anything to do", "label": "task"}
+{"text": "please do i have anything to do now", "label": "task"}
+{"text": "whats on my plate", "label": "task"}
+{"text": "postpone refactor the router to tomorrow", "label": "task"}
+{"text": "hey postpone refactor the router to tomorrow", "label": "task"}
+{"text": "reschedule buy milk", "label": "task"}
+{"text": "rename book flights to the big one", "label": "task"}
+{"text": "update the thing with the vendor priority to high", "label": "task"}
+{"text": "track progress on email alice", "label": "task"}
+{"text": "plan my day", "label": "task"}
+{"text": "hey plan my day lol", "label": "task"}
+{"text": "set a goal: the thing with the vendor", "label": "task"}
+{"text": "start working on graduation ceremony", "label": "task"}
+{"text": "ok start working on graduation ceremony thanks", "label": "task"}
+{"text": "begin clean the garage", "label": "task"}
+{"text": "please begin clean the garage now", "label": "task"}
+{"text": "queue up graduation ceremony", "label": "task"}
+{"text": "add pay rent to the project list", "label": "task"}
+{"text": "add pay rent to the project list lol", "label": "task"}
+{"text": "log a task ship the release", "label": "task"}
+{"text": "todo: backup photos", "label": "task"}
+{"text": "task: study linear algebra", "label": "task"}
+{"text": "ok task: study linear algebra", "label": "task"}
+{"text": "jot down the thing with the vendor", "label": "task"}
+{"text": "hey jot down the thing with the vendor now", "label": "task"}
+{"text": "i have to refactor the router", "label": "task"}
+{"text": "gotta clean the garage before friday", "label": "task"}
+{"text": "please gotta clean the garage before friday now", "label": "task"}
+{"text": "remind me to clean the garage at 5pm", "label": "reminder"}
+{"text": "remind me to refactor the router in 30 minutes", "label": "reminder"}
+{"text": "set an alarm for book flights", "label": "reminder"}
+{"text": "hey set an alarm for book flights lol", "label": "reminder"}
+{"text": "alarm at 7am for graduation ceremony", "label": "reminder"}
+{"text": "ping me about backup photos tomorrow morning", "label": "reminder"}
+{"text": "ping me about backup photos tomorrow morning thanks", "label": "reminder"}
+{"text": "notify me when its time for backup photos", "label": "reminder"}
+{"text": "please notify me when its time for backup photos now", "label": "reminder"}
+{"text": "dont let me forget write the report tonight", "label": "reminder"}
+{"text": "wake me up at 6am", "label": "reminder"}
+{"text": "wake me up at 6am asap", "label": "reminder"}
+{"text": "remind me every day to backup photos", "label": "reminder"}
+{"text": "hey remind me every day to backup photos now", "label": "reminder"}
+{"text": "weekly reminder for the quarterly review", "label": "reminder"}
+{"text": "please weekly reminder for the quarterly review now", "label": "reminder"}
+{"text": "set a timer for 10 minutes", "label": "reminder"}
+{"text": "set a timer for 10 minutes asap", "label": "reminder"}
+{"text": "in two hours remind me to renew passport", "label": "reminder"}
+{"text": "please in two hours remind me to renew passport", "label": "reminder"}
+{"text": "at noon tell me to book flights", "label": "reminder"}
+{"text": "at noon tell me to book flights asap", "label": "reminder"}
+{"text": "schedule study linear algebra for next monday", "label": "reminder"}
+{"text": "please schedule study linear algebra for next monday lol", "label": "reminder"}
+{"text": "put a reminder on the calendar for pay rent", "label": "reminder"}
+{"text": "remind me later about write the report", "label": "reminder"}
+{"text": "alert me at 9pm about the thing with the vendor", "label": "reminder"}
+{"text": "please alert me at 9pm about the thing with the vendor asap", "label": "reminder"}
+{"text": "give me a nudge at 3pm to call the dentist", "label": "reminder"}
+{"text": "hey give me a nudge at 3pm to call the dentist", "label": "reminder"}
+{"text": "time to fix the parser bug? set a bell", "label": "reminder"}
+{"text": "please time to fix the parser bug? set a bell lol", "label": "reminder"}
+{"text": "hourly reminder to stretch", "label": "reminder"}
+{"text": "what's the weather", "label": "info"}
+{"text": "weather forecast please", "label": "info"}
+{"text": "will it rain tomorrow", "label": "info"}
+{"text": "ok will it rain tomorrow", "label": "info"}
+{"text": "how hot is it outside", "label": "info"}
+{"text": "please how hot is it outside now", "label": "info"}
+{"text": "temperature check", "label": "info"}
+{"text": "do i need an umbrella", "label": "info"}
+{"text": "is it sunny or cloudy", "label": "info"}
+{"text": "is it sunny or cloudy lol", "label": "info"}
+{"text": "whats the forecast for the weekend", "label": "info"}
+{"text": "search for the thing with the vendor", "label": "info"}
+{"text": "google pay rent", "label": "info"}
+{"text": "look up fix the parser bug", "label": "info"}
+{"text": "please look up fix the parser bug lol", "label": "info"}
+{"text": "find information about water the plants", "label": "info"}
+{"text": "hey find information about water the plants thanks", "label": "info"}
+{"text": "what does study linear algebra mean", "label": "info"}
+{"text": "define book flights", "label": "info"}
+{"text": "please define book flights now", "label": "info"}
+{"text": "who invented backup photos", "label": "info"}
+{"text": "ok who invented backup photos asap", "label": "info"}
+{"text": "tell me about book flights", "label": "info"}
+{"text": "what time is it", "label": "info"}
+{"text": "please what time is it now", "label": "info"}
+{"text": "whats todays date", "label": "info"}
+{"text": "how many days until friday", "label": "info"}
+{"text": "news about pay rent", "label": "info"}
+{"text": "please news about pay rent thanks", "label": "info"}
+{"text": "translate hello to spanish", "label": "info"}
+{"text": "whats the population of paris", "label": "info"}
+{"text": "please whats the population of paris thanks", "label": "info"}
+{"text": "explain quantum computing", "label": "info"}
+{"text": "lookup the movie water the plants", "label": "info"}
+{"text": "get info on ship the release", "label": "info"}
+{"text": "ok get info on ship the release", "label": "info"}
+{"text": "how far is the moon", "label": "info"}
+{"text": "please how far is the moon", "label": "info"}
+{"text": "recipe for pancakes", "label": "info"}
+{"text": "recipe for pancakes thanks", "label": "info"}
+{"text": "best book about email alice", "label": "info"}
+{"text": "hey best book about email alice", "label": "info"}
+{"text": "summarize refactor the router", "label": "info"}
+{"text": "hello", "label": "chat"}
+{"text": "hi there", "label": "chat"}
+{"text": "hey", "label": "chat"}
+{"text": "good morning", "label": "chat"}
+{"text": "ok good morning now", "label": "chat"}
+{"text": "yo", "label": "chat"}
+{"text": "ok yo", "label": "chat"}
+{"text": "sup", "label": "chat"}
+{"text": "hey sup thanks", "label": "chat"}
+{"text": "how are you", "label": "chat"}
+{"text": "hey how are you thanks", "label": "chat"}
+{"text": "how do you do", "label": "chat"}
+{"text": "im sad", "label": "chat"}
+{"text": "please im sad thanks", "label": "chat"}
+{"text": "im feeling down today", "label": "chat"}
+{"text": "i am happy", "label": "chat"}
+{"text": "life is great", "label": "chat"}
+{"text": "life is great asap", "label": "chat"}
+{"text": "im so angry at my boss", "label": "chat"}
+{"text": "i feel lonely", "label": "chat"}
+{"text": "i feel lonely lol", "label": "chat"}
+{"text": "im tired of everything", "label": "chat"}
+{"text": "hey im tired of everything lol", "label": "chat"}
+{"text": "i am afraid of failing", "label": "chat"}
+{"text": "please i am afraid of failing thanks", "label": "chat"}
+{"text": "nobody understands me", "label": "chat"}
+{"text": "i love programming", "label": "chat"}
+{"text": "i hate mondays", "label": "chat"}
+{"text": "hey i hate mondays asap", "label": "chat"}
+{"text": "my mother never appreciated me", "label": "chat"}
+{"text": "my mother never appreciated me lol", "label": "chat"}
+{"text": "my father was strict with me", "label": "chat"}
+{"text": "hey my father was strict with me", "label": "chat"}
+{"text": "i think my computer hates me", "label": "chat"}
+{"text": "please i think my computer hates me now", "label": "chat"}
+{"text": "dreams confuse me", "label": "chat"}
+{"text": "dreams confuse me now", "label": "chat"}
+{"text": "i wish i had more friends", "label": "chat"}
+{"text": "im bored out of my mind", "label": "chat"}
+{"text": "im bored out of my mind lol", "label": "chat"}
+{"text": "tell me a joke", "label": "chat"}
+{"text": "tell me a joke lol", "label": "chat"}
+{"text": "that was funny", "label": "chat"}
+{"text": "you are useless", "label": "chat"}
+{"text": "stop talking", "label": "chat"}
+{"text": "hey stop talking thanks", "label": "chat"}
+{"text": "be quiet", "label": "chat"}
+{"text": "are you real", "label": "chat"}
+{"text": "ok are you real asap", "label": "chat"}
+{"text": "are you a robot", "label": "chat"}
+{"text": "please are you a robot asap", "label": "chat"}
+{"text": "you sound like a machine", "label": "chat"}
+{"text": "hey you sound like a machine asap", "label": "chat"}
+{"text": "im stressed about work", "label": "chat"}
+{"text": "im stressed about work", "label": "chat"}
+{"text": "work is killing me", "label": "chat"}
+{"text": "i cant sleep at night", "label": "chat"}
+{"text": "i keep making the same mistakes", "label": "chat"}
+{"text": "please i keep making the same mistakes thanks", "label": "chat"}
+{"text": "something is bothering me", "label": "chat"}
+{"text": "my head hurts", "label": "chat"}
+{"text": "i feel sick", "label": "chat"}
+{"text": "i am hungry", "label": "chat"}
+{"text": "i am hungry now", "label": "chat"}
+{"text": "this is pointless", "label": "chat"}
+{"text": "nothing matters anymore", "label": "chat"}
+{"text": "nothing matters anymore asap", "label": "chat"}
+{"text": "i dont know what i want", "label": "chat"}
+{"text": "maybe i am wrong", "label": "chat"}
+{"text": "yes exactly", "label": "chat"}
+{"text": "ok yes exactly", "label": "chat"}
+{"text": "no not really", "label": "chat"}
+{"text": "ok no not really", "label": "chat"}
+{"text": "perhaps", "label": "chat"}
+{"text": "please perhaps", "label": "chat"}
+{"text": "i believe in myself", "label": "chat"}
+{"text": "i cannot decide", "label": "chat"}
+{"text": "i remember my childhood", "label": "chat"}
+{"text": "i forgot where i put my keys", "label": "chat"}
+{"text": "computer programs scare me", "label": "chat"}
+{"text": "please computer programs scare me lol", "label": "chat"}
+{"text": "my friend ignored me today", "label": "chat"}
+{"text": "people never listen", "label": "chat"}
+{"text": "everyone is against me", "label": "chat"}
+{"text": "i feel like giving up", "label": "chat"}
+{"text": "ok i feel like giving up lol", "label": "chat"}
+{"text": "wow that is cool", "label": "chat"}
+{"text": "lol nice", "label": "chat"}
+{"text": "omg seriously", "label": "chat"}
+{"text": "brb", "label": "chat"}
+{"text": "g2g see ya", "label": "chat"}
+{"text": "thx a lot", "label": "chat"}
+{"text": "ok thx a lot now", "label": "chat"}
+{"text": "ur pretty smart", "label": "chat"}
+{"text": "ur pretty smart", "label": "chat"}
+{"text": "idk man", "label": "chat"}
+{"text": "im good wbu", "label": "chat"}
+{"text": "hey im good wbu lol", "label": "chat"}
+{"text": "not much just vibing", "label": "chat"}
+{"text": "same here bro", "label": "chat"}
+{"text": "ok same here bro thanks", "label": "chat"}
+{"text": "no cap thats wild", "label": "chat"}
+{"text": "no cap thats wild asap", "label": "chat"}
+{"text": "bet, sounds good", "label": "chat"}
+{"text": "it gives me life", "label": "chat"}
+{"text": "ok it gives me life asap", "label": "chat"}
+{"text": "thanks for listening", "label": "chat"}
+{"text": "ok thanks for listening thanks", "label": "chat"}
+{"text": "sorry for venting", "label": "chat"}
+{"text": "bye for now", "label": "chat"}
+{"text": "hey bye for now now", "label": "chat"}
+{"text": "see you later", "label": "chat"}
+{"text": "hey see you later", "label": "chat"}
+{"text": "talk soon", "label": "chat"}
+{"text": "later gator", "label": "chat"}
+{"text": "hey later gator thanks", "label": "chat"}
+{"text": "help", "label": "system"}
+{"text": "what can you do", "label": "system"}
+{"text": "commands please", "label": "system"}
+{"text": "commands please thanks", "label": "system"}
+{"text": "list your plugins", "label": "system"}
+{"text": "hey list your plugins thanks", "label": "system"}
+{"text": "show plugin status", "label": "system"}
+{"text": "enable the weather plugin", "label": "system"}
+{"text": "enable the weather plugin thanks", "label": "system"}
+{"text": "disable reminders", "label": "system"}
+{"text": "please disable reminders asap", "label": "system"}
+{"text": "reload config", "label": "system"}
+{"text": "ok reload config now", "label": "system"}
+{"text": "reset memory", "label": "system"}
+{"text": "please reset memory lol", "label": "system"}
+{"text": "clear history", "label": "system"}
+{"text": "who are you", "label": "system"}
+{"text": "what is your name", "label": "system"}
+{"text": "ok what is your name asap", "label": "system"}
+{"text": "your version", "label": "system"}
+{"text": "status report", "label": "system"}
+{"text": "show my profile", "label": "system"}
+{"text": "please show my profile asap", "label": "system"}
+{"text": "change my name to water the plants", "label": "system"}
+{"text": "where am i located", "label": "system"}
+{"text": "where am i located lol", "label": "system"}
+{"text": "set location to tokyo", "label": "system"}
+{"text": "set location to tokyo thanks", "label": "system"}
+{"text": "forget everything i told you", "label": "system"}
+{"text": "what do you know about me", "label": "system"}
+{"text": "save state", "label": "system"}
+{"text": "exit", "label": "system"}
+{"text": "hey exit asap", "label": "system"}
+{"text": "quit", "label": "system"}
+{"text": "quit", "label": "system"}
+{"text": "goodbye", "label": "system"}
+{"text": "ok goodbye thanks", "label": "system"}
+{"text": "bye", "label": "system"}
+{"text": "shutdown", "label": "system"}
+{"text": "eval 2+2", "label": "system"}
+{"text": "hey eval 2+2 asap", "label": "system"}
+{"text": "run script hello.clan", "label": "system"}
+{"text": "hey run script hello.clan thanks", "label": "system"}
+{"text": "learn that my cat is named miso", "label": "system"}
+{"text": "ok learn that my cat is named miso", "label": "system"}
+{"text": "remember my birthday is june 3rd", "label": "system"}
+{"text": "repeat after me", "label": "system"}
+{"text": "interpret this sentence", "label": "system"}
+{"text": "ok interpret this sentence now", "label": "system"}
+{"text": "test the router", "label": "system"}
+{"text": "stats", "label": "system"}
+{"text": "memory usage", "label": "system"}
+{"text": "memory usage thanks", "label": "system"}
+{"text": "how much ram do you use", "label": "system"}
+{"text": "how much ram do you use now", "label": "system"}

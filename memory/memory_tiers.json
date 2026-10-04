@@ -1,0 +1,87 @@
+{
+ "mtm": [
+  {
+   "kind": "turn",
+   "text": "user: tell me about dogs",
+   "t": 1791150369.1697178,
+   "activation": 1.0,
+   "hits": 0
+  },
+  {
+   "kind": "turn",
+   "text": "user: i love movies",
+   "t": 1791150369.2093706,
+   "activation": 1.0,
+   "hits": 0
+  },
+  {
+   "kind": "turn",
+   "text": "bot: What's the smallest thing that makes you feel loved?",
+   "t": 1791150369.210686,
+   "activation": 1.0,
+   "hits": 0
+  },
+  {
+   "kind": "turn",
+   "text": "user: tell me about dogs",
+   "t": 1791150379.0599883,
+   "activation": 1.0,
+   "hits": 0
+  },
+  {
+   "kind": "turn",
+   "text": "user: i love movies",
+   "t": 1791150379.1003315,
+   "activation": 1.0,
+   "hits": 0
+  },
+  {
+   "kind": "turn",
+   "text": "bot: What would you never tell anyone but would want them to know?",
+   "t": 1791150379.1018722,
+   "activation": 1.0,
+   "hits": 0
+  }
+ ],
+ "ltm": {
+  "my_cat": {
+   "text": "my cat",
+   "t": 1791150379.1203964
+  }
+ },
+ "epi": [
+  {
+   "what": "tell me about dogs",
+   "who": "user",
+   "topic": "(untopic)",
+   "valence": 0.0,
+   "t": 1791150369.184701,
+   "activation": 1.0
+  },
+  {
+   "what": "i love movies",
+   "who": "user",
+   "topic": "love",
+   "valence": 0.0,
+   "t": 1791150369.2096164,
+   "activation": 1.0
+  },
+  {
+   "what": "tell me about dogs",
+   "who": "user",
+   "topic": "(untopic)",
+   "valence": 0.0,
+   "t": 1791150379.07552,
+   "activation": 1.0
+  },
+  {
+   "what": "i love movies",
+   "who": "user",
+   "topic": "love",
+   "valence": 0.0,
+   "t": 1791150379.1007104,
+   "activation": 1.0
+  }
+ ],
+ "hits": {}
+}

@@ -1,0 +1,13 @@
+{
+ "used": [
+  "Hello! I don't think we've met.",
+  "Can you elaborate on that?",
+  "I'm not sure I understand you fully.",
+  "Right now in {location}: {temp}\u00b0, {condition}.",
+  "That's quite interesting.",
+  "What does that suggest to you?",
+  "Do you feel strongly about discussing such things?",
+  "Please go on.",
+  "Can you elaborate on that?"
+ ]
+}

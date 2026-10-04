@@ -1,0 +1,55 @@
+{
+ "events": [
+  {
+   "t": 1791143742.1397762,
+   "kind": "user",
+   "text": "add task write readme"
+  },
+  {
+   "t": 1791143742.1447504,
+   "kind": "bot",
+   "text": "That's quite interesting."
+  },
+  {
+   "t": 1791143742.1450696,
+   "kind": "user",
+   "text": "list tasks"
+  },
+  {
+   "t": 1791143742.1469889,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791143742.1472776,
+   "kind": "user",
+   "text": "my name is Bob"
+  },
+  {
+   "t": 1791143742.1516275,
+   "kind": "bot",
+   "text": "Please go on."
+  },
+  {
+   "t": 1791143742.15211,
+   "kind": "user",
+   "text": "who am i"
+  },
+  {
+   "t": 1791143742.154598,
+   "kind": "bot",
+   "text": "Can you elaborate on that?"
+  },
+  {
+   "t": 1791143742.1549737,
+   "kind": "user",
+   "text": "search for lobster recipes"
+  },
+  {
+   "t": 1791143742.1571252,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  }
+ ],
+ "_updated": 1791143742.1571243
+}

@@ -1,0 +1,95 @@
+{
+ "events": [
+  {
+   "t": 1791143819.1089163,
+   "kind": "user",
+   "text": "hello"
+  },
+  {
+   "t": 1791143819.1142957,
+   "kind": "bot",
+   "text": "Hi there! You're new, aren't you?"
+  },
+  {
+   "t": 1791143819.114606,
+   "kind": "user",
+   "text": "i am sad"
+  },
+  {
+   "t": 1791143819.1164896,
+   "kind": "bot",
+   "text": "Can you elaborate on that?"
+  },
+  {
+   "t": 1791143819.1167283,
+   "kind": "user",
+   "text": "remind me to buy milk"
+  },
+  {
+   "t": 1791143819.1187358,
+   "kind": "bot",
+   "text": "Please go on."
+  },
+  {
+   "t": 1791143819.118987,
+   "kind": "user",
+   "text": "what is the weather in paris"
+  },
+  {
+   "t": 1791143820.0262587,
+   "kind": "bot",
+   "text": "Weather check for Nasonogan: overcast , 82\u00b0."
+  },
+  {
+   "t": 1791143820.026575,
+   "kind": "user",
+   "text": "search for lobster recipes"
+  },
+  {
+   "t": 1791143820.0288796,
+   "kind": "bot",
+   "text": "That's quite interesting."
+  },
+  {
+   "t": 1791143820.02919,
+   "kind": "user",
+   "text": "add task write readme"
+  },
+  {
+   "t": 1791143820.0312312,
+   "kind": "bot",
+   "text": "What does that suggest to you?"
+  },
+  {
+   "t": 1791143820.031824,
+   "kind": "user",
+   "text": "list tasks"
+  },
+  {
+   "t": 1791143820.035411,
+   "kind": "bot",
+   "text": "Please go on."
+  },
+  {
+   "t": 1791143820.035732,
+   "kind": "user",
+   "text": "my name is Bob"
+  },
+  {
+   "t": 1791143820.03774,
+   "kind": "bot",
+   "text": "Do you feel strongly about discussing such things?"
+  },
+  {
+   "t": 1791143820.0381176,
+   "kind": "user",
+   "text": "who am i"
+  },
+  {
+   "t": 1791143820.0401106,
+   "kind": "bot",
+   "text": "Can you elaborate on that?"
+  }
+ ],
+ "_updated": 1791143820.0401099
+}

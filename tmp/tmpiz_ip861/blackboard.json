@@ -1,0 +1,12 @@
+{
+ "signals": [],
+ "inferred_state": {
+  "technical_level": "unknown",
+  "emotional_state": "neutral",
+  "urgency": "normal",
+  "attention_focus": "search",
+  "weather_condition": "overcast "
+ },
+ "_updated": 1791143712.9075327,
+ "last_inference": 1791143712.9075518
+}
