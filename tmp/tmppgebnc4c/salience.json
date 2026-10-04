@@ -1,0 +1,24 @@
+{
+ "topics": {
+  "i": {
+   "score": 6.0
+  },
+  "you": {
+   "score": 3.0
+  },
+  "what": {
+   "score": 3.0
+  },
+  "memory": {
+   "score": 3.0
+  },
+  "because": {
+   "score": 3.0
+  },
+  "my": {
+   "score": 3.0
+  }
+ },
+ "last_decay": 1791143763.6595867,
+ "_updated": 1791143763.6784887
+}

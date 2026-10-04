@@ -1,0 +1,25 @@
+{
+ "events": [
+  {
+   "t": 1791143751.6949122,
+   "kind": "user",
+   "text": "remind me to buy milk"
+  },
+  {
+   "t": 1791143751.7015722,
+   "kind": "bot",
+   "text": "That's quite interesting."
+  },
+  {
+   "t": 1791143751.7019022,
+   "kind": "user",
+   "text": "search for lobster recipes"
+  },
+  {
+   "t": 1791143751.7049615,
+   "kind": "bot",
+   "text": "Please go on."
+  }
+ ],
+ "_updated": 1791143751.7049608
+}

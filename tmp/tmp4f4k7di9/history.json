@@ -1,0 +1,15 @@
+{
+ "events": [
+  {
+   "t": 1791143682.1806235,
+   "kind": "user",
+   "text": "hello"
+  },
+  {
+   "t": 1791143682.1856132,
+   "kind": "bot",
+   "text": "Hi there! You're new, aren't you?"
+  }
+ ],
+ "_updated": 1791143682.1856115
+}

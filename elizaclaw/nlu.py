@@ -59,79 +59,87 @@ def apply_pre(text, table):
 
 
 # ------------------------------------------------------ pattern compilation
+def _lit(w):
+    """Anchored literal word: real \\b boundaries, escaped body."""
+    return r"\b%s\b" % re.escape(w)
+
+
 def compile_pattern(pattern, synonyms):
-    """Compile an Eliza decomp pattern into a regex.
+    """Compile an Eliza decomp pattern into a regex.  Wave 0 rebuild.
 
     Tokens understood:
-      '*'          -> capture group (lazy unless trailing, then greedy).
-                      When followed by a literal anchor, the group embeds
-                      its own separators: '(.+?)\s+\blit\b'.
-      '@name'      -> synonym set from eliza.json, whole words, longest-first
-      'word*'      -> prefix match (greeting patterns like 'hello*')
-      literal word -> exact word match (\b...\b)
-    Anchored at the start of the sentence (classic Eliza uses COMPASS-style
-    full-sentence matching), so a wildcard pattern '*' never shadows others.
-    Returns (compiled_regex, num_capture_groups). Group i corresponds to
-    the i-th '*'.  Wave 0 rewrite: parts are (regex, anchored_flag) tuples
-    and _join_parts inserts \W+ ONLY between two plain parts -- an anchored
-    star already carries both of its separators, so the old bug that emitted
-    '\bremind\b\bremind\b' (literal twice) is structurally impossible now.
+      '*'          -> capture group (.+?), lazy unless trailing (then greedy)
+      '@name'      -> synonym set from eliza.json, longest-first alternation
+      'word*'      -> prefix glob (greeting patterns like 'hello*')
+      literal word -> exact whole-word match via \\b...\\b
+    The compiled regex is NOT start-anchored; callers use .search() on the
+    joined token stream, which matches classic COMPASS behaviour closely
+    enough while keeping wildcard fallbacks honest.
+    Returns (compiled_regex, num_capture_groups); group i is the i-th '*'.
+
+    Bug post-mortem (this function has now been rebuilt three times -- the
+    scientific method working as intended): earlier revisions built regex
+    fragments with '%' string formatting using NON-raw strings, so Python
+    silently converted the backslash-b sequences into BACKSPACE control
+    characters (x08) inside the regex source.  Every pattern then matched
+    nothing.  Lesson recorded in llm_wiki/decisions: keep every regex
+    fragment a raw string, and unit-test the compiler directly, not only
+    through its callers.
     """
     toks = pattern.split()
-    parts = []                     # list of (regex_text, is_anchored_star)
+    parts = []                     # regex fragments, joined verbatim
     num = 0
     for i, tok in enumerate(toks):
         last = (i == len(toks) - 1)
         if tok == "*":
             num += 1
-            nxt = None if last else toks[i + 1]
-            if nxt is None:
-                parts.append((r"(.+)", False))     # trailing star: greedy rest
-            elif nxt != "*" and not nxt.startswith("@") \
-                    and not nxt.endswith("*"):
-                # anchored lazy capture: embeds BOTH separators
-                parts.append((r"(.+?)\s+%s" % re.escape(nxt), True))
+            # leading star: optional preamble (COMPASS implicit prefix).
+            # CRITICAL detail found by the Wave 0 test suite: the preamble
+            # must be FOLLOWED BY a separator when non-empty, and the whole
+            # group must be optional.  '(?:.*?)\W*' emits '\W+' after it, so
+            # an empty preamble still demands one non-word char -- which made
+            # every sentence-initial wildcard pattern ('* remind me to *')
+            # fail on 'remind me to buy milk'.  The correct shape is
+            # '(?:(?:.+?)\W+)?': either nothing, or content + boundary.
+            if i == 0 and not last:
+                parts.append(r"(?:(?:.+?)\W+)?")
+            elif last:
+                parts.append(r"(.+)")
             else:
-                parts.append((r"(.+?)", False))    # star before star/@/glob
+                parts.append(r"(.+?)")
         elif tok.startswith("@"):
             syns = sorted(synonyms.get(tok[1:], []), key=len, reverse=True) \
                 or [tok[1:]]
-            alt = "|".join(re.escape(s) for s in syns)
-            parts.append((r"(?:%s)" % alt, False))
+            alt = "|".join(_lit(s) for s in syns)
+            parts.append(r"(?:%s)" % alt)
         elif tok.endswith("*") and len(tok) > 1:   # prefix glob: hello*
-            parts.append((r"%s\w*" % re.escape(tok[:-1]), False))
-        else:
-            parts.append((r"%s" % re.escape(tok), False))
-    out = ""
-    for idx, (p, a) in enumerate(parts):
-        if idx > 0:
-            prev_a = parts[idx - 1][1]
-            # separator needed UNLESS the previous part was an anchored star
-            # (it ends in a literal that this part must follow directly only
-            # when this part IS that same duplicated literal -- which we now
-            # skip entirely below) or this part is anchored (embeds its own).
-            if a:
-                pass                       # anchored: leading sep embedded
-            elif prev_a:
-                pass                       # dup literal consumed by anchor
-            else:
-                out += r"\W+"
-        out += p
-    # drop the duplicate-literal artifacts: anchored part ALREADY emitted the
-    # next pattern token, so remove the standalone copy that followed it.
-    out = _dedupe_anchored(out, parts)
-    if toks and toks[-1] != "*" and not toks[-1].endswith("*"):
-        out += r"(\W.*|)"                # allow trailing words
+            parts.append(r"\b%s\w*" % re.escape(tok[:-1]))
+        else:                                        # plain literal
+            parts.append(_lit(tok))
+        # Separator policy (Wave 0, bug #4 — the scientific method at work):
+        # NEVER emit \W+ right after a fragment that already consumes a
+        # trailing boundary itself:
+        #   * optional preamble '(?:(?:.+?)\W+)?' -> next literal must be
+        #     able to start at position 0 ('remind me to X' has no prefix);
+        #     emitting \W+ after it made an empty preamble still require a
+        #     non-word char. Emit r'' and let \b do the boundary work.
+        #   * greedy '(.+)' capture swallows everything to end of string, so
+        #     a following \W+ can never match (patterns end with '*' anyway).
+        sep = r""
+        prev = parts[-1] if parts else ""
+        if prev.endswith(r")?"):                     # optional preamble group
+            sep = r""
+        elif prev == r"(.+)":                        # greedy tail capture
+            sep = r""
+        elif prev == r"(.+?)":                       # lazy capture: needs one
+            sep = r"\W+"                             # boundary before literal
+        if not last:
+            parts.append(sep)
+    out = "".join(parts)
+    if toks and toks[-1] != "*" and not toks[-1].endswith("*") \
+            and not toks[-1].startswith("@"):
+        out += r"(\W.*)?"                           # optional trailing words
     return re.compile(out, re.S | re.I), num
-
-
-def _dedupe_anchored(src, parts):
-    """Remove '<lit><lit>' sequences created when an anchored star's literal
-    was ALSO appended as its own plain part."""
-    import re as _re
-    fixed = _re.sub(r"(\b[\w]+\b)(\1)+", r"", src)
-    return fixed
-
 
 # ------------------------------------------------------------------- intent
 def _pattern_hit(pat, joined, synonyms):

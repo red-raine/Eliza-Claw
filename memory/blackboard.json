@@ -16,10 +16,10 @@
  "inferred_state": {
   "technical_level": "expert",
   "emotional_state": "neutral",
-  "urgency": "high",
+  "urgency": "normal",
   "attention_focus": "i",
   "weather_condition": "clear "
  },
- "_updated": 1791141913.9860127,
- "last_inference": 1791141913.9860294
+ "_updated": 1791144226.0667233,
+ "last_inference": 1791144226.0667431
 }

@@ -169,6 +169,47 @@ class Shell:
     ROUTE2KEY = {"task": "task", "reminder": "remind", "info": None,
                  "chat": None, "system": None}
 
+    def _key_for_route(self, want, joined):
+        """Wave 0 completion: find the best pattern match belonging to the
+        plugin/key the Bayesian word-web wants ('task', 'remind', ...).
+        Returns (rank_tuple, key, decomp, match, ngroups) or None."""
+        cand = None
+        for key in self.keys:
+            if key.get("plugin") != want and key["keyword"] != want:
+                continue
+            prio = key.get("priority", 0)
+            for decomp in key["decomps"]:
+                rx, ng = self._compiled[decomp["pattern"].lower()]
+                m = rx.search(joined)
+                if m:
+                    rank = (-prio, -self._specificity(decomp["pattern"]))
+                    if cand is None or rank < cand[0]:
+                        cand = (rank, key, decomp, m, ng)
+                    break
+        return cand
+
+    def _web_fallback(self, ctx):
+        """No pattern matched at all.  Two eras of ideas combine here:
+        1. Weizenbaum's xnone -- ask the user to rephrase (cheap, polite).
+        2. Selfridge's Pandemonium -- if the Bayesian word-web shouted with
+           high confidence, try its preferred route's generic opener anyway
+           so a statistically-obvious request isn't bounced.
+        Otherwise fall through to the xnone key's responses."""
+        wr = ctx.get("web_route")
+        if wr and ctx.get("web_conf", 0) >= 0.65:
+            alt = self._key_for_route(self.ROUTE2KEY.get(wr) or wr,
+                                      " ".join(ctx["tokens"]))
+            if alt:
+                return self._dispatch(alt, ctx)
+        return False                                 # let xnone handle it
+
+    def _dispatch(self, best, ctx):
+        _, key, decomp, m, ng = best
+        ctx["key"] = key
+        ctx["decomp"] = decomp
+        ctx["captures"] = [g for g in m.groups()[:ng] if g is not None]
+        return False
+
     def route(self, ctx):
         joined = " ".join(ctx["tokens"])
         best = None                                  # (rank, key, decomp, m)
@@ -179,7 +220,7 @@ class Shell:
             prio = key.get("priority", 0)
             for decomp in key["decomps"]:
                 rx, ng = self._compiled[decomp["pattern"].lower()]
-                m = rx.match(joined)
+                m = rx.search(joined)
                 if m:
                     rank = (-prio, -self._specificity(decomp["pattern"]))
                     if best is None or rank < best[0]:

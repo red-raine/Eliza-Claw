@@ -1,0 +1,11 @@
+{
+ "signals": [],
+ "inferred_state": {
+  "technical_level": "unknown",
+  "emotional_state": "neutral",
+  "urgency": "normal",
+  "attention_focus": "remind"
+ },
+ "_updated": 1791143785.8290353,
+ "last_inference": 1791143785.8290548
+}
