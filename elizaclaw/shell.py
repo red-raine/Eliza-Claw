@@ -324,7 +324,11 @@ class Shell:
         # ...', imperative opener), push it onto the task stack. This is the
         # zero-token answer to "agent memory": we simply write down what was
         # asked, exactly like Colbys object-assumption frames fill slots.
+        # Wave 1 guard: only when no corpus topic claimed the turn either --
+        # 'tell me about dogs' is conversation, not a to-do item.
         if (key["keyword"] == "xnone" and ctx.get("intent") == "command"
+                and ctx.get("response") is None
+                and ctx["vars"].get("topic") in (None, "")
                 and len(ctx["tokens"]) >= 3):
             tm = self.plugins.get("task_manager")
             if tm:

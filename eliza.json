@@ -805,6 +805,12 @@
    ],
    "remembered": [
     "Stored in long-term memory: {key} = {value}"
+   ],
+   "dump": [
+    "Here's what I hold: {facts}"
+   ],
+   "recall": [
+    "Searching my memory for \"{query}\" -- {facts}"
    ]
   }
  },
@@ -1380,7 +1386,7 @@
    "decomps": [
     {
      "pattern": "* search for *",
-     "hook": "web",
+     "hook": "search",
      "params": {
       "query": "cap1"
      },
@@ -1391,10 +1397,10 @@
      }
     },
     {
-     "pattern": "* find *",
-     "hook": "web",
+     "pattern": "* find * *",
+     "hook": "search",
      "params": {
-      "query": "cap1"
+      "query": "cap2"
      },
      "response": "result"
     }
@@ -1583,7 +1589,31 @@
    ],
    "decomps": [
     {
-     "pattern": "* is * true *",
+     "pattern": "* fact check * *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap2"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* verify * *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap2"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* fact check * *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap2"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* is * true * *",
      "hook": "verify",
      "params": {
       "claim": "cap2"
@@ -1605,6 +1635,14 @@
       "claim": "cap1"
      },
      "response": "auto"
+    },
+    {
+     "pattern": "* check * *",
+     "hook": "verify",
+     "params": {
+      "claim": "cap2"
+     },
+     "response": "auto"
     }
    ]
   },
@@ -1613,15 +1651,14 @@
    "priority": 8,
    "plugin": "memory_tiers_plugin",
    "synonyms": [
-    "recall",
-    "what do you know about me"
+    "memory"
    ],
    "decomps": [
     {
-     "pattern": "* remember that *",
-     "hook": "store",
+     "pattern": "* what do you remember about * *",
+     "hook": "show",
      "params": {
-      "text": "cap1"
+      "query": "cap2"
      },
      "response": "auto"
     },
@@ -1633,6 +1670,22 @@
     {
      "pattern": "* memory stats *",
      "hook": "stats",
+     "response": "auto"
+    },
+    {
+     "pattern": "* remember that *",
+     "hook": "store",
+     "params": {
+      "text": "cap1"
+     },
+     "response": "auto"
+    },
+    {
+     "pattern": "* remember *",
+     "hook": "store",
+     "params": {
+      "text": "cap1"
+     },
      "response": "auto"
     }
    ]

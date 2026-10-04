@@ -487,6 +487,32 @@ class Lexicon:
                             "trigger": name, "slots": slots}
         return None
 
+    PREPOSITIONS = {"in", "on", "at", "by", "for", "with", "about", "from",
+                    "to", "of", "under", "over", "near", "during", "after",
+                    "before", "around", "into", "onto", "since", "until",
+                    "beside", "inside", "outside", "across", "along"}
+
+    def noun_phrase(self, tokens, start=0):
+        """Longest noun-ish run starting at `start` (determiner/adjective/
+        noun via POS tags), stopped by a preposition boundary. Returns the
+        phrase or None -- the zero-token answer to 'slot filling'."""
+        tag = self.tag(tokens)
+        run, saw_n = [], False
+        for tok, t in tag[start:]:
+            if tok in self.PREPOSITIONS:
+                break
+            if t[0] in "NNP$DT":           # noun/proper/dollar/determiner
+                run.append(tok)
+                saw_n = saw_n or t[0] in "NN"
+            elif t[0] == "J" and run:       # adjective only mid-phrase
+                run.append(tok)
+            elif tok in ("a", "an", "the") and not run:
+                continue
+            else:
+                break
+        phrase = " ".join(run).strip()
+        return phrase if phrase and (saw_n or len(run) >= 2) else None
+
     # -------------------------------------------------------------- entities
     def recognize(self, tokens):
         """Tiny NER: months, weekdays, numbers, times, proper nouns via tags."""

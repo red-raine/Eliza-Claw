@@ -1,11 +1,11 @@
 {
- "count": 599,
+ "count": 2361,
  "words": [
   {
    "word": "the",
    "rank": 1,
    "stop": true,
-   "slang": true
+   "slang": false
   },
   {
    "word": "be",
@@ -185,7 +185,7 @@
    "word": "or",
    "rank": 31,
    "stop": true,
-   "slang": true
+   "slang": false
   },
   {
    "word": "an",
@@ -209,7 +209,7 @@
    "word": "one",
    "rank": 35,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "all",
@@ -335,7 +335,7 @@
    "word": "no",
    "rank": 56,
    "stop": true,
-   "slang": true
+   "slang": false
   },
   {
    "word": "just",
@@ -587,7 +587,7 @@
    "word": "day",
    "rank": 98,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "most",
@@ -701,7 +701,7 @@
    "word": "things",
    "rank": 117,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "thing",
@@ -1025,7 +1025,7 @@
    "word": "issue",
    "rank": 171,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "side",
@@ -1067,7 +1067,7 @@
    "word": "mother",
    "rank": 178,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "note",
@@ -1271,7 +1271,7 @@
    "word": "event",
    "rank": 212,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "bit",
@@ -2231,7 +2231,7 @@
    "word": "tax",
    "rank": 372,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
    "word": "allocation",
@@ -2654,944 +2654,11516 @@
    "slang": false
   },
   {
-   "word": "lol",
+   "word": "above",
    "rank": 443,
-   "stop": false,
-   "slang": true
+   "stop": true,
+   "slang": false
   },
   {
-   "word": "omg",
+   "word": "abroad",
    "rank": 444,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "btw",
+   "word": "absorbs",
    "rank": 445,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "idc",
+   "word": "actor",
    "rank": 446,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "imo",
+   "word": "actually",
    "rank": 447,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "imho",
+   "word": "air",
    "rank": 448,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "nvm",
+   "word": "album",
    "rank": 449,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "tbh",
+   "word": "aliens",
    "rank": 450,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "ty",
+   "word": "alone",
    "rank": 451,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "vm",
+   "word": "alternative",
    "rank": 452,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "ttyl",
+   "word": "ambition",
    "rank": 453,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "brb",
+   "word": "angry",
    "rank": 454,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "gtg",
+   "word": "anxious",
    "rank": 455,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "ig",
+   "word": "anything",
    "rank": 456,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "yr",
+   "word": "ask",
    "rank": 457,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "fr",
+   "word": "audio",
    "rank": 458,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "cap",
+   "word": "audiobooks",
    "rank": 459,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "sus",
+   "word": "author",
    "rank": 460,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "bet",
+   "word": "bake",
    "rank": 461,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "vibe",
+   "word": "band",
    "rank": 462,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "vibes",
+   "word": "basketball",
    "rank": 463,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "ghosting",
+   "word": "beach",
    "rank": 464,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "catfish",
+   "word": "become",
    "rank": 465,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "red",
+   "word": "before",
    "rank": 466,
-   "stop": false,
-   "slang": true
+   "stop": true,
+   "slang": false
   },
   {
-   "word": "flag",
+   "word": "beginner",
    "rank": 467,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "green",
+   "word": "beginners",
    "rank": 468,
    "stop": false,
-   "slang": true
+   "slang": false
+  },
+  {
+   "word": "believe",
+   "rank": 469,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "besides",
+   "rank": 470,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "best",
+   "rank": 471,
+   "stop": false,
+   "slang": false
   },
   {
    "word": "bestie",
-   "rank": 469,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "fam",
-   "rank": 470,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "sis",
-   "rank": 471,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "stan",
    "rank": 472,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "tea",
+   "word": "betrayal",
    "rank": 473,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "shade",
+   "word": "better",
    "rank": 474,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "slay",
+   "word": "beyond",
    "rank": 475,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "ate",
+   "word": "biggest",
    "rank": 476,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "bussin",
+   "word": "bilingual",
    "rank": 477,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "hits",
+   "word": "books",
    "rank": 478,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "different",
+   "word": "boss",
    "rank": 479,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "rent",
+   "word": "break",
    "rank": 480,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "free",
+   "word": "broke",
    "rank": 481,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "touch",
+   "word": "brother",
    "rank": 482,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "grass",
+   "word": "brunch",
    "rank": 483,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "main",
+   "word": "bucket",
    "rank": 484,
    "stop": false,
-   "slang": true
+   "slang": false
+  },
+  {
+   "word": "buddy",
+   "rank": 485,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "budget",
+   "rank": 486,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "build",
+   "rank": 487,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "buys",
+   "rank": 488,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "buzzword",
+   "rank": 489,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "capture",
+   "rank": 490,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "car",
+   "rank": 491,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "carbon",
+   "rank": 492,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "cars",
+   "rank": 493,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "cat",
+   "rank": 494,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "celeb",
+   "rank": 495,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "celebrities",
+   "rank": 496,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "changed",
+   "rank": 497,
+   "stop": false,
+   "slang": false
   },
   {
    "word": "character",
-   "rank": 485,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "mood",
-   "rank": 486,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "real",
-   "rank": 487,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "ones",
-   "rank": 488,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "ride",
-   "rank": 489,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "die",
-   "rank": 490,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "lowkey",
-   "rank": 491,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "highkey",
-   "rank": 492,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "extra",
-   "rank": 493,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "basic",
-   "rank": 494,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "salty",
-   "rank": 495,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "clapback",
-   "rank": 496,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "read",
-   "rank": 497,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "ratio",
    "rank": 498,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "w",
+   "word": "cheap",
    "rank": 499,
    "stop": false,
    "slang": false
   },
   {
-   "word": "l",
+   "word": "cheer",
    "rank": 500,
    "stop": false,
    "slang": false
   },
   {
-   "word": "based",
+   "word": "chef",
    "rank": 501,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "cringe",
+   "word": "childhood",
    "rank": 502,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "cope",
+   "word": "choose",
    "rank": 503,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "seethe",
+   "word": "chosen",
    "rank": 504,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "skill",
+   "word": "church",
    "rank": 505,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "shot",
+   "word": "cinema",
    "rank": 506,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "big",
+   "word": "climate",
    "rank": 507,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "yikes",
+   "word": "closer",
    "rank": 508,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "it's",
+   "word": "clothes",
    "rank": 509,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "giving",
+   "word": "coffee",
    "rank": 510,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "periodt",
+   "word": "collect",
    "rank": 511,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "understood",
+   "word": "comfort",
    "rank": 512,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "assignment",
+   "word": "commands",
    "rank": 513,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "menace",
+   "word": "competed",
    "rank": 514,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "goblin",
+   "word": "completely",
    "rank": 515,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "era",
+   "word": "concert",
    "rank": 516,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "canon",
+   "word": "controversial",
    "rank": 517,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "lore",
+   "word": "cook",
    "rank": 518,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "rizz",
+   "word": "cooking",
    "rank": 519,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "gyat",
+   "word": "course",
    "rank": 520,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "sigma",
+   "word": "crueller",
    "rank": 521,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "alpha",
+   "word": "dad",
    "rank": 522,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "beta",
+   "word": "daily",
    "rank": 523,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "skibidi",
+   "word": "dating",
    "rank": 524,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "ohio",
+   "word": "days",
    "rank": 525,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "brainrot",
+   "word": "deathbed",
    "rank": 526,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "delulu",
+   "word": "deep",
    "rank": 527,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "mewing",
+   "word": "define",
    "rank": 528,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "looksmax",
+   "word": "depressed",
    "rank": 529,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "mogging",
+   "word": "determined",
    "rank": 530,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "fanum",
+   "word": "detox",
    "rank": 531,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "yapping",
+   "word": "die",
    "rank": 532,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "hit",
+   "word": "diet",
    "rank": 533,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "diff",
+   "word": "doctor",
    "rank": 534,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "glazing",
+   "word": "does",
    "rank": 535,
-   "stop": false,
-   "slang": true
+   "stop": true,
+   "slang": false
   },
   {
-   "word": "edging",
+   "word": "dog",
    "rank": 536,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "gooning",
+   "word": "doing",
    "rank": 537,
-   "stop": false,
-   "slang": true
+   "stop": true,
+   "slang": false
   },
   {
-   "word": "bussy",
+   "word": "drama",
    "rank": 538,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "gatekeep",
+   "word": "draw",
    "rank": 539,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "gaslight",
+   "word": "draws",
    "rank": 540,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "girlboss",
+   "word": "dream",
    "rank": 541,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "heal",
+   "word": "dreams",
    "rank": 542,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "thyself",
+   "word": "drive",
    "rank": 543,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "live",
+   "word": "ease",
    "rank": 544,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "laugh",
+   "word": "eat",
    "rank": 545,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "lobotomy",
+   "word": "endlessly",
    "rank": 546,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "core",
+   "word": "engine",
    "rank": 547,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "cannon",
+   "word": "enjoy",
    "rank": 548,
    "stop": false,
-   "slang": true
+   "slang": false
+  },
+  {
+   "word": "escape",
+   "rank": 549,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ethics",
+   "rank": 550,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "etiquette",
+   "rank": 551,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ever",
+   "rank": 552,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "everyday",
+   "rank": 553,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "exist",
+   "rank": 554,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "existed",
+   "rank": 555,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "explain",
+   "rank": 556,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "extrovert",
+   "rank": 557,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "faith",
+   "rank": 558,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fashion",
+   "rank": 559,
+   "stop": false,
+   "slang": false
   },
   {
    "word": "fear",
-   "rank": 549,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "romanticize",
-   "rank": 550,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "delusional",
-   "rank": 551,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "normality",
-   "rank": 552,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "paranoia",
-   "rank": 553,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "villain",
-   "rank": 554,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "arc",
-   "rank": 555,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "akasl",
-   "rank": 556,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "frfr",
-   "rank": 557,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "ong",
-   "rank": 558,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "smh",
-   "rank": 559,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "fomo",
    "rank": 560,
    "stop": false,
-   "slang": true
+   "slang": false
   },
   {
-   "word": "jomo",
+   "word": "feel",
    "rank": 561,
    "stop": false,
    "slang": false
   },
   {
-   "word": "haha",
+   "word": "feelings",
    "rank": 562,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "feels",
+   "rank": 563,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fictional",
+   "rank": 564,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "film",
+   "rank": 565,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "financial",
+   "rank": 566,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "find",
+   "rank": 567,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "finished",
+   "rank": 568,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fit",
+   "rank": 569,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fitness",
+   "rank": 570,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "five",
+   "rank": 571,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "flight",
+   "rank": 572,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "follow",
+   "rank": 573,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "football",
+   "rank": 574,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "forest",
+   "rank": 575,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "forever",
+   "rank": 576,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "forgive",
+   "rank": 577,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freedom",
+   "rank": 578,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freelancing",
+   "rank": 579,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "french",
+   "rank": 580,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "friends",
+   "rank": 581,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "friendship",
+   "rank": 582,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "fryer",
+   "rank": 583,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "future",
+   "rank": 584,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "game",
+   "rank": 585,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "games",
+   "rank": 586,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "gaming",
+   "rank": 587,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "genuinely",
+   "rank": 588,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "god",
+   "rank": 589,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "government",
+   "rank": 590,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "green",
+   "rank": 591,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "grind",
+   "rank": 592,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "growing",
+   "rank": 593,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "guide",
+   "rank": 594,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "gym",
+   "rank": 595,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "habit",
+   "rank": 596,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "happen",
+   "rank": 597,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "happened",
+   "rank": 598,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "happiness",
+   "rank": 599,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "happy",
+   "rank": 600,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hard",
+   "rank": 601,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "headline",
+   "rank": 602,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hello",
+   "rank": 603,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "help",
+   "rank": 604,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hey",
+   "rank": 605,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hike",
+   "rank": 606,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "history",
+   "rank": 607,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hobbies",
+   "rank": 608,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hobby",
+   "rank": 609,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hold",
+   "rank": 610,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "hours",
+   "rank": 611,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "important",
+   "rank": 612,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "impressive",
+   "rank": 613,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "improvement",
+   "rank": 614,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "inherited",
+   "rank": 615,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "insomnia",
+   "rank": 616,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "instagram",
+   "rank": 617,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "intense",
+   "rank": 618,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "interesting",
+   "rank": 619,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "internet",
+   "rank": 620,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "introvert",
+   "rank": 621,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "invest",
+   "rank": 622,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "investing",
+   "rank": 623,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "involving",
+   "rank": 624,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "judge",
+   "rank": 625,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "keep",
+   "rank": 626,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "kill",
+   "rank": 627,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "kinder",
+   "rank": 628,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "kitten",
+   "rank": 629,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "knit",
+   "rank": 630,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "language",
+   "rank": 631,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "last",
+   "rank": 632,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "late",
+   "rank": 633,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lately",
+   "rank": 634,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "learn",
+   "rank": 635,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "learned",
+   "rank": 636,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lifts",
+   "rank": 637,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "list",
+   "rank": 638,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "llm",
+   "rank": 639,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lonely",
+   "rank": 640,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "long",
+   "rank": 641,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lose",
+   "rank": 642,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lost",
+   "rank": 643,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "loved",
+   "rank": 644,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lucid",
+   "rank": 645,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "makes",
+   "rank": 646,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "making",
+   "rank": 647,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "marriage",
+   "rank": 648,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mars",
+   "rank": 649,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "master",
+   "rank": 650,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mbti",
+   "rank": 651,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mean",
+   "rank": 652,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "meaning",
+   "rank": 653,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "memories",
+   "rank": 654,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "memory",
+   "rank": 655,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mind",
+   "rank": 656,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "misjudge",
+   "rank": 657,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mom",
+   "rank": 658,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "monthly",
+   "rank": 659,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mood",
+   "rank": 660,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "moon",
+   "rank": 661,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mountain",
+   "rank": 662,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "movie",
+   "rank": 663,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "movies",
+   "rank": 664,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "name",
+   "rank": 665,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "netflix",
+   "rank": 666,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "nightmare",
+   "rank": 667,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "nostalgia",
+   "rank": 668,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "novel",
+   "rank": 669,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ocean",
+   "rank": 670,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "office",
+   "rank": 671,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "oldest",
+   "rank": 672,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "opinions",
+   "rank": 673,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "optimistic",
+   "rank": 674,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "options",
+   "rank": 675,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "outfit",
+   "rank": 676,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "overrated",
+   "rank": 677,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "paint",
+   "rank": 678,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "pal",
+   "rank": 679,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "parents",
+   "rank": 680,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "performative",
+   "rank": 681,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "personality",
+   "rank": 682,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "pet",
+   "rank": 683,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "pets",
+   "rank": 684,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "phase",
+   "rank": 685,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "philosophy",
+   "rank": 686,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "phone",
+   "rank": 687,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "pizza",
+   "rank": 688,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "planet",
+   "rank": 689,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "play",
+   "rank": 690,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "playstation",
+   "rank": 691,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "podcast",
+   "rank": 692,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "podcasts",
+   "rank": 693,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "politics",
+   "rank": 694,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "prefer",
+   "rank": 695,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "proud",
+   "rank": 696,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "puppy",
+   "rank": 697,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "purchase",
+   "rank": 698,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "quietly",
+   "rank": 699,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "quitting",
+   "rank": 700,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "radio",
+   "rank": 701,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "rainy",
+   "rank": 702,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "rather",
+   "rank": 703,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "read",
+   "rank": 704,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reading",
+   "rank": 705,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "real",
+   "rank": 706,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recipe",
+   "rank": 707,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recommendations",
+   "rank": 708,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recycle",
+   "rank": 709,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "reddit",
+   "rank": 710,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "relative",
+   "rank": 711,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "religion",
+   "rank": 712,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "remind",
+   "rank": 713,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "restaurant",
+   "rank": 714,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "rewatch",
+   "rank": 715,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "rich",
+   "rank": 716,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ritual",
+   "rank": 717,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "rituals",
+   "rank": 718,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "robot",
+   "rank": 719,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "routines",
+   "rank": 720,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "run",
+   "rank": 721,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sad",
+   "rank": 722,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "salary",
+   "rank": 723,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "saturday",
+   "rank": 724,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "save",
+   "rank": 725,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "self",
+   "rank": 726,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "seriously",
+   "rank": 727,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "shoes",
+   "rank": 728,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "show",
+   "rank": 729,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sibling",
+   "rank": 730,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sick",
+   "rank": 731,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "since",
+   "rank": 732,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "singer",
+   "rank": 733,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sink",
+   "rank": 734,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sister",
+   "rank": 735,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "skill",
+   "rank": 736,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "skills",
+   "rank": 737,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sky",
+   "rank": 738,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sleep",
+   "rank": 739,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sleeping",
+   "rank": 740,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "small",
+   "rank": 741,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "smallest",
+   "rank": 742,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "smalltalk",
+   "rank": 743,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "soccer",
+   "rank": 744,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "social",
+   "rank": 745,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "solo",
+   "rank": 746,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "something",
+   "rank": 747,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "song",
+   "rank": 748,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "soulmates",
+   "rank": 749,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "space",
+   "rank": 750,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "spanish",
+   "rank": 751,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "spiritual",
+   "rank": 752,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sport",
+   "rank": 753,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sports",
+   "rank": 754,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "spotify",
+   "rank": 755,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "spouse",
+   "rank": 756,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "star",
+   "rank": 757,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "stars",
+   "rank": 758,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "started",
+   "rank": 759,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "starter",
+   "rank": 760,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "staycations",
+   "rank": 761,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "stayed",
+   "rank": 762,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "steam",
+   "rank": 763,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "still",
+   "rank": 764,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "stoic",
+   "rank": 765,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "stranger",
+   "rank": 766,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "stressed",
+   "rank": 767,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "style",
+   "rank": 768,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "success",
+   "rank": 769,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sunday",
+   "rank": 770,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "sup",
+   "rank": 771,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise",
+   "rank": 772,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprisingly",
+   "rank": 773,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "survive",
+   "rank": 774,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "teaching",
+   "rank": 775,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "teams",
+   "rank": 776,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tech",
+   "rank": 777,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "technology",
+   "rank": 778,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tell",
+   "rank": 779,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tesla",
+   "rank": 780,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tests",
+   "rank": 781,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "thinking",
+   "rank": 782,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "through",
+   "rank": 783,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "throwback",
+   "rank": 784,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tiktok",
+   "rank": 785,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "today",
+   "rank": 786,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "together",
+   "rank": 787,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tomorrow",
+   "rank": 788,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "track",
+   "rank": 789,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tradition",
+   "rank": 790,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "trait",
+   "rank": 791,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "translate",
+   "rank": 792,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "travel",
+   "rank": 793,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "trip",
+   "rank": 794,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "truly",
+   "rank": 795,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "trust",
+   "rank": 796,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "trying",
+   "rank": 797,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "twitter",
+   "rank": 798,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "ultimate",
+   "rank": 799,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "underrated",
+   "rank": 800,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "understand",
+   "rank": 801,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "universe",
+   "rank": 802,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "unlearned",
+   "rank": 803,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "usually",
+   "rank": 804,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vacation",
+   "rank": 805,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "versus",
+   "rank": 806,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "video",
+   "rank": 807,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "war",
+   "rank": 808,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "weather",
+   "rank": 809,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "weekend",
+   "rank": 810,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "weekends",
+   "rank": 811,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "wellness",
+   "rank": 812,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "were",
+   "rank": 813,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "where",
+   "rank": 814,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "why",
+   "rank": 815,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "win",
+   "rank": 816,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "wish",
+   "rank": 817,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "workday",
+   "rank": 818,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "worst",
+   "rank": 819,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "wrong",
+   "rank": 820,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "xbox",
+   "rank": 821,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "years",
+   "rank": 822,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "young",
+   "rank": 823,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "younger",
+   "rank": 824,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "yours",
+   "rank": 825,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "youtube",
+   "rank": 826,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "zero",
+   "rank": 827,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "zodiac",
+   "rank": 828,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how long have you been",
+   "rank": 829,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "long have you been at",
+   "rank": 830,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "have you been at your",
+   "rank": 831,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you been at your job",
+   "rank": 832,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how long have you",
+   "rank": 833,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "long have you been",
+   "rank": 834,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "have you been at",
+   "rank": 835,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you been at your",
+   "rank": 836,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "been at your job",
+   "rank": 837,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how long have",
+   "rank": 838,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "long have you",
+   "rank": 839,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "have you been",
+   "rank": 840,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you been at",
+   "rank": 841,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "been at your",
+   "rank": 842,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "at your job",
+   "rank": 843,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what's the best part of",
+   "rank": 844,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the best part of your",
+   "rank": 845,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best part of your workday",
+   "rank": 846,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what's the best part",
+   "rank": 847,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the best part of",
+   "rank": 848,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best part of your",
+   "rank": 849,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "part of your workday",
+   "rank": 850,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what's the best",
+   "rank": 851,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the best part",
+   "rank": 852,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best part of",
+   "rank": 853,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "part of your",
+   "rank": 854,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "of your workday",
+   "rank": 855,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "if money didn't matter, would",
+   "rank": 856,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money didn't matter, would you",
+   "rank": 857,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "didn't matter, would you still",
+   "rank": 858,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "matter, would you still do",
+   "rank": 859,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would you still do this",
+   "rank": 860,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you still do this work",
+   "rank": 861,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "if money didn't matter,",
+   "rank": 862,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money didn't matter, would",
+   "rank": 863,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "didn't matter, would you",
+   "rank": 864,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "matter, would you still",
+   "rank": 865,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would you still do",
+   "rank": 866,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you still do this",
+   "rank": 867,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "still do this work",
+   "rank": 868,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "if money didn't",
+   "rank": 869,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money didn't matter,",
+   "rank": 870,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "didn't matter, would",
+   "rank": 871,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "matter, would you",
+   "rank": 872,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would you still",
+   "rank": 873,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you still do",
+   "rank": 874,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "still do this",
+   "rank": 875,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "do this work",
+   "rank": 876,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what would you tell your",
+   "rank": 877,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would you tell your younger",
+   "rank": 878,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you tell your younger self",
+   "rank": 879,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell your younger self about",
+   "rank": 880,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "your younger self about your",
+   "rank": 881,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "younger self about your career",
+   "rank": 882,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what would you tell",
+   "rank": 883,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would you tell your",
+   "rank": 884,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you tell your younger",
+   "rank": 885,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell your younger self",
+   "rank": 886,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "your younger self about",
+   "rank": 887,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "younger self about your",
+   "rank": 888,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "self about your career",
+   "rank": 889,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what would you",
+   "rank": 890,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would you tell",
+   "rank": 891,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you tell your",
+   "rank": 892,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell your younger",
+   "rank": 893,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "your younger self",
+   "rank": 894,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "younger self about",
+   "rank": 895,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "self about your",
+   "rank": 896,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about your career",
+   "rank": 897,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to job",
+   "rank": 898,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job at",
+   "rank": 899,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job at home",
+   "rank": 900,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to",
+   "rank": 901,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job",
+   "rank": 902,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job at",
+   "rank": 903,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job at home",
+   "rank": 904,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you",
+   "rank": 905,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to",
+   "rank": 906,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job",
+   "rank": 907,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job at",
+   "rank": 908,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job at home",
+   "rank": 909,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job at home",
+   "rank": 910,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job at home become",
+   "rank": 911,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job at home become important",
+   "rank": 912,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "at home become important to",
+   "rank": 913,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "home become important to you",
+   "rank": 914,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job at",
+   "rank": 915,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job at home",
+   "rank": 916,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job at home become",
+   "rank": 917,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "at home become important",
+   "rank": 918,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "home become important to",
+   "rank": 919,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "become important to you",
+   "rank": 920,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job",
+   "rank": 921,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job at",
+   "rank": 922,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "at home become",
+   "rank": 923,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "home become important",
+   "rank": 924,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "become important to",
+   "rank": 925,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "important to you",
+   "rank": 926,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what would surprise people about",
+   "rank": 927,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about job",
+   "rank": 928,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job at",
+   "rank": 929,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job at home",
+   "rank": 930,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what would surprise people",
+   "rank": 931,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about",
+   "rank": 932,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job",
+   "rank": 933,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job at",
+   "rank": 934,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job at home",
+   "rank": 935,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what would surprise",
+   "rank": 936,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would surprise people",
+   "rank": 937,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about",
+   "rank": 938,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job",
+   "rank": 939,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job at",
+   "rank": 940,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job at",
+   "rank": 941,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job at home",
+   "rank": 942,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job",
+   "rank": 943,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job at",
+   "rank": 944,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about",
+   "rank": 945,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job",
+   "rank": 946,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job on",
+   "rank": 947,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job on weekends",
+   "rank": 948,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job on",
+   "rank": 949,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job on weekends",
+   "rank": 950,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job on",
+   "rank": 951,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job on weekends",
+   "rank": 952,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job on weekends",
+   "rank": 953,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job on weekends become",
+   "rank": 954,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job on weekends become important",
+   "rank": 955,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "on weekends become important to",
+   "rank": 956,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "weekends become important to you",
+   "rank": 957,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job on",
+   "rank": 958,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job on weekends",
+   "rank": 959,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job on weekends become",
+   "rank": 960,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "on weekends become important",
+   "rank": 961,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "weekends become important to",
+   "rank": 962,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job on",
+   "rank": 963,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "on weekends become",
+   "rank": 964,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "weekends become important",
+   "rank": 965,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job on",
+   "rank": 966,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job on weekends",
+   "rank": 967,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job on",
+   "rank": 968,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job on weekends",
+   "rank": 969,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job on",
+   "rank": 970,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job on",
+   "rank": 971,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job on weekends",
+   "rank": 972,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job on",
+   "rank": 973,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job with",
+   "rank": 974,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job with friends",
+   "rank": 975,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job with",
+   "rank": 976,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job with friends",
+   "rank": 977,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job with",
+   "rank": 978,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job with friends",
+   "rank": 979,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job with friends",
+   "rank": 980,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job with friends become",
+   "rank": 981,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job with friends become important",
+   "rank": 982,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "with friends become important to",
+   "rank": 983,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "friends become important to you",
+   "rank": 984,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job with",
+   "rank": 985,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job with friends",
+   "rank": 986,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job with friends become",
+   "rank": 987,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "with friends become important",
+   "rank": 988,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "friends become important to",
+   "rank": 989,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job with",
+   "rank": 990,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "with friends become",
+   "rank": 991,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "friends become important",
+   "rank": 992,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job with",
+   "rank": 993,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job with friends",
+   "rank": 994,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job with",
+   "rank": 995,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job with friends",
+   "rank": 996,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job with",
+   "rank": 997,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job with",
+   "rank": 998,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job with friends",
+   "rank": 999,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job with",
+   "rank": 1000,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job alone",
+   "rank": 1001,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job alone",
+   "rank": 1002,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job alone",
+   "rank": 1003,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did job alone become",
+   "rank": 1004,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job alone become important",
+   "rank": 1005,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job alone become important to",
+   "rank": 1006,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "alone become important to you",
+   "rank": 1007,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job alone",
+   "rank": 1008,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job alone become",
+   "rank": 1009,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job alone become important",
+   "rank": 1010,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "alone become important to",
+   "rank": 1011,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job alone",
+   "rank": 1012,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job alone become",
+   "rank": 1013,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "alone become important",
+   "rank": 1014,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job alone",
+   "rank": 1015,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job alone",
+   "rank": 1016,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job alone",
+   "rank": 1017,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job alone",
+   "rank": 1018,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job alone",
+   "rank": 1019,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job as",
+   "rank": 1020,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job as a",
+   "rank": 1021,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job as a hobby",
+   "rank": 1022,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job as",
+   "rank": 1023,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job as a",
+   "rank": 1024,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job as a hobby",
+   "rank": 1025,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "to job as",
+   "rank": 1026,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job as a",
+   "rank": 1027,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "as a hobby",
+   "rank": 1028,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did job as a",
+   "rank": 1029,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job as a hobby",
+   "rank": 1030,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job as a hobby become",
+   "rank": 1031,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "as a hobby become important",
+   "rank": 1032,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "a hobby become important to",
+   "rank": 1033,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "hobby become important to you",
+   "rank": 1034,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job as",
+   "rank": 1035,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job as a",
+   "rank": 1036,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "as a hobby become",
+   "rank": 1037,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "a hobby become important",
+   "rank": 1038,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "hobby become important to",
+   "rank": 1039,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job as",
+   "rank": 1040,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "a hobby become",
+   "rank": 1041,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "hobby become important",
+   "rank": 1042,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job as",
+   "rank": 1043,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job as a",
+   "rank": 1044,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job as a hobby",
+   "rank": 1045,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about job as",
+   "rank": 1046,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job as a",
+   "rank": 1047,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job as",
+   "rank": 1048,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job as",
+   "rank": 1049,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job as a",
+   "rank": 1050,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job as",
+   "rank": 1051,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job for",
+   "rank": 1052,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job for beginners",
+   "rank": 1053,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job for",
+   "rank": 1054,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job for beginners",
+   "rank": 1055,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job for",
+   "rank": 1056,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job for beginners",
+   "rank": 1057,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job for beginners",
+   "rank": 1058,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job for beginners become",
+   "rank": 1059,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job for beginners become important",
+   "rank": 1060,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "for beginners become important to",
+   "rank": 1061,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "beginners become important to you",
+   "rank": 1062,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job for",
+   "rank": 1063,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job for beginners",
+   "rank": 1064,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job for beginners become",
+   "rank": 1065,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "for beginners become important",
+   "rank": 1066,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "beginners become important to",
+   "rank": 1067,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job for",
+   "rank": 1068,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "for beginners become",
+   "rank": 1069,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "beginners become important",
+   "rank": 1070,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job for",
+   "rank": 1071,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job for beginners",
+   "rank": 1072,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job for",
+   "rank": 1073,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job for beginners",
+   "rank": 1074,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job for",
+   "rank": 1075,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job for",
+   "rank": 1076,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job for beginners",
+   "rank": 1077,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job for",
+   "rank": 1078,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job vs",
+   "rank": 1079,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job vs freelancing",
+   "rank": 1080,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job vs",
+   "rank": 1081,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job vs freelancing",
+   "rank": 1082,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job vs",
+   "rank": 1083,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job vs freelancing",
+   "rank": 1084,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job vs freelancing",
+   "rank": 1085,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job vs freelancing become",
+   "rank": 1086,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job vs freelancing become important",
+   "rank": 1087,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vs freelancing become important to",
+   "rank": 1088,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freelancing become important to you",
+   "rank": 1089,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job vs",
+   "rank": 1090,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job vs freelancing",
+   "rank": 1091,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job vs freelancing become",
+   "rank": 1092,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vs freelancing become important",
+   "rank": 1093,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freelancing become important to",
+   "rank": 1094,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job vs",
+   "rank": 1095,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "vs freelancing become",
+   "rank": 1096,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freelancing become important",
+   "rank": 1097,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job vs",
+   "rank": 1098,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job vs freelancing",
+   "rank": 1099,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job vs",
+   "rank": 1100,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job vs freelancing",
+   "rank": 1101,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job vs",
+   "rank": 1102,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job vs",
+   "rank": 1103,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job vs freelancing",
+   "rank": 1104,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job vs",
+   "rank": 1105,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to best",
+   "rank": 1106,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to best job",
+   "rank": 1107,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "draws you to best",
+   "rank": 1108,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to best job",
+   "rank": 1109,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to best",
+   "rank": 1110,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to best job",
+   "rank": 1111,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did best job become",
+   "rank": 1112,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did best job become important",
+   "rank": 1113,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best job become important to",
+   "rank": 1114,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "job become important to you",
+   "rank": 1115,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did best job",
+   "rank": 1116,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did best job become",
+   "rank": 1117,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best job become important",
+   "rank": 1118,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "job become important to",
+   "rank": 1119,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did best",
+   "rank": 1120,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did best job",
+   "rank": 1121,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best job become",
+   "rank": 1122,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "job become important",
+   "rank": 1123,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about best",
+   "rank": 1124,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about best job",
+   "rank": 1125,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about best",
+   "rank": 1126,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about best job",
+   "rank": 1127,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about best",
+   "rank": 1128,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about best job",
+   "rank": 1129,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about best job",
+   "rank": 1130,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tell me about best",
+   "rank": 1131,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about best job",
+   "rank": 1132,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about best",
+   "rank": 1133,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to worst",
+   "rank": 1134,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to worst job",
+   "rank": 1135,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "draws you to worst",
+   "rank": 1136,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to worst job",
+   "rank": 1137,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to worst",
+   "rank": 1138,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to worst job",
+   "rank": 1139,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did worst job become",
+   "rank": 1140,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did worst job become important",
+   "rank": 1141,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "worst job become important to",
+   "rank": 1142,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did worst job",
+   "rank": 1143,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did worst job become",
+   "rank": 1144,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "worst job become important",
+   "rank": 1145,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did worst",
+   "rank": 1146,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did worst job",
+   "rank": 1147,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "worst job become",
+   "rank": 1148,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about worst",
+   "rank": 1149,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about worst job",
+   "rank": 1150,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about worst",
+   "rank": 1151,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about worst job",
+   "rank": 1152,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about worst",
+   "rank": 1153,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about worst job",
+   "rank": 1154,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about worst job",
+   "rank": 1155,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tell me about worst",
+   "rank": 1156,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about worst job",
+   "rank": 1157,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about worst",
+   "rank": 1158,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to future",
+   "rank": 1159,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to future of",
+   "rank": 1160,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to future of job",
+   "rank": 1161,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to future",
+   "rank": 1162,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to future of",
+   "rank": 1163,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to future of job",
+   "rank": 1164,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to future",
+   "rank": 1165,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to future of",
+   "rank": 1166,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "future of job",
+   "rank": 1167,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did future of job",
+   "rank": 1168,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did future of job become",
+   "rank": 1169,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "future of job become important",
+   "rank": 1170,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "of job become important to",
+   "rank": 1171,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did future of",
+   "rank": 1172,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did future of job",
+   "rank": 1173,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "future of job become",
+   "rank": 1174,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "of job become important",
+   "rank": 1175,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did future",
+   "rank": 1176,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did future of",
+   "rank": 1177,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "of job become",
+   "rank": 1178,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about future",
+   "rank": 1179,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about future of",
+   "rank": 1180,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about future of job",
+   "rank": 1181,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about future",
+   "rank": 1182,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about future of",
+   "rank": 1183,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about future of job",
+   "rank": 1184,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about future",
+   "rank": 1185,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about future of",
+   "rank": 1186,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about future of",
+   "rank": 1187,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about future of job",
+   "rank": 1188,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about future",
+   "rank": 1189,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about future of",
+   "rank": 1190,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about future",
+   "rank": 1191,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job etiquette",
+   "rank": 1192,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job etiquette",
+   "rank": 1193,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job etiquette",
+   "rank": 1194,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did job etiquette become",
+   "rank": 1195,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job etiquette become important",
+   "rank": 1196,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job etiquette become important to",
+   "rank": 1197,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "etiquette become important to you",
+   "rank": 1198,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job etiquette",
+   "rank": 1199,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job etiquette become",
+   "rank": 1200,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job etiquette become important",
+   "rank": 1201,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "etiquette become important to",
+   "rank": 1202,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job etiquette",
+   "rank": 1203,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job etiquette become",
+   "rank": 1204,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "etiquette become important",
+   "rank": 1205,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job etiquette",
+   "rank": 1206,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job etiquette",
+   "rank": 1207,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job etiquette",
+   "rank": 1208,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job etiquette",
+   "rank": 1209,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job etiquette",
+   "rank": 1210,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job memories",
+   "rank": 1211,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job memories",
+   "rank": 1212,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job memories",
+   "rank": 1213,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did job memories become",
+   "rank": 1214,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job memories become important",
+   "rank": 1215,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job memories become important to",
+   "rank": 1216,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "memories become important to you",
+   "rank": 1217,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job memories",
+   "rank": 1218,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job memories become",
+   "rank": 1219,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job memories become important",
+   "rank": 1220,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "memories become important to",
+   "rank": 1221,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job memories",
+   "rank": 1222,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job memories become",
+   "rank": 1223,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "memories become important",
+   "rank": 1224,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job memories",
+   "rank": 1225,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job memories",
+   "rank": 1226,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job memories",
+   "rank": 1227,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job memories",
+   "rank": 1228,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job memories",
+   "rank": 1229,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job recommendations",
+   "rank": 1230,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job recommendations",
+   "rank": 1231,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job recommendations",
+   "rank": 1232,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did job recommendations become",
+   "rank": 1233,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job recommendations become important",
+   "rank": 1234,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job recommendations become important to",
+   "rank": 1235,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recommendations become important to you",
+   "rank": 1236,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job recommendations",
+   "rank": 1237,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job recommendations become",
+   "rank": 1238,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job recommendations become important",
+   "rank": 1239,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recommendations become important to",
+   "rank": 1240,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job recommendations",
+   "rank": 1241,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job recommendations become",
+   "rank": 1242,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "recommendations become important",
+   "rank": 1243,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job recommendations",
+   "rank": 1244,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job recommendations",
+   "rank": 1245,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job recommendations",
+   "rank": 1246,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job recommendations",
+   "rank": 1247,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job recommendations",
+   "rank": 1248,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to learning",
+   "rank": 1249,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to learning job",
+   "rank": 1250,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "draws you to learning",
+   "rank": 1251,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to learning job",
+   "rank": 1252,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to learning",
+   "rank": 1253,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to learning job",
+   "rank": 1254,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did learning job become",
+   "rank": 1255,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did learning job become important",
+   "rank": 1256,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "learning job become important to",
+   "rank": 1257,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did learning job",
+   "rank": 1258,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did learning job become",
+   "rank": 1259,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "learning job become important",
+   "rank": 1260,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did learning",
+   "rank": 1261,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did learning job",
+   "rank": 1262,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "learning job become",
+   "rank": 1263,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about learning",
+   "rank": 1264,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about learning job",
+   "rank": 1265,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about learning",
+   "rank": 1266,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about learning job",
+   "rank": 1267,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about learning",
+   "rank": 1268,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about learning job",
+   "rank": 1269,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about learning job",
+   "rank": 1270,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tell me about learning",
+   "rank": 1271,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about learning job",
+   "rank": 1272,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about learning",
+   "rank": 1273,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to quitting",
+   "rank": 1274,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to quitting job",
+   "rank": 1275,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "draws you to quitting",
+   "rank": 1276,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to quitting job",
+   "rank": 1277,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to quitting",
+   "rank": 1278,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to quitting job",
+   "rank": 1279,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did quitting job become",
+   "rank": 1280,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did quitting job become important",
+   "rank": 1281,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "quitting job become important to",
+   "rank": 1282,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did quitting job",
+   "rank": 1283,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did quitting job become",
+   "rank": 1284,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "quitting job become important",
+   "rank": 1285,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did quitting",
+   "rank": 1286,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did quitting job",
+   "rank": 1287,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "quitting job become",
+   "rank": 1288,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about quitting",
+   "rank": 1289,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about quitting job",
+   "rank": 1290,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about quitting",
+   "rank": 1291,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about quitting job",
+   "rank": 1292,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about quitting",
+   "rank": 1293,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about quitting job",
+   "rank": 1294,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about quitting job",
+   "rank": 1295,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "tell me about quitting",
+   "rank": 1296,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about quitting job",
+   "rank": 1297,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about quitting",
+   "rank": 1298,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job bucket",
+   "rank": 1299,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job bucket list",
+   "rank": 1300,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job bucket",
+   "rank": 1301,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job bucket list",
+   "rank": 1302,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job bucket",
+   "rank": 1303,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job bucket list",
+   "rank": 1304,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job bucket list",
+   "rank": 1305,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job bucket list become",
+   "rank": 1306,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job bucket list become important",
+   "rank": 1307,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "bucket list become important to",
+   "rank": 1308,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "list become important to you",
+   "rank": 1309,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job bucket",
+   "rank": 1310,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job bucket list",
+   "rank": 1311,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job bucket list become",
+   "rank": 1312,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "bucket list become important",
+   "rank": 1313,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "list become important to",
+   "rank": 1314,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job bucket",
+   "rank": 1315,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "bucket list become",
+   "rank": 1316,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "list become important",
+   "rank": 1317,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job bucket",
+   "rank": 1318,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job bucket list",
+   "rank": 1319,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job bucket",
+   "rank": 1320,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job bucket list",
+   "rank": 1321,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job bucket",
+   "rank": 1322,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job bucket",
+   "rank": 1323,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job bucket list",
+   "rank": 1324,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job bucket",
+   "rank": 1325,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job small",
+   "rank": 1326,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job small talk",
+   "rank": 1327,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job small",
+   "rank": 1328,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job small talk",
+   "rank": 1329,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job small",
+   "rank": 1330,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job small talk",
+   "rank": 1331,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job small talk",
+   "rank": 1332,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job small talk become",
+   "rank": 1333,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job small talk become important",
+   "rank": 1334,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "small talk become important to",
+   "rank": 1335,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "talk become important to you",
+   "rank": 1336,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job small",
+   "rank": 1337,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job small talk",
+   "rank": 1338,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job small talk become",
+   "rank": 1339,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "small talk become important",
+   "rank": 1340,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "talk become important to",
+   "rank": 1341,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job small",
+   "rank": 1342,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "small talk become",
+   "rank": 1343,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "talk become important",
+   "rank": 1344,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job small",
+   "rank": 1345,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job small talk",
+   "rank": 1346,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job small",
+   "rank": 1347,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job small talk",
+   "rank": 1348,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job small",
+   "rank": 1349,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job small",
+   "rank": 1350,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job small talk",
+   "rank": 1351,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job small",
+   "rank": 1352,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to job deep",
+   "rank": 1353,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to job deep talk",
+   "rank": 1354,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to job deep",
+   "rank": 1355,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job deep talk",
+   "rank": 1356,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to job deep",
+   "rank": 1357,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job deep talk",
+   "rank": 1358,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job deep talk",
+   "rank": 1359,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job deep talk become",
+   "rank": 1360,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job deep talk become important",
+   "rank": 1361,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "deep talk become important to",
+   "rank": 1362,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did job deep",
+   "rank": 1363,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did job deep talk",
+   "rank": 1364,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "job deep talk become",
+   "rank": 1365,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "deep talk become important",
+   "rank": 1366,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did job deep",
+   "rank": 1367,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "deep talk become",
+   "rank": 1368,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about job deep",
+   "rank": 1369,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job deep talk",
+   "rank": 1370,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about job deep",
+   "rank": 1371,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about job deep talk",
+   "rank": 1372,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about job deep",
+   "rank": 1373,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about job deep",
+   "rank": 1374,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about job deep talk",
+   "rank": 1375,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about job deep",
+   "rank": 1376,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "do you feel money buys",
+   "rank": 1377,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you feel money buys happiness",
+   "rank": 1378,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "feel money buys happiness or",
+   "rank": 1379,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money buys happiness or just",
+   "rank": 1380,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "buys happiness or just options",
+   "rank": 1381,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "do you feel money",
+   "rank": 1382,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you feel money buys",
+   "rank": 1383,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "feel money buys happiness",
+   "rank": 1384,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money buys happiness or",
+   "rank": 1385,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "buys happiness or just",
+   "rank": 1386,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "happiness or just options",
+   "rank": 1387,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "do you feel",
+   "rank": 1388,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you feel money",
+   "rank": 1389,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "feel money buys",
+   "rank": 1390,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money buys happiness",
+   "rank": 1391,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "buys happiness or",
+   "rank": 1392,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "happiness or just",
+   "rank": 1393,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "or just options",
+   "rank": 1394,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what's the best purchase you've",
+   "rank": 1395,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the best purchase you've ever",
+   "rank": 1396,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best purchase you've ever made",
+   "rank": 1397,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what's the best purchase",
+   "rank": 1398,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the best purchase you've",
+   "rank": 1399,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best purchase you've ever",
+   "rank": 1400,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "purchase you've ever made",
+   "rank": 1401,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the best purchase",
+   "rank": 1402,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best purchase you've",
+   "rank": 1403,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "purchase you've ever",
+   "rank": 1404,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you've ever made",
+   "rank": 1405,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would you rather have $1m",
+   "rank": 1406,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you rather have $1m today",
+   "rank": 1407,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "rather have $1m today or",
+   "rank": 1408,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "have $1m today or $10k",
+   "rank": 1409,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "$1m today or $10k monthly",
+   "rank": 1410,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "today or $10k monthly forever",
+   "rank": 1411,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "would you rather have",
+   "rank": 1412,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you rather have $1m",
+   "rank": 1413,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "rather have $1m today",
+   "rank": 1414,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "have $1m today or",
+   "rank": 1415,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "$1m today or $10k",
+   "rank": 1416,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "today or $10k monthly",
+   "rank": 1417,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "or $10k monthly forever",
+   "rank": 1418,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would you rather",
+   "rank": 1419,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you rather have",
+   "rank": 1420,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "rather have $1m",
+   "rank": 1421,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "have $1m today",
+   "rank": 1422,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "$1m today or",
+   "rank": 1423,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "today or $10k",
+   "rank": 1424,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "or $10k monthly",
+   "rank": 1425,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "$10k monthly forever",
+   "rank": 1426,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what does financial freedom actually",
+   "rank": 1427,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "does financial freedom actually mean",
+   "rank": 1428,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "financial freedom actually mean to",
+   "rank": 1429,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freedom actually mean to you",
+   "rank": 1430,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what does financial freedom",
+   "rank": 1431,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "does financial freedom actually",
+   "rank": 1432,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "financial freedom actually mean",
+   "rank": 1433,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freedom actually mean to",
+   "rank": 1434,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "actually mean to you",
+   "rank": 1435,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what does financial",
+   "rank": 1436,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "does financial freedom",
+   "rank": 1437,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "financial freedom actually",
+   "rank": 1438,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "freedom actually mean",
+   "rank": 1439,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "actually mean to",
+   "rank": 1440,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "mean to you",
+   "rank": 1441,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what draws you to money",
+   "rank": 1442,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money at",
+   "rank": 1443,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money at home",
+   "rank": 1444,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money",
+   "rank": 1445,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money at",
+   "rank": 1446,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money at home",
+   "rank": 1447,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money",
+   "rank": 1448,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money at",
+   "rank": 1449,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money at home",
+   "rank": 1450,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money at home",
+   "rank": 1451,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money at home become",
+   "rank": 1452,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money at home become important",
+   "rank": 1453,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money at",
+   "rank": 1454,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money at home",
+   "rank": 1455,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money at home become",
+   "rank": 1456,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money",
+   "rank": 1457,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money at",
+   "rank": 1458,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about money",
+   "rank": 1459,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money at",
+   "rank": 1460,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money at home",
+   "rank": 1461,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money",
+   "rank": 1462,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money at",
+   "rank": 1463,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money at home",
+   "rank": 1464,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about money",
+   "rank": 1465,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money at",
+   "rank": 1466,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money at",
+   "rank": 1467,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money at home",
+   "rank": 1468,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money",
+   "rank": 1469,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money at",
+   "rank": 1470,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money",
+   "rank": 1471,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money on",
+   "rank": 1472,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money on weekends",
+   "rank": 1473,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money on",
+   "rank": 1474,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money on weekends",
+   "rank": 1475,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money on",
+   "rank": 1476,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money on weekends",
+   "rank": 1477,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money on weekends",
+   "rank": 1478,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money on weekends become",
+   "rank": 1479,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money on weekends become important",
+   "rank": 1480,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money on",
+   "rank": 1481,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money on weekends",
+   "rank": 1482,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money on weekends become",
+   "rank": 1483,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money on",
+   "rank": 1484,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money on",
+   "rank": 1485,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money on weekends",
+   "rank": 1486,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money on",
+   "rank": 1487,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money on weekends",
+   "rank": 1488,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money on",
+   "rank": 1489,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money on",
+   "rank": 1490,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money on weekends",
+   "rank": 1491,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money on",
+   "rank": 1492,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money with",
+   "rank": 1493,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money with friends",
+   "rank": 1494,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money with",
+   "rank": 1495,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money with friends",
+   "rank": 1496,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money with",
+   "rank": 1497,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money with friends",
+   "rank": 1498,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money with friends",
+   "rank": 1499,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money with friends become",
+   "rank": 1500,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money with friends become important",
+   "rank": 1501,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money with",
+   "rank": 1502,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money with friends",
+   "rank": 1503,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money with friends become",
+   "rank": 1504,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money with",
+   "rank": 1505,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money with",
+   "rank": 1506,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money with friends",
+   "rank": 1507,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money with",
+   "rank": 1508,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money with friends",
+   "rank": 1509,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money with",
+   "rank": 1510,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money with",
+   "rank": 1511,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money with friends",
+   "rank": 1512,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money with",
+   "rank": 1513,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money alone",
+   "rank": 1514,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money alone",
+   "rank": 1515,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money alone",
+   "rank": 1516,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did money alone become",
+   "rank": 1517,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money alone become important",
+   "rank": 1518,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money alone become important to",
+   "rank": 1519,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money alone",
+   "rank": 1520,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money alone become",
+   "rank": 1521,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money alone become important",
+   "rank": 1522,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money alone",
+   "rank": 1523,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money alone become",
+   "rank": 1524,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money alone",
+   "rank": 1525,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money alone",
+   "rank": 1526,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money alone",
+   "rank": 1527,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money alone",
+   "rank": 1528,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money alone",
+   "rank": 1529,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money as",
+   "rank": 1530,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money as a",
+   "rank": 1531,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money as a hobby",
+   "rank": 1532,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money as",
+   "rank": 1533,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money as a",
+   "rank": 1534,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money as a hobby",
+   "rank": 1535,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "to money as",
+   "rank": 1536,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money as a",
+   "rank": 1537,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money as a",
+   "rank": 1538,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money as a hobby",
+   "rank": 1539,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money as a hobby become",
+   "rank": 1540,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money as",
+   "rank": 1541,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money as a",
+   "rank": 1542,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money as",
+   "rank": 1543,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money as",
+   "rank": 1544,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money as a",
+   "rank": 1545,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money as a hobby",
+   "rank": 1546,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about money as",
+   "rank": 1547,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money as a",
+   "rank": 1548,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money as",
+   "rank": 1549,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money as",
+   "rank": 1550,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money as a",
+   "rank": 1551,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money as",
+   "rank": 1552,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money for",
+   "rank": 1553,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money for beginners",
+   "rank": 1554,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money for",
+   "rank": 1555,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money for beginners",
+   "rank": 1556,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money for",
+   "rank": 1557,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money for beginners",
+   "rank": 1558,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money for beginners",
+   "rank": 1559,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money for beginners become",
+   "rank": 1560,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money for beginners become important",
+   "rank": 1561,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money for",
+   "rank": 1562,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money for beginners",
+   "rank": 1563,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money for beginners become",
+   "rank": 1564,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money for",
+   "rank": 1565,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money for",
+   "rank": 1566,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money for beginners",
+   "rank": 1567,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money for",
+   "rank": 1568,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money for beginners",
+   "rank": 1569,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money for",
+   "rank": 1570,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money for",
+   "rank": 1571,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money for beginners",
+   "rank": 1572,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money for",
+   "rank": 1573,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money vs",
+   "rank": 1574,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money vs investing",
+   "rank": 1575,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money vs",
+   "rank": 1576,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money vs investing",
+   "rank": 1577,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money vs",
+   "rank": 1578,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money vs investing",
+   "rank": 1579,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money vs investing",
+   "rank": 1580,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money vs investing become",
+   "rank": 1581,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money vs investing become important",
+   "rank": 1582,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vs investing become important to",
+   "rank": 1583,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "investing become important to you",
+   "rank": 1584,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money vs",
+   "rank": 1585,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money vs investing",
+   "rank": 1586,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money vs investing become",
+   "rank": 1587,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vs investing become important",
+   "rank": 1588,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "investing become important to",
+   "rank": 1589,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money vs",
+   "rank": 1590,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "vs investing become",
+   "rank": 1591,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "investing become important",
+   "rank": 1592,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money vs",
+   "rank": 1593,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money vs investing",
+   "rank": 1594,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money vs",
+   "rank": 1595,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money vs investing",
+   "rank": 1596,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money vs",
+   "rank": 1597,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money vs",
+   "rank": 1598,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money vs investing",
+   "rank": 1599,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money vs",
+   "rank": 1600,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to best money",
+   "rank": 1601,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to best money",
+   "rank": 1602,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to best money",
+   "rank": 1603,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did best money become",
+   "rank": 1604,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did best money become important",
+   "rank": 1605,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best money become important to",
+   "rank": 1606,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money become important to you",
+   "rank": 1607,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did best money",
+   "rank": 1608,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did best money become",
+   "rank": 1609,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best money become important",
+   "rank": 1610,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money become important to",
+   "rank": 1611,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did best money",
+   "rank": 1612,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "best money become",
+   "rank": 1613,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "money become important",
+   "rank": 1614,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about best money",
+   "rank": 1615,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about best money",
+   "rank": 1616,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about best money",
+   "rank": 1617,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about best money",
+   "rank": 1618,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about best money",
+   "rank": 1619,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to worst money",
+   "rank": 1620,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to worst money",
+   "rank": 1621,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to worst money",
+   "rank": 1622,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did worst money become",
+   "rank": 1623,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did worst money become important",
+   "rank": 1624,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "worst money become important to",
+   "rank": 1625,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did worst money",
+   "rank": 1626,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did worst money become",
+   "rank": 1627,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "worst money become important",
+   "rank": 1628,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did worst money",
+   "rank": 1629,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "worst money become",
+   "rank": 1630,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about worst money",
+   "rank": 1631,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about worst money",
+   "rank": 1632,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about worst money",
+   "rank": 1633,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about worst money",
+   "rank": 1634,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about worst money",
+   "rank": 1635,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to future of money",
+   "rank": 1636,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to future of money",
+   "rank": 1637,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "future of money",
+   "rank": 1638,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did future of money",
+   "rank": 1639,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did future of money become",
+   "rank": 1640,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "future of money become important",
+   "rank": 1641,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "of money become important to",
+   "rank": 1642,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did future of money",
+   "rank": 1643,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "future of money become",
+   "rank": 1644,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "of money become important",
+   "rank": 1645,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "of money become",
+   "rank": 1646,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about future of money",
+   "rank": 1647,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about future of money",
+   "rank": 1648,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about future of money",
+   "rank": 1649,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money etiquette",
+   "rank": 1650,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money etiquette",
+   "rank": 1651,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money etiquette",
+   "rank": 1652,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did money etiquette become",
+   "rank": 1653,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money etiquette become important",
+   "rank": 1654,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money etiquette become important to",
+   "rank": 1655,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money etiquette",
+   "rank": 1656,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money etiquette become",
+   "rank": 1657,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money etiquette become important",
+   "rank": 1658,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money etiquette",
+   "rank": 1659,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money etiquette become",
+   "rank": 1660,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money etiquette",
+   "rank": 1661,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money etiquette",
+   "rank": 1662,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money etiquette",
+   "rank": 1663,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money etiquette",
+   "rank": 1664,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money etiquette",
+   "rank": 1665,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money memories",
+   "rank": 1666,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money memories",
+   "rank": 1667,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money memories",
+   "rank": 1668,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did money memories become",
+   "rank": 1669,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money memories become important",
+   "rank": 1670,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money memories become important to",
+   "rank": 1671,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money memories",
+   "rank": 1672,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money memories become",
+   "rank": 1673,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money memories become important",
+   "rank": 1674,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money memories",
+   "rank": 1675,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money memories become",
+   "rank": 1676,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money memories",
+   "rank": 1677,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money memories",
+   "rank": 1678,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money memories",
+   "rank": 1679,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money memories",
+   "rank": 1680,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money memories",
+   "rank": 1681,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money recommendations",
+   "rank": 1682,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money recommendations",
+   "rank": 1683,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money recommendations",
+   "rank": 1684,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did money recommendations become",
+   "rank": 1685,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money recommendations become important",
+   "rank": 1686,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money recommendations become important to",
+   "rank": 1687,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money recommendations",
+   "rank": 1688,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money recommendations become",
+   "rank": 1689,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money recommendations become important",
+   "rank": 1690,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money recommendations",
+   "rank": 1691,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money recommendations become",
+   "rank": 1692,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money recommendations",
+   "rank": 1693,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money recommendations",
+   "rank": 1694,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money recommendations",
+   "rank": 1695,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money recommendations",
+   "rank": 1696,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money recommendations",
+   "rank": 1697,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to learning money",
+   "rank": 1698,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to learning money",
+   "rank": 1699,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to learning money",
+   "rank": 1700,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did learning money become",
+   "rank": 1701,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did learning money become important",
+   "rank": 1702,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "learning money become important to",
+   "rank": 1703,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did learning money",
+   "rank": 1704,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did learning money become",
+   "rank": 1705,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "learning money become important",
+   "rank": 1706,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did learning money",
+   "rank": 1707,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "learning money become",
+   "rank": 1708,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about learning money",
+   "rank": 1709,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about learning money",
+   "rank": 1710,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about learning money",
+   "rank": 1711,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about learning money",
+   "rank": 1712,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about learning money",
+   "rank": 1713,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to quitting money",
+   "rank": 1714,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to quitting money",
+   "rank": 1715,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to quitting money",
+   "rank": 1716,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did quitting money become",
+   "rank": 1717,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did quitting money become important",
+   "rank": 1718,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "quitting money become important to",
+   "rank": 1719,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did quitting money",
+   "rank": 1720,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did quitting money become",
+   "rank": 1721,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "quitting money become important",
+   "rank": 1722,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did quitting money",
+   "rank": 1723,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "quitting money become",
+   "rank": 1724,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about quitting money",
+   "rank": 1725,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about quitting money",
+   "rank": 1726,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about quitting money",
+   "rank": 1727,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about quitting money",
+   "rank": 1728,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about quitting money",
+   "rank": 1729,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money bucket",
+   "rank": 1730,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money bucket list",
+   "rank": 1731,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money bucket",
+   "rank": 1732,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money bucket list",
+   "rank": 1733,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money bucket",
+   "rank": 1734,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money bucket list",
+   "rank": 1735,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money bucket list",
+   "rank": 1736,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money bucket list become",
+   "rank": 1737,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money bucket list become important",
+   "rank": 1738,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money bucket",
+   "rank": 1739,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money bucket list",
+   "rank": 1740,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money bucket list become",
+   "rank": 1741,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money bucket",
+   "rank": 1742,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money bucket",
+   "rank": 1743,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money bucket list",
+   "rank": 1744,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money bucket",
+   "rank": 1745,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money bucket list",
+   "rank": 1746,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money bucket",
+   "rank": 1747,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money bucket",
+   "rank": 1748,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money bucket list",
+   "rank": 1749,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money bucket",
+   "rank": 1750,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money small",
+   "rank": 1751,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money small talk",
+   "rank": 1752,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money small",
+   "rank": 1753,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money small talk",
+   "rank": 1754,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money small",
+   "rank": 1755,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money small talk",
+   "rank": 1756,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money small talk",
+   "rank": 1757,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money small talk become",
+   "rank": 1758,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money small talk become important",
+   "rank": 1759,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money small",
+   "rank": 1760,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money small talk",
+   "rank": 1761,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money small talk become",
+   "rank": 1762,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money small",
+   "rank": 1763,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money small",
+   "rank": 1764,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money small talk",
+   "rank": 1765,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money small",
+   "rank": 1766,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money small talk",
+   "rank": 1767,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money small",
+   "rank": 1768,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money small",
+   "rank": 1769,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money small talk",
+   "rank": 1770,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money small",
+   "rank": 1771,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to money deep",
+   "rank": 1772,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to money deep talk",
+   "rank": 1773,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to money deep",
+   "rank": 1774,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money deep talk",
+   "rank": 1775,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to money deep",
+   "rank": 1776,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money deep talk",
+   "rank": 1777,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money deep talk",
+   "rank": 1778,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money deep talk become",
+   "rank": 1779,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money deep talk become important",
+   "rank": 1780,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did money deep",
+   "rank": 1781,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did money deep talk",
+   "rank": 1782,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "money deep talk become",
+   "rank": 1783,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did money deep",
+   "rank": 1784,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about money deep",
+   "rank": 1785,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money deep talk",
+   "rank": 1786,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about money deep",
+   "rank": 1787,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about money deep talk",
+   "rank": 1788,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about money deep",
+   "rank": 1789,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about money deep",
+   "rank": 1790,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about money deep talk",
+   "rank": 1791,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about money deep",
+   "rank": 1792,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what's a goal you're quietly",
+   "rank": 1793,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "a goal you're quietly proud",
+   "rank": 1794,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "goal you're quietly proud of",
+   "rank": 1795,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what's a goal you're",
+   "rank": 1796,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "a goal you're quietly",
+   "rank": 1797,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "goal you're quietly proud",
+   "rank": 1798,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you're quietly proud of",
+   "rank": 1799,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what's a goal",
+   "rank": 1800,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "a goal you're",
+   "rank": 1801,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "goal you're quietly",
+   "rank": 1802,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you're quietly proud",
+   "rank": 1803,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "quietly proud of",
+   "rank": 1804,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "is your ambition yours or",
+   "rank": 1805,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "your ambition yours or inherited",
+   "rank": 1806,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition yours or inherited from",
+   "rank": 1807,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "yours or inherited from your",
+   "rank": 1808,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "or inherited from your parents",
+   "rank": 1809,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "is your ambition yours",
+   "rank": 1810,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "your ambition yours or",
+   "rank": 1811,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition yours or inherited",
+   "rank": 1812,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "yours or inherited from",
+   "rank": 1813,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "or inherited from your",
+   "rank": 1814,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "inherited from your parents",
+   "rank": 1815,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "is your ambition",
+   "rank": 1816,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "your ambition yours",
+   "rank": 1817,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition yours or",
+   "rank": 1818,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "yours or inherited",
+   "rank": 1819,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "or inherited from",
+   "rank": 1820,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "inherited from your",
+   "rank": 1821,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "from your parents",
+   "rank": 1822,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what would success look like",
+   "rank": 1823,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would success look like on",
+   "rank": 1824,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "success look like on your",
+   "rank": 1825,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "look like on your deathbed",
+   "rank": 1826,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what would success look",
+   "rank": 1827,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would success look like",
+   "rank": 1828,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "success look like on",
+   "rank": 1829,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "look like on your",
+   "rank": 1830,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "like on your deathbed",
+   "rank": 1831,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "what would success",
+   "rank": 1832,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would success look",
+   "rank": 1833,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "success look like",
+   "rank": 1834,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "look like on",
+   "rank": 1835,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "like on your",
+   "rank": 1836,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "on your deathbed",
+   "rank": 1837,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what draws you to ambition",
+   "rank": 1838,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition at",
+   "rank": 1839,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition at home",
+   "rank": 1840,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition",
+   "rank": 1841,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition at",
+   "rank": 1842,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition at home",
+   "rank": 1843,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to ambition",
+   "rank": 1844,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition at",
+   "rank": 1845,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition at home",
+   "rank": 1846,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition at home",
+   "rank": 1847,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition at home become",
+   "rank": 1848,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition at home become important",
+   "rank": 1849,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition at",
+   "rank": 1850,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition at home",
+   "rank": 1851,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition at home become",
+   "rank": 1852,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition",
+   "rank": 1853,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition at",
+   "rank": 1854,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "would surprise people about ambition",
+   "rank": 1855,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition at",
+   "rank": 1856,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition at home",
+   "rank": 1857,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition",
+   "rank": 1858,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition at",
+   "rank": 1859,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition at home",
+   "rank": 1860,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about ambition",
+   "rank": 1861,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition at",
+   "rank": 1862,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition at",
+   "rank": 1863,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition at home",
+   "rank": 1864,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition",
+   "rank": 1865,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition at",
+   "rank": 1866,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about ambition",
+   "rank": 1867,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition on",
+   "rank": 1868,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition on weekends",
+   "rank": 1869,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to ambition on",
+   "rank": 1870,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition on weekends",
+   "rank": 1871,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition on",
+   "rank": 1872,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition on weekends",
+   "rank": 1873,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition on weekends",
+   "rank": 1874,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition on weekends become",
+   "rank": 1875,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition on weekends become important",
+   "rank": 1876,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition on",
+   "rank": 1877,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition on weekends",
+   "rank": 1878,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition on weekends become",
+   "rank": 1879,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did ambition on",
+   "rank": 1880,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition on",
+   "rank": 1881,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition on weekends",
+   "rank": 1882,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition on",
+   "rank": 1883,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition on weekends",
+   "rank": 1884,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about ambition on",
+   "rank": 1885,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition on",
+   "rank": 1886,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition on weekends",
+   "rank": 1887,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about ambition on",
+   "rank": 1888,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition with",
+   "rank": 1889,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition with friends",
+   "rank": 1890,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to ambition with",
+   "rank": 1891,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition with friends",
+   "rank": 1892,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition with",
+   "rank": 1893,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition with friends",
+   "rank": 1894,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition with friends",
+   "rank": 1895,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition with friends become",
+   "rank": 1896,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition with friends become important",
+   "rank": 1897,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition with",
+   "rank": 1898,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition with friends",
+   "rank": 1899,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition with friends become",
+   "rank": 1900,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did ambition with",
+   "rank": 1901,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition with",
+   "rank": 1902,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition with friends",
+   "rank": 1903,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition with",
+   "rank": 1904,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition with friends",
+   "rank": 1905,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about ambition with",
+   "rank": 1906,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition with",
+   "rank": 1907,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition with friends",
+   "rank": 1908,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about ambition with",
+   "rank": 1909,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition alone",
+   "rank": 1910,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition alone",
+   "rank": 1911,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition alone",
+   "rank": 1912,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how did ambition alone become",
+   "rank": 1913,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition alone become important",
+   "rank": 1914,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition alone become important to",
+   "rank": 1915,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition alone",
+   "rank": 1916,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition alone become",
+   "rank": 1917,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition alone become important",
+   "rank": 1918,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did ambition alone",
+   "rank": 1919,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition alone become",
+   "rank": 1920,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition alone",
+   "rank": 1921,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition alone",
+   "rank": 1922,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition alone",
+   "rank": 1923,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition alone",
+   "rank": 1924,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition alone",
+   "rank": 1925,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition as",
+   "rank": 1926,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition as a",
+   "rank": 1927,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition as a hobby",
+   "rank": 1928,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to ambition as",
+   "rank": 1929,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition as a",
+   "rank": 1930,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition as a hobby",
+   "rank": 1931,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "to ambition as",
+   "rank": 1932,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition as a",
+   "rank": 1933,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition as a",
+   "rank": 1934,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition as a hobby",
+   "rank": 1935,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition as a hobby become",
+   "rank": 1936,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition as",
+   "rank": 1937,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition as a",
+   "rank": 1938,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition as",
+   "rank": 1939,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition as",
+   "rank": 1940,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition as a",
+   "rank": 1941,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition as a hobby",
+   "rank": 1942,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about ambition as",
+   "rank": 1943,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition as a",
+   "rank": 1944,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about ambition as",
+   "rank": 1945,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition as",
+   "rank": 1946,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition as a",
+   "rank": 1947,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about ambition as",
+   "rank": 1948,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition for",
+   "rank": 1949,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition for beginners",
+   "rank": 1950,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to ambition for",
+   "rank": 1951,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition for beginners",
+   "rank": 1952,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition for",
+   "rank": 1953,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition for beginners",
+   "rank": 1954,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition for beginners",
+   "rank": 1955,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition for beginners become",
+   "rank": 1956,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition for beginners become important",
+   "rank": 1957,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition for",
+   "rank": 1958,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition for beginners",
+   "rank": 1959,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition for beginners become",
+   "rank": 1960,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did ambition for",
+   "rank": 1961,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition for",
+   "rank": 1962,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition for beginners",
+   "rank": 1963,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition for",
+   "rank": 1964,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition for beginners",
+   "rank": 1965,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about ambition for",
+   "rank": 1966,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition for",
+   "rank": 1967,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition for beginners",
+   "rank": 1968,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "me about ambition for",
+   "rank": 1969,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "draws you to ambition vs",
+   "rank": 1970,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "you to ambition vs the",
+   "rank": 1971,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition vs the alternative",
+   "rank": 1972,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "you to ambition vs",
+   "rank": 1973,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "to ambition vs the",
+   "rank": 1974,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition vs the alternative",
+   "rank": 1975,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "to ambition vs",
+   "rank": 1976,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition vs the",
+   "rank": 1977,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vs the alternative",
+   "rank": 1978,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition vs the",
+   "rank": 1979,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition vs the alternative",
+   "rank": 1980,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "ambition vs the alternative become",
+   "rank": 1981,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "vs the alternative become important",
+   "rank": 1982,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the alternative become important to",
+   "rank": 1983,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "alternative become important to you",
+   "rank": 1984,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "how did ambition vs",
+   "rank": 1985,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "did ambition vs the",
+   "rank": 1986,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "vs the alternative become",
+   "rank": 1987,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "the alternative become important",
+   "rank": 1988,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "alternative become important to",
+   "rank": 1989,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "did ambition vs",
+   "rank": 1990,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "the alternative become",
+   "rank": 1991,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "alternative become important",
+   "rank": 1992,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "surprise people about ambition vs",
+   "rank": 1993,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "people about ambition vs the",
+   "rank": 1994,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition vs the alternative",
+   "rank": 1995,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "people about ambition vs",
+   "rank": 1996,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "about ambition vs the",
+   "rank": 1997,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "about ambition vs",
+   "rank": 1998,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "tell me about ambition vs",
+   "rank": 1999,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "me about ambition vs the",
+   "rank": 2000,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what do you think how are you what is your tell me about",
+   "rank": 2001,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "i think that i feel like do you like what about your favorite what else",
+   "rank": 2002,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "how do you why do you when was the last time have you ever would you rather",
+   "rank": 2003,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "do you believe can you help i need to remind me to search for fact check",
+   "rank": 2004,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "is it true what can you do nice to meet you how old are you where do you live",
+   "rank": 2005,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "what do you do for fun my name is i am feeling that sounds good i agree",
+   "rank": 2006,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "i disagree maybe later not sure at all thanks a lot see you later good night",
+   "rank": 2007,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "good morning how's it going what's up nothing much same here of course",
+   "rank": 2008,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "for real or not hot take big mood main character energy safe space red flag",
+   "rank": 2009,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "green flag quality time me time we should catch up long time no see",
+   "rank": 2010,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "lol",
+   "rank": 2011,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "omg",
+   "rank": 2012,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "btw",
+   "rank": 2013,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "idc",
+   "rank": 2014,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "imo",
+   "rank": 2015,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "imho",
+   "rank": 2016,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nvm",
+   "rank": 2017,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tbh",
+   "rank": 2018,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ty",
+   "rank": 2019,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vm",
+   "rank": 2020,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ttyl",
+   "rank": 2021,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "brb",
+   "rank": 2022,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gtg",
+   "rank": 2023,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ig",
+   "rank": 2024,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yr",
+   "rank": 2025,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fr",
+   "rank": 2026,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cap",
+   "rank": 2027,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sus",
+   "rank": 2028,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bet",
+   "rank": 2029,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vibe",
+   "rank": 2030,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vibes",
+   "rank": 2031,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ghosting",
+   "rank": 2032,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "catfish",
+   "rank": 2033,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "red",
+   "rank": 2034,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "flag",
+   "rank": 2035,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fam",
+   "rank": 2036,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sis",
+   "rank": 2037,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "stan",
+   "rank": 2038,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tea",
+   "rank": 2039,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "shade",
+   "rank": 2040,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "slay",
+   "rank": 2041,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ate",
+   "rank": 2042,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bussin",
+   "rank": 2043,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hits",
+   "rank": 2044,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "different",
+   "rank": 2045,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rent",
+   "rank": 2046,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "free",
+   "rank": 2047,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "touch",
+   "rank": 2048,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "grass",
+   "rank": 2049,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "main",
+   "rank": 2050,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ones",
+   "rank": 2051,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ride",
+   "rank": 2052,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lowkey",
+   "rank": 2053,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "highkey",
+   "rank": 2054,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "extra",
+   "rank": 2055,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "basic",
+   "rank": 2056,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "salty",
+   "rank": 2057,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "clapback",
+   "rank": 2058,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ratio",
+   "rank": 2059,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "w",
+   "rank": 2060,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "l",
+   "rank": 2061,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "based",
+   "rank": 2062,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cringe",
+   "rank": 2063,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cope",
+   "rank": 2064,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "seethe",
+   "rank": 2065,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "shot",
+   "rank": 2066,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "big",
+   "rank": 2067,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yikes",
+   "rank": 2068,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "it's",
+   "rank": 2069,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "giving",
+   "rank": 2070,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "periodt",
+   "rank": 2071,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "understood",
+   "rank": 2072,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "assignment",
+   "rank": 2073,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "menace",
+   "rank": 2074,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "goblin",
+   "rank": 2075,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "era",
+   "rank": 2076,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "canon",
+   "rank": 2077,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lore",
+   "rank": 2078,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rizz",
+   "rank": 2079,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gyat",
+   "rank": 2080,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sigma",
+   "rank": 2081,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "alpha",
+   "rank": 2082,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "beta",
+   "rank": 2083,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "skibidi",
+   "rank": 2084,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ohio",
+   "rank": 2085,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "brainrot",
+   "rank": 2086,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "delulu",
+   "rank": 2087,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mewing",
+   "rank": 2088,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "looksmax",
+   "rank": 2089,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mogging",
+   "rank": 2090,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fanum",
+   "rank": 2091,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yapping",
+   "rank": 2092,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hit",
+   "rank": 2093,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "diff",
+   "rank": 2094,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "glazing",
+   "rank": 2095,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "edging",
+   "rank": 2096,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gooning",
+   "rank": 2097,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bussy",
+   "rank": 2098,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gatekeep",
+   "rank": 2099,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gaslight",
+   "rank": 2100,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "girlboss",
+   "rank": 2101,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "heal",
+   "rank": 2102,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "thyself",
+   "rank": 2103,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "live",
+   "rank": 2104,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "laugh",
+   "rank": 2105,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lobotomy",
+   "rank": 2106,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "core",
+   "rank": 2107,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cannon",
+   "rank": 2108,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "romanticize",
+   "rank": 2109,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "delusional",
+   "rank": 2110,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "normality",
+   "rank": 2111,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "paranoia",
+   "rank": 2112,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "villain",
+   "rank": 2113,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "arc",
+   "rank": 2114,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "akasl",
+   "rank": 2115,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "frfr",
+   "rank": 2116,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ong",
+   "rank": 2117,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "smh",
+   "rank": 2118,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fomo",
+   "rank": 2119,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "jomo",
+   "rank": 2120,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "haha",
+   "rank": 2121,
    "stop": false,
    "slang": true
   },
   {
    "word": "hehe",
-   "rank": 563,
+   "rank": 2122,
    "stop": false,
    "slang": true
   },
   {
    "word": "lolz",
-   "rank": 564,
+   "rank": 2123,
    "stop": false,
    "slang": true
   },
   {
    "word": "lmao",
-   "rank": 565,
+   "rank": 2124,
    "stop": false,
    "slang": true
   },
   {
    "word": "wtf",
-   "rank": 566,
+   "rank": 2125,
    "stop": false,
    "slang": true
   },
   {
    "word": "meh",
-   "rank": 567,
+   "rank": 2126,
    "stop": false,
    "slang": true
   },
   {
    "word": "yeah",
-   "rank": 568,
+   "rank": 2127,
    "stop": false,
    "slang": true
   },
   {
    "word": "yep",
-   "rank": 569,
+   "rank": 2128,
    "stop": false,
    "slang": true
   },
   {
    "word": "nope",
-   "rank": 570,
+   "rank": 2129,
    "stop": false,
    "slang": true
   },
   {
    "word": "nah",
-   "rank": 571,
+   "rank": 2130,
    "stop": false,
    "slang": true
   },
   {
    "word": "ok",
-   "rank": 572,
+   "rank": 2131,
    "stop": false,
    "slang": true
   },
   {
    "word": "okay",
-   "rank": 573,
+   "rank": 2132,
    "stop": false,
    "slang": true
   },
   {
    "word": "cool",
-   "rank": 574,
+   "rank": 2133,
    "stop": false,
    "slang": true
   },
   {
    "word": "nice",
-   "rank": 575,
+   "rank": 2134,
    "stop": false,
    "slang": true
   },
   {
    "word": "awesome",
-   "rank": 576,
+   "rank": 2135,
    "stop": false,
    "slang": true
   },
   {
    "word": "great",
-   "rank": 577,
+   "rank": 2136,
    "stop": false,
    "slang": true
   },
   {
    "word": "sweet",
-   "rank": 578,
+   "rank": 2137,
    "stop": false,
    "slang": true
   },
   {
    "word": "dude",
-   "rank": 579,
+   "rank": 2138,
    "stop": false,
    "slang": true
   },
   {
    "word": "bro",
-   "rank": 580,
+   "rank": 2139,
    "stop": false,
    "slang": true
   },
   {
    "word": "guy",
-   "rank": 581,
+   "rank": 2140,
    "stop": false,
    "slang": true
   },
   {
    "word": "guys",
-   "rank": 582,
+   "rank": 2141,
    "stop": false,
    "slang": true
   },
   {
    "word": "literally",
-   "rank": 583,
+   "rank": 2142,
    "stop": false,
    "slang": true
   },
   {
    "word": "basically",
-   "rank": 584,
-   "stop": false,
-   "slang": true
-  },
-  {
-   "word": "actually",
-   "rank": 585,
+   "rank": 2143,
    "stop": false,
    "slang": true
   },
   {
    "word": "honestly",
-   "rank": 586,
+   "rank": 2144,
    "stop": false,
    "slang": true
   },
   {
    "word": "obviously",
-   "rank": 587,
+   "rank": 2145,
    "stop": false,
    "slang": true
   },
   {
    "word": "probably",
-   "rank": 588,
+   "rank": 2146,
    "stop": false,
    "slang": true
   },
   {
    "word": "maybe",
-   "rank": 589,
+   "rank": 2147,
    "stop": false,
    "slang": true
   },
   {
    "word": "perhaps",
-   "rank": 590,
+   "rank": 2148,
    "stop": false,
    "slang": true
   },
   {
    "word": "kinda",
-   "rank": 591,
+   "rank": 2149,
    "stop": false,
    "slang": true
   },
   {
    "word": "sorta",
-   "rank": 592,
+   "rank": 2150,
    "stop": false,
    "slang": true
   },
   {
    "word": "wanna",
-   "rank": 593,
+   "rank": 2151,
    "stop": false,
    "slang": true
   },
   {
    "word": "gonna",
-   "rank": 594,
+   "rank": 2152,
    "stop": false,
    "slang": true
   },
   {
    "word": "gotta",
-   "rank": 595,
+   "rank": 2153,
    "stop": false,
    "slang": true
   },
   {
    "word": "stuff",
-   "rank": 596,
+   "rank": 2154,
    "stop": false,
    "slang": true
   },
   {
    "word": "whatever",
-   "rank": 597,
+   "rank": 2155,
    "stop": false,
    "slang": true
   },
   {
    "word": "anyways",
-   "rank": 598,
+   "rank": 2156,
    "stop": false,
    "slang": true
   },
   {
    "word": "anyway",
-   "rank": 599,
+   "rank": 2157,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "g",
+   "rank": 2158,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "u",
+   "rank": 2159,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "y",
+   "rank": 2160,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "t",
+   "rank": 2161,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "h",
+   "rank": 2162,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "n",
+   "rank": 2163,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "m",
+   "rank": 2164,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "e",
+   "rank": 2165,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "d",
+   "rank": 2166,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "o",
+   "rank": 2167,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "r",
+   "rank": 2168,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "f",
+   "rank": 2169,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "p",
+   "rank": 2170,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "c",
+   "rank": 2171,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "k",
+   "rank": 2172,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "s",
+   "rank": 2173,
+   "stop": true,
+   "slang": false
+  },
+  {
+   "word": "q",
+   "rank": 2174,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "v",
+   "rank": 2175,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "b",
+   "rank": 2176,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "j",
+   "rank": 2177,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "x",
+   "rank": 2178,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "z",
+   "rank": 2179,
+   "stop": false,
+   "slang": false
+  },
+  {
+   "word": "yeet",
+   "rank": 2180,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "spill",
+   "rank": 2181,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "unwun",
+   "rank": 2182,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "finna",
+   "rank": 2183,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "queen",
+   "rank": 2184,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "npc",
+   "rank": 2185,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "aura",
+   "rank": 2186,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "farming",
+   "rank": 2187,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "grimace",
+   "rank": 2188,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "shake",
+   "rank": 2189,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mode",
+   "rank": 2190,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bop",
+   "rank": 2191,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "flop",
+   "rank": 2192,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "drip",
+   "rank": 2193,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "flex",
+   "rank": 2194,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ghost",
+   "rank": 2195,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bench",
+   "rank": 2196,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "zone",
+   "rank": 2197,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fumble",
+   "rank": 2198,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sack",
+   "rank": 2199,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tifu",
+   "rank": 2200,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ama",
+   "rank": 2201,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nsfw",
+   "rank": 2202,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nsfl",
+   "rank": 2203,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "irl",
+   "rank": 2204,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fyi",
+   "rank": 2205,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tldr",
+   "rank": 2206,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "eli5",
+   "rank": 2207,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "diy",
+   "rank": 2208,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fwb",
+   "rank": 2209,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "goat",
+   "rank": 2210,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "w/",
+   "rank": 2211,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "w/o",
+   "rank": 2212,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bc",
+   "rank": 2213,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tb",
+   "rank": 2214,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "afk",
+   "rank": 2215,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yo",
+   "rank": 2216,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bruh",
+   "rank": 2217,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "dawg",
+   "rank": 2218,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hit-diff",
+   "rank": 2219,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hot",
+   "rank": 2220,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "safe",
+   "rank": 2221,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "beige",
+   "rank": 2222,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "situationship",
+   "rank": 2223,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "breadcrumbting",
+   "rank": 2224,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lovebombing",
+   "rank": 2225,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "orbiting",
+   "rank": 2226,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cuffing",
+   "rank": 2227,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "season",
+   "rank": 2228,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "deadname",
+   "rank": 2229,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "clocking",
+   "rank": 2230,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "throwing",
+   "rank": 2231,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "catching",
+   "rank": 2232,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hands",
+   "rank": 2233,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "catch",
+   "rank": 2234,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "spilling",
+   "rank": 2235,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "drinking",
+   "rank": 2236,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "serving",
+   "rank": 2237,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "snatched",
+   "rank": 2238,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "baked",
+   "rank": 2239,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "toasting",
+   "rank": 2240,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "roading",
+   "rank": 2241,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "joking",
+   "rank": 2242,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "pressing",
+   "rank": 2243,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "issues",
+   "rank": 2244,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "check",
+   "rank": 2245,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "immaculate",
+   "rank": 2246,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "poison",
+   "rank": 2247,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "manifesting",
+   "rank": 2248,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "twin",
+   "rank": 2249,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "flame",
+   "rank": 2250,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "awakening",
+   "rank": 2251,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "healing",
+   "rank": 2252,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "toxic",
+   "rank": 2253,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "narcissist",
+   "rank": 2254,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gaslighting",
+   "rank": 2255,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "doomscrolling",
+   "rank": 2256,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "doomer",
+   "rank": 2257,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "boomer",
+   "rank": 2258,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "zoomer",
+   "rank": 2259,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gen-z",
+   "rank": 2260,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gamma",
+   "rank": 2261,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "alt-right",
+   "rank": 2262,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "centrist",
+   "rank": 2263,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "normie",
+   "rank": 2264,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "edge",
+   "rank": 2265,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lord",
+   "rank": 2266,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tryhard",
+   "rank": 2267,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "casual",
+   "rank": 2268,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hardcore",
+   "rank": 2269,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "speedrun",
+   "rank": 2270,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "glitch",
+   "rank": 2271,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "exploit",
+   "rank": 2272,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nerf",
+   "rank": 2273,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "buff",
+   "rank": 2274,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "meta",
+   "rank": 2275,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "minmax",
+   "rank": 2276,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "theorycraft",
+   "rank": 2277,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "salt",
+   "rank": 2278,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rage",
+   "rank": 2279,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "tilt",
+   "rank": 2280,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gg",
+   "rank": 2281,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "wp",
+   "rank": 2282,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ez",
+   "rank": 2283,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "smurf",
+   "rank": 2284,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "duo",
+   "rank": 2285,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "squad",
+   "rank": 2286,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "trio",
+   "rank": 2287,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "quad",
+   "rank": 2288,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "carry",
+   "rank": 2289,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "feed",
+   "rank": 2290,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bot",
+   "rank": 2291,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "noob",
+   "rank": 2292,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "pro",
+   "rank": 2293,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vet",
+   "rank": 2294,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "veteran",
+   "rank": 2295,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rookie",
+   "rank": 2296,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hustle",
+   "rank": 2297,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "side-hustle",
+   "rank": 2298,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "wage",
+   "rank": 2299,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cuck",
+   "rank": 2300,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "burnout",
+   "rank": 2301,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "quit",
+   "rank": 2302,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "quiet-quitting",
+   "rank": 2303,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "resigning",
+   "rank": 2304,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "networking",
+   "rank": 2305,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "contact",
+   "rank": 2306,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lead",
+   "rank": 2307,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "pipeline",
+   "rank": 2308,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "forecast",
+   "rank": 2309,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "quarter",
+   "rank": 2310,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "q1",
+   "rank": 2311,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "q2",
+   "rank": 2312,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "q3",
+   "rank": 2313,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "q4",
+   "rank": 2314,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "okr",
+   "rank": 2315,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "kpi",
+   "rank": 2316,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "standup",
+   "rank": 2317,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "sync",
+   "rank": 2318,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "async",
+   "rank": 2319,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "remote",
+   "rank": 2320,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hybrid",
+   "rank": 2321,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "onsite",
+   "rank": 2322,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "offsite",
+   "rank": 2323,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "retreat",
+   "rank": 2324,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "onboarding",
+   "rank": 2325,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "promotion",
+   "rank": 2326,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "demotion",
+   "rank": 2327,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "raise",
+   "rank": 2328,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "bonus",
+   "rank": 2329,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "equity",
+   "rank": 2330,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "vest",
+   "rank": 2331,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "cliff",
+   "rank": 2332,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "stock",
+   "rank": 2333,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "crypto",
+   "rank": 2334,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "defi",
+   "rank": 2335,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "nft",
+   "rank": 2336,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "web3",
+   "rank": 2337,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "blockchain",
+   "rank": 2338,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "wallet",
+   "rank": 2339,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "seed",
+   "rank": 2340,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "phrase",
+   "rank": 2341,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "hodl",
+   "rank": 2342,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "lambo",
+   "rank": 2343,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "rug-pull",
+   "rank": 2344,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "scam",
+   "rank": 2345,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "ponzi",
+   "rank": 2346,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "airdrop",
+   "rank": 2347,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mint",
+   "rank": 2348,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "gas",
+   "rank": 2349,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "fee",
+   "rank": 2350,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "slippage",
+   "rank": 2351,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "impermanent",
+   "rank": 2352,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "loss",
+   "rank": 2353,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "yield",
+   "rank": 2354,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "farm",
+   "rank": 2355,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "staking",
+   "rank": 2356,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "mining",
+   "rank": 2357,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "node",
+   "rank": 2358,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "validator",
+   "rank": 2359,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "consensus",
+   "rank": 2360,
+   "stop": false,
+   "slang": true
+  },
+  {
+   "word": "proof-of-stake",
+   "rank": 2361,
    "stop": false,
    "slang": true
   }

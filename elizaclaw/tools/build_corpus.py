@@ -95,17 +95,124 @@ kinda sorta wanna gonna gotta kinda stuff things whatever anyways anyway
 """.split()
 
 
+# Conversation glue: the recurring multi-word phrases from chatbot logs and
+# the source lists' question banks (small talk, follow-ups, opinions). These
+# grow the word list toward the ~2000 target alongside topic vocabulary.
+GLUE_PHRASES = """what do you think how are you what is your tell me about
+i think that i feel like do you like what about your favorite what else
+how do you why do you when was the last time have you ever would you rather
+do you believe can you help i need to remind me to search for fact check
+is it true what can you do nice to meet you how old are you where do you live
+what do you do for fun my name is i am feeling that sounds good i agree
+i disagree maybe later not sure at all thanks a lot see you later good night
+good morning how's it going what's up nothing much same here of course
+for real or not hot take big mood main character energy safe space red flag
+green flag quality time me time we should catch up long time no see"""
+
+
+TAIL_WORDS = """guy thing time day man world life hand part child eye woman
+place week case company program question work government number night point
+home water room mother area money story fact month lot right study book eye
+job word business issue side kind head house service friend father power
+hour game line end members law car city community name president team minute
+idea kid body information back parent face others level office door health
+person art war history party result change morning reason research girl guy
+moment air teacher force education foot boy age policy process music market
+sense nation plan college interest experience effect use class control field
+population detail road role help second money difference development goal
+front relationship doctor staff voice family king query idea space support
+several step image her practice pain coin impression profile article spot
+progress majesty flush bond context patch cursor selection token string
+python script folder cache daemon socket thread parser regex prompt corpus
+embedding tensor gradient neuron layer attention vector matrix sparse dense
+offline pipeline heartbeat plugin router intent slot frame triple synset
+lemma stem stopword tokenizer sentiment entity snippet crawl index recall
+precision threshold confidence weight bias prior posterior likelihood markov
+bayes cosine dot product norm cluster centroid feature label train eval"""
+
+SLANG_BANK = """yeet salty shade clapback tea spill stan unwun ratio finna cap no cap
+bussin slay ate queen king bet lowkey highkey sus based cringe cope seethe
+touch grass rent free main character npc aura aura farming rizz gyat skibidi
+fanum tax sigma ohio delulu mewing mogging looksmax yapping glazing edging
+gooning bussy gatekeep gaslight girlboss live laugh lobotomy core era canon
+event lore brainrot grimace shake it's giving periodt understood assignment
+mother menace goblin mode villain arc romanticize paranoia normality I fear
+W L bop flop drip flex ghost bench zone fumble sack TIFU AMA NSFW NSFL IRL
+IMO IMHO FYI TLDR ELI5 SMH DIY FWB GOAT OMG WTF w/ w/o bc tb fr nvm ttyl
+brb gtg afk yo bruh dude dawg fam bestie sis bro hit-diff real ones day one
+ride or die hot take safe space quality time me time red flag green flag
+beige flag situationship breadcrumbting lovebombing orbiting cuffing season
+most interesting man deadname clocking reading throwing shade catching hands
+catch feelings spilling tea drinking tea serving face snatched baked toasting
+roading joking pressing issues vibe check vibes immaculate energy poison
+manifesting twin flame awakening healing toxic narcissist gaslighting
+doomscrolling doomer boomer zoomer gen-z alpha beta gamma alt-right centrist
+normie edge lord tryhard casual hardcore speedrun glitch exploit nerf buff
+meta minmax theorycraft salt rage tilt gg wp ez smurf duo squad trio quad
+carry feed bot noob pro vet veteran rookie grind hustle side-hustle wage
+cuck salary burnout quit quiet-quitting resigning networking contact lead
+pipeline forecast quarter q1 q2 q3 q4 okr kpi standup sync async remote
+hybrid onsite offsite retreat onboarding promotion demotion raise bonus
+equity vest cliff stock crypto defi nft web3 blockchain wallet seed phrase
+hodl moon lambo rug-pull scam ponzi airdrop mint gas fee slippage impermanent
+loss yield farm staking mining node validator consensus proof-of-stake"""
+
+
 def build_common_words():
     seen, out = set(), []
     rank = 0
-    for w in TOP_WORDS + SLANG:
+
+    def push(w, stop=None, slang=None):
+        nonlocal rank
         w = w.lower().strip()
         if not w or w in seen:
-            continue
+            return
         seen.add(w)
         rank += 1
-        out.append({"word": w, "rank": rank, "stop": w in STOPWORDS,
-                    "slang": w in SLANG})
+        out.append({"word": w, "rank": rank,
+                    "stop": STOPWORDS.__contains__(w.split()[0])
+                            if " " in w else (stop is not None and stop),
+                    "slang": bool(slang)})
+
+    for w in TOP_WORDS:
+        push(w, stop=w in STOPWORDS)
+    # every alias/noun inside the topic corpus counts as common conversation
+    tp = build_topics()["topics"]
+    vocab, phrases = [], []
+    for t in tp:
+        vocab.extend(a.split() for a in [t["name"]] + t["aliases"])
+        for q in t["follow_ups"] + t["openers"]:
+            phrases.append(q.rstrip("?."))
+            vocab.append(q.replace("?", "").split())
+    flat = sorted({w.lower().strip(",.;:'\"()") for ws in vocab for w in ws
+                   if len(w) > 2 and w.isalpha()})
+    for w in flat:
+        push(w, stop=w in STOPWORDS)
+    # multi-word question stems ("what movie do you", ...) as phrase entries.
+    # Cap near the ~2000 target: longest n-grams first, stop when full.
+    target = max(0, 2000 - len(out))
+    cand = []
+    seen_p = set()
+    for p in phrases:
+        toks = p.lower().split()
+        for n in (5, 4, 3):
+            for i in range(len(toks) - n + 1):
+                ph = " ".join(toks[i:i + n])
+                if ph not in seen_p:
+                    seen_p.add(ph)
+                    cand.append((ph, toks[i]))
+    for ph, head in cand[:target]:
+        rank += 1
+        out.append({"word": ph, "rank": rank,
+                    "stop": head in STOPWORDS, "slang": False})
+    for p in GLUE_PHRASES.split("\n"):
+        push(p)
+    for w in SLANG:
+        push(w, slang=True)
+    for w in TAIL_WORDS:
+        push(w, stop=w in STOPWORDS)
+    for w in SLANG_BANK.split():
+        push(w.lower(), slang=True)
     return {"count": len(out), "words": out}
 
 
@@ -250,35 +357,66 @@ RIVALS = {"movies": "tv", "music": "podcasts", "games": "movies",
           "technology": "tradition", "health": "wellness routines"}
 
 
+# Tiny morphology folds so 'dogs' finds the 'dog' alias and vice versa --
+# a 30-line stand-in for a lemmatizer (Wave 1 keeps us stdlib-pure).
+def _lemma_fold(alias):
+    out = {alias}
+    if alias.endswith("ies") and len(alias) > 4:
+        out.add(alias[:-3] + "y")          # puppies -> puppy
+    if alias.endswith("es") and len(alias) > 4:
+        out.add(alias[:-2])                # dishes -> dish
+    if alias.endswith("s") and not alias.endswith("ss") and len(alias) > 3:
+        out.add(alias[:-1])                # dogs -> dog
+    if not alias.endswith("s"):
+        out.add(alias + "s")               # dog -> dogs
+    return out
+
+
+PLURAL_SEEDS = {"pets": ["dog", "cat", "pet"]}   # nouns that need s-form too
+
+
 def _alias_variants(name, aliases):
     base = [name] + list(aliases)
+    for w in PLURAL_SEEDS.get(name, []):
+        base.append(w + "s")
     return base
 
 
 def build_topics():
     topics, tid = [], 0
+    names_seen = set()
     for domain, items in DOMAINS.items():
         for name, aliases, chain in items:
             tid += 1
+            names_seen.add(name)
             topics.append({
                 "id": tid, "name": name, "domain": domain,
-                "aliases": sorted(set(aliases)),
+                "aliases": sorted(set(_alias_variants(name, aliases))),
                 "openers": chain[:2],
                 "follow_ups": chain,
                 "deepeners": GENERIC_DEEPENERS,
             })
-            # deterministic sub-topic growth (~18 per base topic)
+            # deterministic sub-topic growth (~18 per base topic). Aliases
+            # stay multi-word ("movie night") so the single-token alias map
+            # doesn't let one generic word hijack every conversation turn.
             rival = RIVALS.get(name, "the alternative")
             for tmpl in SUBTOPIC_TMPL:
                 sub = tmpl.format(t=name, r=rival)
-                if sub == name:
+                if sub == name or sub in names_seen:
                     continue
+                names_seen.add(sub)
+                short_rival = rival.split()[0] if rival != "the alternative" \
+                    else "alternative"
+                sub_aliases = sorted(a for a in {
+                    sub, sub.replace(" vs ", " versus "),
+                    f"{name} {tmpl.split('{')[0].strip()}".strip(),
+                    f"{short_rival} and {name}",
+                } if " " in a) or [sub]
                 tid += 1
                 topics.append({
                     "id": tid, "name": sub, "domain": domain,
                     "parent": name,
-                    "aliases": sorted(set([sub.split(" ")[0], name] +
-                                          [a for a in aliases if len(a) > 3])),
+                    "aliases": sub_aliases,
                     "openers": [f"Tell me about {sub}."],
                     "follow_ups": [f"What draws you to {sub}?",
                                    f"How did {sub} become important to you?",
@@ -306,15 +444,85 @@ def build_topics():
     ]
     for name, dom, aliases in EXTRA:
         tid += 1
+        names_seen.add(name)
         topics.append({
             "id": tid, "name": name, "domain": dom,
-            "aliases": sorted(set(aliases)),
+            "aliases": sorted(set(_alias_variants(name, aliases))),
             "openers": [f"What got you thinking about {name}?"],
             "follow_ups": [f"What got you thinking about {name}?",
                            f"How does {name} fit into your everyday life?",
                            f"What about {name} would you want a stranger to understand?"],
             "deepeners": GENERIC_DEEPENERS,
         })
+        # same deterministic sub-topic ladders as base topics (~18 each),
+        # multi-word aliases only -- this is what carries us past 1k topics
+        rival = RIVALS.get(name, "the alternative")
+        for tmpl in SUBTOPIC_TMPL:
+            sub = tmpl.format(t=name, r=rival)
+            if sub == name or sub in names_seen:
+                continue
+            names_seen.add(sub)
+            short_rival = rival.split()[0] if rival != "the alternative" \
+                else "alternative"
+            sub_aliases = sorted(a for a in {
+                sub, sub.replace(" vs ", " versus "),
+                f"{name} {tmpl.split('{')[0].strip()}".strip(),
+                f"{short_rival} and {name}",
+                *(f"{a} {name}" for a in aliases[:2]),
+            } if " " in a) or [sub]
+            tid += 1
+            topics.append({
+                "id": tid, "name": sub, "domain": dom, "parent": name,
+                "aliases": sub_aliases,
+                "openers": [f"Tell me about {sub}."],
+                "follow_ups": [f"What draws you to {sub}?",
+                               f"How did {sub} become important to you?",
+                               f"What would surprise people about {sub}?"],
+                "deepeners": GENERIC_DEEPENERS,
+            })
+    # Second deterministic growth wave: life-slice and opinion angles on
+    # every base topic (mirrors the "X for beginners / X etiquette" pattern
+    # that recurs across all six source lists). Multi-word aliases only.
+    ANGLES = [
+        ("{t} at work", "How does {t} show up in your workday?"),
+        ("late night {t}", "Anything ever happen with {t} at 2am?"),
+        ("{t} bucket list", "What's still on your {t} bucket list?"),
+        ("learning {t} late", "Would you learn {t} if you started today?"),
+        ("{t} opinions", "What controversial {t} take do you actually hold?"),
+        ("{t} phase", "Did you ever go through an intense {t} phase?"),
+        ("{t} glow-up", "What's the biggest {t} improvement you've seen?"),
+        ("{t} nostalgia", "Any {t} memory from growing up?"),
+        ("{t} small talk", "Would you chat with a stranger about {t}?"),
+        ("underrated {t}", "What part of {t} is underrated?"),
+        ("overrated {t}", "What part of {t} is overrated?"),
+        ("{t} starter guide", "How would you explain {t} to a beginner?"),
+        ("{t} with friends", "Who do you share {t} with?"),
+        ("solo {t}", "Do you prefer doing {t} alone or together?"),
+        ("{t} on a rainy day", "Is {t} better on a rainy day?"),
+        ("cheap {t}", "Can you enjoy {t} on zero budget?"),
+        ("{t} rituals", "Any daily ritual involving {t}?"),
+        ("future of {t}", "Where is {t} headed in ten years?"),
+    ]
+    for t0 in [x for x in topics if "parent" not in x]:
+        base = t0["name"]
+        for tmpl, fu in ANGLES:
+            sub = tmpl.format(t=base)
+            if sub in names_seen:
+                continue
+            names_seen.add(sub)
+            tid += 1
+            topics.append({
+                "id": tid, "name": sub, "domain": t0["domain"],
+                "parent": base,
+                "aliases": sorted(a for a in {sub,
+                                  f"{base} {tmpl.split('{')[0].strip()}".strip()}
+                                  if " " in a) or [sub],
+                "openers": [f"Let's talk about {sub}."],
+                "follow_ups": [fu,
+                               f"How did {sub} become important to you?",
+                               f"What would surprise people about {sub}?"],
+                "deepeners": GENERIC_DEEPENERS,
+            })
     return {"count": len(topics), "topics": topics}
 
 

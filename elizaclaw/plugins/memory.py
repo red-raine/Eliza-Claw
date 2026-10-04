@@ -33,7 +33,30 @@ class MemoryTiersPlugin(Plugin):
 
     # ------------------------------------------------------------------ hooks
     def hook_store(self, ctx):
-        text = self.param(ctx, ctx["decomp"].get("params", {}).get("text", "cap1"))
+        spec = ctx["decomp"].get("params", {}).get("text", "cap1")
+        text = self.param(ctx, spec)
+        # NLP slot refinement (Wave 1): if the raw capture is empty or a bare
+        # preposition ('remind to call mom' -> cap1=''), grab the noun phrase
+        # after the cue word instead -- POS-tagged, prep-bounded.
+        toks = ctx.get("tokens") or []
+        cue = {"remember", "that", "note"}
+        weak = (not text or str(text).strip() == ""
+                or set(str(text).lower().split()) <= cue)
+        if weak:
+            lex = getattr(self.shell, "lexicon", None)
+            if lex is not None:
+                try:
+                    idx = max((i for i, t in enumerate(toks) if t in cue),
+                              default=None)
+                    if idx is not None:
+                        np_ = lex.noun_phrase(toks, idx + 1)
+                        if np_:
+                            text = np_
+                except Exception:
+                    pass
+            if weak:
+                tail = " ".join(t for t in toks if t not in cue).strip()
+                text = tail or None
         if not text:
             return False
         key = re.sub(r"[^a-z0-9]+", "_", str(text).lower())[:40] or f"fact{ctx['turn']}"
@@ -49,15 +72,22 @@ class MemoryTiersPlugin(Plugin):
         lines = [f"- {v}" for v in list(facts.values())[-8:]]
         lines += [f"- (episode, {e.get('topic','?')}) {e['what'][:60]}"
                   for e in eps]
+        # 'what do you remember about X' -> RAG retrieval over every tier
+        q = self.param(ctx, ctx["decomp"].get("params", {}).get("query"))
+        if q:
+            hits = [d for s, d in self.rag.search(str(q), k=4)
+                    if d["meta"].get("kind") in ("fact", "episode", "mtm")]
+            ctx["vars"]["query"] = q
+            ctx["vars"]["facts"] = ("\n".join("- " + d["text"][:90]
+                                              for d in hits)
+                                    or "(nothing yet)")
+            ctx["response"] = "memory.recall"
+            return True
         ctx["vars"]["facts"] = "\n".join(lines) or "(nothing yet)"
-        ctx["response"] = None
-        ctx["explicit_response"] = None
-        # render inline: simplest template is generic.continue + our text
-        ctx["vars"]["memory_dump"] = ctx["vars"]["facts"]
-        ctx["response"] = "memory.stats"
         st = self.mem.stats()
         ctx["vars"].update({k: v for k, v in
                             zip(("stm", "mtm", "ltm", "epi"), st.values())})
+        ctx["response"] = "memory.dump"
         return True
 
     def hook_stats(self, ctx):

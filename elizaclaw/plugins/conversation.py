@@ -25,6 +25,20 @@ TOPICS_FILE = os.path.join(HERE, "..", "..", "data", "topics.json")
 
 
 @register
+def _lemma_variants(word):
+    """Tiny morphology folds (stdlib stand-in for a lemmatizer)."""
+    out = {word}
+    if word.endswith("ies") and len(word) > 4:
+        out.add(word[:-3] + "y")
+    if word.endswith("es") and len(word) > 4:
+        out.add(word[:-2])
+    if word.endswith("s") and not word.endswith("ss") and len(word) > 3:
+        out.add(word[:-1])
+    if not word.endswith("s"):
+        out.add(word + "s")
+    return out
+
+
 class Conversation(Plugin):
     name = "conversation"
     priority = -5                      # last resort before raw ELIZA
@@ -38,7 +52,12 @@ class Conversation(Plugin):
                 self.topics = json.load(f)["topics"]
             for t in self.topics:
                 for a in t["aliases"] + [t["name"]]:
-                    self.alias_map.setdefault(a.lower(), []).append(t)
+                    a = a.lower()
+                    self.alias_map.setdefault(a, []).append(t)
+                    # morphology fold: 'dogs' also indexes the 'dog' alias
+                    for v in _lemma_variants(a):
+                        if v != a:
+                            self.alias_map.setdefault(v, []).append(t)
         # lazy singleton tiered memory + rag shared across plugins
         self.mem = getattr(shell, "tiers", None)
         self.rag = getattr(shell, "rag", None)
@@ -105,14 +124,22 @@ class Conversation(Plugin):
     # ------------------------------------------------------------- topic detect
     def detect_topic(self, text, ctx):
         toks = set(ctx["tokens"])
-        # exact alias hit wins, most aliases first
+        folded = {v for a in toks for v in _lemma_variants(a)}
+        # exact alias hit wins; multi-word aliases match as substrings so
+        # sub-topics ('movie night') beat their parents on the full phrase
         best, best_n = None, 0
         for alias, tlist in self.alias_map.items():
-            if alias in toks or (" " in alias and alias in text):
-                for t in tlist:
-                    n = sum(1 for a in t["aliases"] if a in toks)
-                    if n > best_n:
-                        best, best_n = t, n
+            single = " " not in alias
+            hit = (alias in folded if single else alias in text)
+            if not hit:
+                continue
+            for t in tlist:
+                n = sum(1 for a in t["aliases"]
+                        if (a in folded) if " " not in a else (a in text))
+                if len(alias.split()) > 1:
+                    n += 2                       # phrase alias bonus
+                if n > best_n:
+                    best, best_n = t, n
         if best:
             return best
         # WordNet-synonym growth: expand sentence seeds, re-probe aliases
